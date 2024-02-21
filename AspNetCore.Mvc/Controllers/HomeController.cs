@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore.Mvc.Models.Views;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers
 {
@@ -6,8 +7,10 @@ namespace AspNetCore.Mvc.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Title"] = "Task Management Assistant You Gonna Love";
-            return View();
+            var viewModel = new HomeIndexViewModel();        
+            ViewData["Title"] = viewModel.Title;
+
+            return View(viewModel);
         }
     }
 }
