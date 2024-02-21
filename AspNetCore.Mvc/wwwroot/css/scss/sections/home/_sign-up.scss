@@ -1,0 +1,110 @@
+#sign-up {
+    background-color: $gray-100;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        .sign-up-heading {
+
+            @include md {
+                display: flex;
+                gap: 1rem
+            }
+            h2 {
+                @include standard-heading; 
+                font-size: 28px !important;
+
+                @include xl {
+                    font-size: 38px !important;
+                    text-align: left;
+                }
+            }
+            img {
+                display: none;
+
+                @include md {
+                    display: flex;
+                }
+            }
+        }
+
+        .sign-up-newsletters {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            padding-bottom: 1rem;
+
+            @include lg {
+                flex-direction: row
+            }
+
+            @include xl {
+                // max-width: 87.4rem
+                max-width: 50rem;
+            }
+
+            h5 {
+                @include standard-heading; 
+                font-size: 20px !important;
+                padding-bottom: 1rem;
+
+                @include xxl {
+                    max-width: 10rem;
+                }
+            }
+
+            .sign-up-options {
+                display: flex;
+                flex-wrap: wrap;
+                // justify-content: center;
+                // align-items: center;
+                gap: 1.1rem;
+
+                .newsletter {
+                    display: flex;
+                    gap: 0.5rem;
+
+                    @include md {
+                        flex: 1 0 calc(33.33% - 1rem);
+                        gap: 1rem;
+                    }
+    
+                    p {
+                        margin: 0;
+
+                        @include md {
+                            @include standard-text; 
+                            font-size: 14px !important;
+                        }
+                    }
+                }
+            }          
+        }
+
+        .sign-up-field {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1rem;
+
+            input {
+                border-radius: 0.37rem;
+                border: none;
+
+                @include md {
+                    width: 33rem;
+                }
+
+                @include lg {
+                    width: 39rem;
+                }
+            }
+        }
+    }
+}

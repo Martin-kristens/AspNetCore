@@ -1,0 +1,109 @@
+#showcase {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    @include md {
+        flex-direction: row-reverse;
+    }
+    
+    img {
+
+        display: none;
+
+        @include md {
+            display: flex;
+            max-width: 50%;
+            object-fit: scale-down;
+            justify-content: flex-end;
+        }
+       
+    }
+    
+    .container {
+        padding: 1.1rem 1rem;
+        
+        @include xl {
+            width: 50%;
+        }
+
+        .content {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            // max-width: 80%;
+
+            @include md {
+                text-align: left;
+                max-width: 70%;
+                padding: 0 20px;
+                margin-left: 5rem;
+            }
+            
+            h1 {
+                margin-bottom: 2rem;
+                @include standard-heading; 
+                font-size: 40px !important;
+
+                @include md {
+                    @include standard-heading; 
+                    font-size: 35px !important;
+                }
+
+                @include xxl {
+                    @include standard-heading; 
+                    font-size: 58px !important;
+                }
+            }
+            p {
+                margin-bottom: 2rem;
+            }
+
+            a {
+                @include lg {
+                    max-width: 70%;
+                }
+
+                @include lg {
+                    max-width: 15rem;
+                }
+            }
+
+            h6 {
+                padding-top: 2rem;
+                margin-bottom: 2.5rem;
+                @include standard-heading; 
+                font-size: 20px !important;
+
+                @include md {
+                    @include standard-heading; 
+                    font-size: 18px !important;
+                }
+            }
+
+            .brands {
+                display: flex;
+                flex-wrap: nowrap; /* Förhindra ombrytning av element på flera rader */
+                justify-content: center; /* Centrera elementen horisontellt */
+                gap: 20px;
+
+                @include xl {
+                    justify-content: flex-start;
+                }
+
+                img {
+                    max-width: 20%; /* Säkerställ att bilderna inte överskrider förälderselementets bredd */
+                    height: auto; 
+
+                    @include md {
+                        // max-width: 25%;
+                    }
+                }
+            }
+
+        }
+    }
+}

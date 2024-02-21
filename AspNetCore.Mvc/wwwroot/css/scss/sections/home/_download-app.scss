@@ -1,0 +1,127 @@
+#download-app {
+    background-color: $gray-100;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        // justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 1rem;
+        background-color: $gray-200;
+
+        @include md {
+            flex-direction: row;
+            text-align: left;
+            justify-content: space-between;
+        }
+
+        img {
+            max-width: 50%;
+            object-fit: scale-down;
+            padding-top: 1.2rem;
+
+            @include md {
+                max-width: 40%;
+            }
+
+            @include lg {
+                max-width: 30%;
+            }
+        }
+
+        .download-app-content {
+
+            @include md {
+                display: flex;
+                flex-direction: column;
+                max-width: 50%;
+            }
+
+            .download-app-heading {
+
+                h2 {
+
+                    @include md {
+                        @include standard-heading; 
+                        font-size: 24px !important;   
+                    }  
+
+                    @include lg{
+                        @include standard-heading; 
+                        font-size: 28px !important;
+                    }
+                    @include xl{
+                        @include standard-heading; 
+                        font-size: 38px !important;
+                        max-width: 60%;
+                    }
+                }
+                 
+                
+               
+
+               
+            }
+
+            .app-download {
+
+                @include md {
+                    display: flex;
+                    // flex-direction: column;
+                    // gap: 3rem;
+                }
+
+                .left-side-download {
+                    
+                    @include md {
+                        
+                        // column-gap: 0;
+                        // width: 60%;
+                    }
+
+                    .store-heading {
+                        @include md {
+                            margin-top: 10px;
+                        }
+                    }
+
+                    .ratings {
+                        padding-bottom: 0.5rem;
+                    }
+
+                }
+
+                
+                .right-side-download {
+                       
+                    @include md {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // width: 40%;
+                    }
+
+                    .app-stores {
+ 
+                        @include md {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+
+                        img {
+                            width: 30%;
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

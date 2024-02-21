@@ -1,0 +1,100 @@
+#features {
+    background-color: #D9D9D9;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrera innehållet vertikalt */
+        text-align: center;
+        padding: 1.3rem 1rem;
+
+        h2 {
+            @include standard-heading; 
+            font-size: 32px !important;
+
+            @include lg {
+                font-size: 40px !important;
+            }
+        }
+
+        .tool-features {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1rem;
+
+            @include md {
+                margin-top: 3rem;
+                flex-direction: row;
+                // display: flex;
+                flex-wrap: wrap; /* Tillåt att elementen går till nästa rad när de inte ryms */
+                justify-content: center; /* Centrera elementen horisontellt */
+                gap: 20px; /* Avstånd mellan elementen */
+            }
+          
+
+            .box {
+                padding: 1.3rem;
+                border-radius: 8px;
+                text-align: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Skugga för varje box */
+                margin-bottom: 20px; /* Avstånd mellan varje box */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                @include md {
+                    flex: 0 0 calc(33.33% - 20px); /* Bredden på varje box är 33.33% av förälderns bredd minus avståndet */
+                    max-width: calc(33.33% - 20px); /* Maxbredden för varje box är 33.33% av förälderns bredd minus avståndet */
+                    padding: 20px;
+                    // background-color: white;
+                    border-radius: 8px;
+                    // text-align: center;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Skugga för varje box */
+                    margin-bottom: 20px; /* Avstånd mellan varje box */                    
+                }
+
+                img {
+
+                    @include md {
+                        display: flex;
+                        max-width: 40%;
+                        object-fit: scale-down;
+                        margin-bottom: 1rem                      
+                    }
+                }
+
+                h5 {
+
+                    @include md {
+                        @include standard-heading; 
+                        font-size: 14px !important;
+                    }
+
+                    @include lg {
+                        @include standard-heading; 
+                        font-size: 18px !important;
+                    }
+                }
+
+                p {
+
+                    @include md {
+                        @include standard-text; 
+                        font-size: 12px !important;
+                    }
+
+                    @include lg {
+                        @include standard-text; 
+                        font-size: 14px !important;
+                    }
+                }
+               
+            }
+        }
+    }
+}
