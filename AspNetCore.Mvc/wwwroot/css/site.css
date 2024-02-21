@@ -465,7 +465,7 @@ footer .container p span {
   }
 }
 
-#showcase {
+.showcase {
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
@@ -473,44 +473,44 @@ footer .container p span {
   justify-content: center;
 }
 @media (min-width: 768px) {
-  #showcase {
+  .showcase {
     flex-direction: row-reverse;
   }
 }
-#showcase img {
+.showcase img {
   display: none;
 }
 @media (min-width: 768px) {
-  #showcase img {
+  .showcase img {
     display: flex;
     max-width: 50%;
     object-fit: scale-down;
     justify-content: flex-end;
   }
 }
-#showcase .container {
+.showcase .container {
   padding: 1.1rem 1rem;
 }
 @media (min-width: 1200px) {
-  #showcase .container {
+  .showcase .container {
     width: 50%;
   }
 }
-#showcase .container .content {
+.showcase .container .content {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 @media (min-width: 768px) {
-  #showcase .container .content {
+  .showcase .container .content {
     text-align: left;
     max-width: 70%;
     padding: 0 20px;
     margin-left: 5rem;
   }
 }
-#showcase .container .content h1 {
+.showcase .container .content h1 {
   margin-bottom: 2rem;
   line-height: 160%;
   font-weight: 400;
@@ -521,7 +521,7 @@ footer .container p span {
   font-size: 40px !important;
 }
 @media (min-width: 768px) {
-  #showcase .container .content h1 {
+  .showcase .container .content h1 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -532,7 +532,7 @@ footer .container p span {
   }
 }
 @media (min-width: 1400px) {
-  #showcase .container .content h1 {
+  .showcase .container .content h1 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -542,20 +542,20 @@ footer .container p span {
     font-size: 58px !important;
   }
 }
-#showcase .container .content p {
+.showcase .container .content p {
   margin-bottom: 2rem;
 }
 @media (min-width: 992px) {
-  #showcase .container .content a {
+  .showcase .container .content a {
     max-width: 70%;
   }
 }
 @media (min-width: 992px) {
-  #showcase .container .content a {
+  .showcase .container .content a {
     max-width: 15rem;
   }
 }
-#showcase .container .content h6 {
+.showcase .container .content h6 {
   padding-top: 2rem;
   margin-bottom: 2.5rem;
   line-height: 160%;
@@ -567,7 +567,7 @@ footer .container p span {
   font-size: 20px !important;
 }
 @media (min-width: 768px) {
-  #showcase .container .content h6 {
+  .showcase .container .content h6 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -577,34 +577,34 @@ footer .container p span {
     font-size: 18px !important;
   }
 }
-#showcase .container .content .brands {
+.showcase .container .content .brands {
   display: flex;
   flex-wrap: nowrap; /* Förhindra ombrytning av element på flera rader */
   justify-content: center; /* Centrera elementen horisontellt */
   gap: 20px;
 }
 @media (min-width: 1200px) {
-  #showcase .container .content .brands {
+  .showcase .container .content .brands {
     justify-content: flex-start;
   }
 }
-#showcase .container .content .brands img {
+.showcase .container .content .brands img {
   max-width: 20%; /* Säkerställ att bilderna inte överskrider förälderselementets bredd */
   height: auto;
 }
-#features {
+.features {
   background-color: #D9D9D9;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
-#features .container {
+.features .container {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centrera innehållet vertikalt */
   text-align: center;
   padding: 1.3rem 1rem;
 }
-#features .container h2 {
+.features .container h2 {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -614,18 +614,18 @@ footer .container p span {
   font-size: 32px !important;
 }
 @media (min-width: 992px) {
-  #features .container h2 {
+  .features .container h2 {
     font-size: 40px !important;
   }
 }
-#features .container .tool-features {
+.features .container .tool-features {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
 }
 @media (min-width: 768px) {
-  #features .container .tool-features {
+  .features .container .tool-features {
     margin-top: 3rem;
     flex-direction: row;
     flex-wrap: wrap; /* Tillåt att elementen går till nästa rad när de inte ryms */
@@ -633,7 +633,7 @@ footer .container p span {
     gap: 20px; /* Avstånd mellan elementen */
   }
 }
-#features .container .tool-features .box {
+.features .container .tool-features .box {
   padding: 1.3rem;
   border-radius: 8px;
   text-align: center;
@@ -645,7 +645,7 @@ footer .container p span {
   justify-content: center;
 }
 @media (min-width: 768px) {
-  #features .container .tool-features .box {
+  .features .container .tool-features .box {
     flex: 0 0 calc(33.33% - 20px); /* Bredden på varje box är 33.33% av förälderns bredd minus avståndet */
     max-width: calc(33.33% - 20px); /* Maxbredden för varje box är 33.33% av förälderns bredd minus avståndet */
     padding: 20px;
@@ -655,7 +655,7 @@ footer .container p span {
   }
 }
 @media (min-width: 768px) {
-  #features .container .tool-features .box img {
+  .features .container .tool-features .box img {
     display: flex;
     max-width: 40%;
     object-fit: scale-down;
@@ -663,7 +663,7 @@ footer .container p span {
   }
 }
 @media (min-width: 768px) {
-  #features .container .tool-features .box h5 {
+  .features .container .tool-features .box h5 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -674,7 +674,7 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #features .container .tool-features .box h5 {
+  .features .container .tool-features .box h5 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -685,7 +685,7 @@ footer .container p span {
   }
 }
 @media (min-width: 768px) {
-  #features .container .tool-features .box p {
+  .features .container .tool-features .box p {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -694,7 +694,7 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #features .container .tool-features .box p {
+  .features .container .tool-features .box p {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -703,30 +703,30 @@ footer .container p span {
   }
 }
 
-#switch-black-white {
+.switch-black-white {
   display: none;
 }
 @media (min-width: 992px) {
-  #switch-black-white {
+  .switch-black-white {
     display: flex;
     width: 100%;
     height: 80vh;
     position: relative;
   }
 }
-#switch-black-white .light-theme {
+.switch-black-white .light-theme {
   background-color: #FFFFFF;
   flex: 1;
   color: #000000;
   padding: 20px;
 }
-#switch-black-white .dark-theme {
+.switch-black-white .dark-theme {
   background-color: #000000;
   flex: 1;
   color: #FFFFFF;
   padding: 20px;
 }
-#switch-black-white .container {
+.switch-black-white .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -736,26 +736,26 @@ footer .container p span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#switch-black-white .container h2 {
+.switch-black-white .container h2 {
   text-align: center;
   margin-left: 1.2rem;
 }
-#switch-black-white .container h2span {
+.switch-black-white .container h2span {
   color: #FFFFFF;
 }
-#switch-black-white .container .switch-black-white-laptop {
+.switch-black-white .container .switch-black-white-laptop {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-#switch-black-white .container .switch-black-white-laptop img {
+.switch-black-white .container .switch-black-white-laptop img {
   width: 70%;
   height: 70%;
   object-fit: cover;
   z-index: 1;
 }
-#switch-black-white .container .switch-black-white-laptop .circle-in-laptop {
+.switch-black-white .container .switch-black-white-laptop .circle-in-laptop {
   width: 5%;
   height: 17%;
   object-fit: cover;
@@ -766,44 +766,44 @@ footer .container p span {
   z-index: 10;
 }
 
-#task-management {
+.task-management {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-#task-management .container .task-management-content {
+.task-management .container .task-management-content {
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
   align-items: center;
 }
 @media (min-width: 768px) {
-  #task-management .container .task-management-content {
+  .task-management .container .task-management-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 }
-#task-management .container .task-management-content img {
+.task-management .container .task-management-content img {
   max-width: 80%;
   object-fit: scale-down;
 }
 @media (min-width: 768px) {
-  #task-management .container .task-management-content img {
+  .task-management .container .task-management-content img {
     max-width: 40%;
   }
 }
-#task-management .container .task-management-content .task-management-work {
+.task-management .container .task-management-content .task-management-work {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 @media (min-width: 768px) {
-  #task-management .container .task-management-content .task-management-work {
+  .task-management .container .task-management-content .task-management-work {
     display: flex;
     flex-direction: column;
   }
 }
 @media (min-width: 992px) {
-  #task-management .container .task-management-content .task-management-work h3 {
+  .task-management .container .task-management-content .task-management-work h3 {
     text-align: left;
     line-height: 160%;
     font-weight: 400;
@@ -814,13 +814,13 @@ footer .container p span {
     font-size: 28px !important;
   }
 }
-#task-management .container .task-management-content .task-management-work .task-management-status-badge {
+.task-management .container .task-management-content .task-management-work .task-management-status-badge {
   display: flex;
   justify-content: flex-start;
   gap: 0.8rem;
   padding-bottom: 1.4rem;
 }
-#task-management .container .task-management-content .task-management-work .task-management-status-badge p {
+.task-management .container .task-management-content .task-management-work .task-management-status-badge p {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -829,7 +829,7 @@ footer .container p span {
   margin: 0;
 }
 @media (min-width: 992px) {
-  #task-management .container .task-management-content .task-management-work .task-management-status-badge p {
+  .task-management .container .task-management-content .task-management-work .task-management-status-badge p {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -838,17 +838,17 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #task-management .container .task-management-content .task-management-work a {
+  .task-management .container .task-management-content .task-management-work a {
     max-width: 40%;
   }
 }
 
-#download-app {
+.download-app {
   background-color: #F3F6FF;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
-#download-app .container {
+.download-app .container {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -857,36 +857,36 @@ footer .container p span {
   background-color: #EFF2FC;
 }
 @media (min-width: 768px) {
-  #download-app .container {
+  .download-app .container {
     flex-direction: row;
     text-align: left;
     justify-content: space-between;
   }
 }
-#download-app .container img {
+.download-app .container img {
   max-width: 50%;
   object-fit: scale-down;
   padding-top: 1.2rem;
 }
 @media (min-width: 768px) {
-  #download-app .container img {
+  .download-app .container img {
     max-width: 40%;
   }
 }
 @media (min-width: 992px) {
-  #download-app .container img {
+  .download-app .container img {
     max-width: 30%;
   }
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content {
+  .download-app .container .download-app-content {
     display: flex;
     flex-direction: column;
     max-width: 50%;
   }
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content .download-app-heading h2 {
+  .download-app .container .download-app-content .download-app-heading h2 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -897,7 +897,7 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #download-app .container .download-app-content .download-app-heading h2 {
+  .download-app .container .download-app-content .download-app-heading h2 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -908,7 +908,7 @@ footer .container p span {
   }
 }
 @media (min-width: 1200px) {
-  #download-app .container .download-app-content .download-app-heading h2 {
+  .download-app .container .download-app-content .download-app-heading h2 {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -920,27 +920,27 @@ footer .container p span {
   }
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content .app-download {
+  .download-app .container .download-app-content .app-download {
     display: flex;
   }
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content .app-download .left-side-download .store-heading {
+  .download-app .container .download-app-content .app-download .left-side-download .store-heading {
     margin-top: 10px;
   }
 }
-#download-app .container .download-app-content .app-download .left-side-download .ratings {
+.download-app .container .download-app-content .app-download .left-side-download .ratings {
   padding-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content .app-download .right-side-download {
+  .download-app .container .download-app-content .app-download .right-side-download {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
 @media (min-width: 768px) {
-  #download-app .container .download-app-content .app-download .right-side-download .app-stores {
+  .download-app .container .download-app-content .app-download .right-side-download .app-stores {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -948,15 +948,15 @@ footer .container p span {
     object-fit: cover;
   }
 }
-#download-app .container .download-app-content .app-download .right-side-download .app-stores img {
+.download-app .container .download-app-content .app-download .right-side-download .app-stores img {
   width: 30%;
 }
 
-#integrate-tool {
+.integrate-tool {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-#integrate-tool .container {
+.integrate-tool .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -964,7 +964,7 @@ footer .container p span {
   text-align: center;
   padding-bottom: 1.2rem;
 }
-#integrate-tool .container .integrate-tool-heading h2 {
+.integrate-tool .container .integrate-tool-heading h2 {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -973,16 +973,16 @@ footer .container p span {
   color: #0B0F19;
   font-size: 28px !important;
 }
-#integrate-tool .container .integrate-tool-heading p {
+.integrate-tool .container .integrate-tool-heading p {
   text-align: center;
 }
 @media (min-width: 992px) {
-  #integrate-tool .container .integrate-tool-heading p {
+  .integrate-tool .container .integrate-tool-heading p {
     max-width: 45rem;
   }
 }
 @media (min-width: 768px) {
-  #integrate-tool .container .integrate-tools {
+  .integrate-tool .container .integrate-tools {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -990,13 +990,13 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #integrate-tool .container .integrate-tools {
+  .integrate-tool .container .integrate-tools {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
   }
 }
-#integrate-tool .container .integrate-tools .tool {
+.integrate-tool .container .integrate-tools .tool {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1004,7 +1004,7 @@ footer .container p span {
   row-gap: 1.1rem;
 }
 @media (min-width: 768px) {
-  #integrate-tool .container .integrate-tools .tool {
+  .integrate-tool .container .integrate-tools .tool {
     flex-direction: column;
     max-width: 10rem;
     align-items: center;
@@ -1012,21 +1012,21 @@ footer .container p span {
   }
 }
 @media (min-width: 992px) {
-  #integrate-tool .container .integrate-tools .tool {
+  .integrate-tool .container .integrate-tools .tool {
     max-width: 12rem;
   }
 }
-#integrate-tool .container .integrate-tools .tool img {
+.integrate-tool .container .integrate-tools .tool img {
   width: 6%;
   margin-right: 1rem;
 }
 @media (min-width: 768px) {
-  #integrate-tool .container .integrate-tools .tool img {
+  .integrate-tool .container .integrate-tools .tool img {
     width: 16%;
     align-self: flex-start;
   }
 }
-#integrate-tool .container .integrate-tools .tool p {
+.integrate-tool .container .integrate-tools .tool p {
   text-align: left;
   margin-top: 0.6rem;
   line-height: 160%;
@@ -1036,12 +1036,12 @@ footer .container p span {
   font-size: 12px !important;
 }
 @media (min-width: 768px) {
-  #integrate-tool .container .integrate-tools .tool p {
+  .integrate-tool .container .integrate-tools .tool p {
     margin-top: 0rem;
   }
 }
 @media (min-width: 992px) {
-  #integrate-tool .container .integrate-tools .tool p {
+  .integrate-tool .container .integrate-tools .tool p {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -1050,10 +1050,10 @@ footer .container p span {
   }
 }
 
-#sign-up {
+.sign-up {
   background-color: #F3F6FF;
 }
-#sign-up .container {
+.sign-up .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1063,12 +1063,12 @@ footer .container p span {
   padding-bottom: 2rem;
 }
 @media (min-width: 768px) {
-  #sign-up .container .sign-up-heading {
+  .sign-up .container .sign-up-heading {
     display: flex;
     gap: 1rem;
   }
 }
-#sign-up .container .sign-up-heading h2 {
+.sign-up .container .sign-up-heading h2 {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -1078,20 +1078,20 @@ footer .container p span {
   font-size: 28px !important;
 }
 @media (min-width: 1200px) {
-  #sign-up .container .sign-up-heading h2 {
+  .sign-up .container .sign-up-heading h2 {
     font-size: 38px !important;
     text-align: left;
   }
 }
-#sign-up .container .sign-up-heading img {
+.sign-up .container .sign-up-heading img {
   display: none;
 }
 @media (min-width: 768px) {
-  #sign-up .container .sign-up-heading img {
+  .sign-up .container .sign-up-heading img {
     display: flex;
   }
 }
-#sign-up .container .sign-up-newsletters {
+.sign-up .container .sign-up-newsletters {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -1099,16 +1099,16 @@ footer .container p span {
   padding-bottom: 1rem;
 }
 @media (min-width: 992px) {
-  #sign-up .container .sign-up-newsletters {
+  .sign-up .container .sign-up-newsletters {
     flex-direction: row;
   }
 }
 @media (min-width: 1200px) {
-  #sign-up .container .sign-up-newsletters {
+  .sign-up .container .sign-up-newsletters {
     max-width: 50rem;
   }
 }
-#sign-up .container .sign-up-newsletters h5 {
+.sign-up .container .sign-up-newsletters h5 {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -1119,30 +1119,30 @@ footer .container p span {
   padding-bottom: 1rem;
 }
 @media (min-width: 1400px) {
-  #sign-up .container .sign-up-newsletters h5 {
+  .sign-up .container .sign-up-newsletters h5 {
     max-width: 10rem;
   }
 }
-#sign-up .container .sign-up-newsletters .sign-up-options {
+.sign-up .container .sign-up-newsletters .sign-up-options {
   display: flex;
   flex-wrap: wrap;
   gap: 1.1rem;
 }
-#sign-up .container .sign-up-newsletters .sign-up-options .newsletter {
+.sign-up .container .sign-up-newsletters .sign-up-options .newsletter {
   display: flex;
   gap: 0.5rem;
 }
 @media (min-width: 768px) {
-  #sign-up .container .sign-up-newsletters .sign-up-options .newsletter {
+  .sign-up .container .sign-up-newsletters .sign-up-options .newsletter {
     flex: 1 0 calc(33.33% - 1rem);
     gap: 1rem;
   }
 }
-#sign-up .container .sign-up-newsletters .sign-up-options .newsletter p {
+.sign-up .container .sign-up-newsletters .sign-up-options .newsletter p {
   margin: 0;
 }
 @media (min-width: 768px) {
-  #sign-up .container .sign-up-newsletters .sign-up-options .newsletter p {
+  .sign-up .container .sign-up-newsletters .sign-up-options .newsletter p {
     line-height: 160%;
     font-weight: 400;
     color: #565973;
@@ -1150,22 +1150,22 @@ footer .container p span {
     font-size: 14px !important;
   }
 }
-#sign-up .container .sign-up-field {
+.sign-up .container .sign-up-field {
   display: flex;
   gap: 1rem;
   padding-bottom: 1rem;
 }
-#sign-up .container .sign-up-field input {
+.sign-up .container .sign-up-field input {
   border-radius: 0.37rem;
   border: none;
 }
 @media (min-width: 768px) {
-  #sign-up .container .sign-up-field input {
+  .sign-up .container .sign-up-field input {
     width: 33rem;
   }
 }
 @media (min-width: 992px) {
-  #sign-up .container .sign-up-field input {
+  .sign-up .container .sign-up-field input {
     width: 39rem;
   }
 }
