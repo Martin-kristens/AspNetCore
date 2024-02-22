@@ -1,11 +1,19 @@
-﻿<section class="switch-black-white">
+﻿@model SwitchBlackAndWhiteViewModel
+
+<section id="switch-black-white" class="switch-black-white">
     <div class="dark-theme"></div>
     <div class="light-theme"></div>
     <div class="container">
-        <h2><span>Switch between</span> <span>Light & Dark Mode</span></h2>
+        <h2><span>@Model.Title</span></h2>
         <div class="switch-black-white-laptop">
-            <img src="images/laptop.svg" alt="laptop">
-            <img class="circle-in-laptop" src="images/circle-in-laptop.svg" alt="">
+            @if (Model.Image != null)
+            {
+                foreach (var img in Model.Image)
+                {
+                    <img src="@img.ImageUrl" alt="@img.AltText">
+                }
+            }
+        
         </div>
     </div>
 </section> 

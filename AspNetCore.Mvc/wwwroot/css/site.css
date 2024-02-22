@@ -748,7 +748,10 @@ footer .container p span {
   text-align: center;
   margin-left: 1.2rem;
 }
-.switch-black-white .container h2span {
+.switch-black-white .container h2 .dark {
+  color: #000000;
+}
+.switch-black-white .container h2 .light {
   color: #FFFFFF;
 }
 .switch-black-white .container .switch-black-white-laptop {

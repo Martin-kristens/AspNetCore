@@ -1,7 +1,6 @@
 ﻿using AspNetCore.Mvc.Models.Components;
 using AspNetCore.Mvc.Models.Sections;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace AspNetCore.Mvc.Models.Views;
 
@@ -34,7 +33,7 @@ public class HomeIndexViewModel
         [
             new FeatureBoxViewModel() {
                 Image = new ImageViewModel() { ImageUrl = "images/chat.svg", AltText = "Features 1" },
-                BoxText = "Id mollis consectetur congue egestas egestas suspendisse blandit justo." ,
+                BoxText = "Id mollis consectetur congue egestas egestas suspendisse blandit justo.",
                 Subheading = "Comments on Tasks"
             },
 
@@ -72,6 +71,96 @@ public class HomeIndexViewModel
                 BoxText = "Aliquam malesuada neque eget elit nulla vestibulum nunc cras.",
                 Subheading = "Data Security"
             },
-        ]            
+        ]
+    };
+
+    public SwitchBlackAndWhiteViewModel DarkAndLight { get; set; } = new SwitchBlackAndWhiteViewModel
+    {
+        Id = "switch-black-white",
+        Title = "Switch between Light & Dark Mode",
+        Image =
+        {
+            new () {ImageUrl = "images/laptop.svg", AltText = "laptop" },
+            new () {ImageUrl = "circle-in-laptop", AltText = "circle" },
+        }
+    };
+
+    public TaskManagementViewModel TaskManagement { get; set; } = new TaskManagementViewModel
+    {
+        Id = "task - management",
+        Dashboard = new() { ImageUrl = "images/task-management-img.svg", AltText = "dashboard" },
+        Title = "Manage Your Work",
+        TaskBox =
+        [
+            new TaskManagementBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
+                Text = "Powerful project management"
+            },
+            new TaskManagementBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
+                Text = "Transparent work management"
+            },
+            new TaskManagementBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
+                Text = "Manage work & focus on the most important tasks"
+            },
+            new TaskManagementBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
+                Text = "Track your progress with interactive charts"
+            },
+            new TaskManagementBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
+                Text = "Easiest way to track time spent on tasks"
+            },
+
+        ],
+        Link = new() { ControllerName = "LearnMore", ActionName = "Index", Text = "Learn more" },
+    };
+
+    public DownloadAppViewModel DownloadApp { get; set; } = new DownloadAppViewModel
+    {
+        Id = "download-app",
+        MobileImg = new() { ImageUrl = "images/mobile-img-app.svg", AltText = "mobile phone" },
+        Title = "Download Our App for Any Devices:",
+        AppDownload = new List<DownloadAppBoxViewModel>
+        {
+            new DownloadAppBoxViewModel
+            {
+                AppStore = "App Store",
+                RatingImg =
+                    [
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                    ],
+                Subheading = "Editor's Choice",
+                Ratings = "rating 4.7, 187K+ reviews",
+                Link = new LinkViewModel { ControllerName = "", ActionName = "", Text = ""},
+                LinkImages = new ImageViewModel { ImageUrl = "images/appstore.svg", AltText = "appstore logo"}
+            },
+              new DownloadAppBoxViewModel
+            {
+                AppStore = "Google Store",
+                RatingImg =
+                    [
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
+                    ],
+                Subheading = "App of the Day",
+                Ratings = "rating 4.8, 30K+ reviews",
+                Link = new LinkViewModel { ControllerName = "", ActionName = ""},
+                LinkImages = new ImageViewModel { ImageUrl = "images/googleplay.svg", AltText = "google store logo"}
+            },
+        }
     };
 }
