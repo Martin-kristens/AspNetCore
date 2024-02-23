@@ -718,7 +718,7 @@ footer .container p span {
   .switch-black-white {
     display: flex;
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     position: relative;
   }
 }
@@ -826,17 +826,41 @@ footer .container p span {
   }
 }
 .task-management .container .task-management-content .task-management-work .task-management-status-badge {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "image text";
   justify-content: flex-start;
   gap: 0.8rem;
   padding-bottom: 1.4rem;
+  text-align: left;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .task-management .container .task-management-content .task-management-work .task-management-status-badge {
+    margin-left: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .task-management .container .task-management-content .task-management-work .task-management-status-badge {
+    margin-left: 0;
+  }
+}
+.task-management .container .task-management-content .task-management-work .task-management-status-badge img {
+  grid-area: "image";
+  width: 3rem;
+}
+@media (min-width: 992px) {
+  .task-management .container .task-management-content .task-management-work .task-management-status-badge img {
+    width: 4rem;
+  }
 }
 .task-management .container .task-management-content .task-management-work .task-management-status-badge p {
+  grid-area: "text";
   line-height: 160%;
   font-weight: 400;
   color: #565973;
   font-family: "Manrope", sans-serif;
-  font-size: 12px !important;
+  font-size: 16px !important;
   margin: 0;
 }
 @media (min-width: 992px) {
@@ -845,7 +869,7 @@ footer .container p span {
     font-weight: 400;
     color: #565973;
     font-family: "Manrope", sans-serif;
-    font-size: 16px !important;
+    font-size: 20px !important;
   }
 }
 @media (min-width: 992px) {

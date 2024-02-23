@@ -1,43 +1,20 @@
-﻿<section class="integrate-tool">
+﻿@model IntegrateToolViewModel
+
+<section id="@Model.Id" class="integrate-tool">
     <div class="container">
         <div class="integrate-tool-heading">
-            <h2>Integrate Top Work Tools</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.</p>
+            <h2>@Model.Title</h2>
+            <p>@Model.Text</p>
         </div>
 
         <div class="integrate-tools">
-            <div class="tool">
-                <img src="../icons/google-icon.svg" alt="google icon">
-                <p>Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/camera.svg" alt="camera icon">
-                <p>In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/color-circle.svg" alt="color-circle icon">
-                <p>Id mollis consectetur congue egestas egestas suspendisse blandit justo.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/mail-icon.svg" alt="mail-box icon">
-                <p>Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/icon-5.svg" alt="blue circle icon">
-                <p>Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/monkey-head.svg" alt="monkey head icon">
-                <p>A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/drop-box-icon.svg" alt="dropbox icon">
-                <p>Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea.</p>
-            </div>
-            <div class="tool">
-                <img src="../icons/elephant-head.svg" alt="green elephant head icon">
-                <p>Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu.</p>
-            </div>
+            @foreach (var toolBox in Model.ToolBox)
+            {
+                <div class="tool">
+                    <img src="@toolBox.Image.ImageUrl" alt="@toolBox.Image.AltText">
+                    <p>@toolBox.BoxText</p>
+                </div>
+            }
         </div>
     </div>
 </section>

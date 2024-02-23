@@ -1,6 +1,5 @@
 ﻿using AspNetCore.Mvc.Models.Components;
 using AspNetCore.Mvc.Models.Sections;
-using System.Threading.Tasks;
 
 namespace AspNetCore.Mvc.Models.Views;
 
@@ -77,12 +76,10 @@ public class HomeIndexViewModel
     public SwitchBlackAndWhiteViewModel DarkAndLight { get; set; } = new SwitchBlackAndWhiteViewModel
     {
         Id = "switch-black-white",
-        Title = "Switch between Light & Dark Mode",
-        Image =
-        {
-            new () {ImageUrl = "images/laptop.svg", AltText = "laptop" },
-            new () {ImageUrl = "circle-in-laptop", AltText = "circle" },
-        }
+        TitleLight = "Switch between ",
+        TitleDark = "Light & Dark Mode",
+        LaptopImg = new ImageViewModel() { ImageUrl = "images/laptop.svg", AltText = "laptop" },
+        CircleImg = new ImageViewModel() { ImageUrl = "images/circle-in-laptop.svg", AltText = "circle" }
     };
 
     public TaskManagementViewModel TaskManagement { get; set; } = new TaskManagementViewModel
@@ -142,7 +139,7 @@ public class HomeIndexViewModel
                     ],
                 Subheading = "Editor's Choice",
                 Ratings = "rating 4.7, 187K+ reviews",
-                Link = new LinkViewModel { ControllerName = "", ActionName = "", Text = ""},
+                Link = new LinkViewModel { ControllerName = "Downloads", ActionName = "AppleStore", Text = ""},
                 LinkImages = new ImageViewModel { ImageUrl = "images/appstore.svg", AltText = "appstore logo"}
             },
               new DownloadAppBoxViewModel
@@ -158,9 +155,107 @@ public class HomeIndexViewModel
                     ],
                 Subheading = "App of the Day",
                 Ratings = "rating 4.8, 30K+ reviews",
-                Link = new LinkViewModel { ControllerName = "", ActionName = ""},
+                Link = new LinkViewModel { ControllerName = "Downloads", ActionName = "GooglePlay"},
                 LinkImages = new ImageViewModel { ImageUrl = "images/googleplay.svg", AltText = "google store logo"}
             },
+        }
+    };
+
+    public IntegrateToolViewModel IntegrateTool { get; set; } = new IntegrateToolViewModel
+    {
+        Id = "integrate-tool",
+        Title = "Integrate Top Work Tools",
+        Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.",
+        ToolBox = 
+        [
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/google-icon.svg", AltText = "google icon" },
+                BoxText = "Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/camera.svg", AltText = "camera icon" },
+                BoxText = "In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/color-circle.svg", AltText = "color-circle icon" },
+                BoxText = "Id mollis consectetur congue egestas egestas suspendisse blandit justo."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/mail-icon.svg", AltText = "mail-box icon" },
+                BoxText = "Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/icon-5.svg", AltText = "blue circle icon" },
+                BoxText = "Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/monkey-head.svg", AltText = "monkey head icon" },
+                BoxText = "A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/drop-box-icon.svg", AltText = "dropbox icon" },
+                BoxText = "Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea."
+            },
+            new ToolBoxViewModel()
+            {
+                Image = new ImageViewModel() { ImageUrl = "../icons/elephant-head.svg", AltText = "green elephant head icon" },
+                BoxText = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu."
+            },
+        ]
+        
+        
+
+    };
+
+    public SignUpViewModel SignUp { get; set; } = new SignUpViewModel() 
+    {
+        Id = "sign-up",
+        Title = "Don't Want to Miss Anything?",
+        HeadingImg = new ImageViewModel() { ImageUrl = "../icons/sign-up-line.svg", AltText = "blue winding line" },
+        Subheading = "Sign up for Newsletters",
+        SignUpBox = 
+        [
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Daily Newsletter"
+            },
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Advertising Updates"
+            },
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Week in Review"
+            },
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Event Updates"
+            },
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Startups Weekly"
+            },
+            new SignUpBoxViewModel()
+            {
+                LabelText = "Podcasts"
+            },
+        ],
+        PlaceholderText = "Your Email",
+        Link = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Index", Text = "Subscribe *" },
+        TermsAndPrivacy = new TermsAndPrivacyViewModel()
+        {
+            Text1 = "* Yes, I agree to the",
+            Link1 = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Terms", Text = "terms" },
+            Text2 = "and",
+            Link2 = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Privacy", Text = "privacy" },
+            Text3 = "policy."
         }
     };
 }

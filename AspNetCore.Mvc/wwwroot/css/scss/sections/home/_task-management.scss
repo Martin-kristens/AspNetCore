@@ -39,25 +39,47 @@
                 @include lg {
                     h3 {
                         text-align: left;
-                        @include standard-heading; 
+                        @include standard-heading;
                         font-size: 28px !important;
                     }
                 }
 
                 .task-management-status-badge {
-                    display: flex;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-areas: "image text";
                     justify-content: flex-start;
                     gap: 0.8rem;
                     padding-bottom: 1.4rem;
+                    text-align: left;
+                    align-items: center;
+
+                    @include md {
+                        margin-left: 2rem;
+                    }
+
+                    @include lg {
+                        margin-left: 0;
+                    }
+
+                    img {
+                        grid-area: "image";
+                        width: 3rem;
+
+                        @include lg {
+                            width: 4rem;
+                        }
+                    }
 
                     p {
-                        @include standard-text; 
-                        font-size: 12px !important;
+                        grid-area: "text";
+                        @include standard-text;
+                        font-size: 16px !important;
                         margin: 0;
 
                         @include lg {
-                            @include standard-text; 
-                            font-size: 16px !important;
+                            @include standard-text;
+                            font-size: 20px !important;
                         }
                     }
                 }
@@ -68,6 +90,6 @@
                     }
                 }
             }
-        }        
+        }
     }
 }

@@ -1,60 +1,37 @@
-﻿<section class="sign-up">
+﻿@model SignUpViewModel
+
+
+<section id="@Model.Id" class="sign-up">
     <div class="container">
         <div class="sign-up-heading">
-            <h2>Don't Want to Miss Anything?</h2>
-            <img src="../icons/sign-up-line.svg" alt="blue winding line">
+            <h2>@Model.Title</h2>
+            <img src="@Model.HeadingImg.ImageUrl" alt="@Model.HeadingImg.AltText">
         </div>
         <div class="sign-up-newsletters">
-            <h5>Sign up for Newsletters</h5>
+            <h5>@Model.Subheading</h5>
             <div class="sign-up-options">
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Daily Newsletter
-                    </label>
-                </div>
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Advertising Updates
-                    </label>
-                </div>
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Week in Review
-                    </label>
-                </div>
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Event Updates
-                    </label>
-                </div>
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Startups Weekly
-                    </label>
-                </div>
-                <div class="form-check newsletter">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Podcasts
-                    </label>
-                </div>
+                @foreach (var label in Model.SignUpBox)
+                {
+                    <div class="form-check newsletter">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            @label.LabelText
+                        </label>
+                    </div>
+                }
             </div>
-
         </div>
-
         <div class="sign-up-field">
-            <input type="text" placeholder="Your Email">
-
-            <a class="btn-theme" href="#">Subscribe *</a>
+            <input type="text" placeholder="@Model.PlaceholderText">
+            <a class="btn-theme" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">@Model.Link.Text</a>
         </div>
-
         <div class="sign-up-terms-and-privacy">
-            <p>* Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy</a> policy.</p>
+            <p>@Model.TermsAndPrivacy.Text1 
+                <a asp-controller="@Model.TermsAndPrivacy.Link1.ControllerName" asp-action="@Model.TermsAndPrivacy.Link1.ActionName">@Model.TermsAndPrivacy.Link1.Text</a> 
+                @Model.TermsAndPrivacy.Text2 
+                <a asp-controller="@Model.TermsAndPrivacy.Link2.ControllerName" asp-action="@Model.TermsAndPrivacy.Link2.ActionName">@Model.TermsAndPrivacy.Link2.Text</a> 
+                @Model.TermsAndPrivacy.Text3
+            </p>
         </div>
     </div>
 </section>
