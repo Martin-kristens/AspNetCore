@@ -214,7 +214,7 @@ public class HomeIndexViewModel
 
     };
 
-    public SignUpViewModel SignUp { get; set; } = new SignUpViewModel() 
+    public SubscribeViewModel SignUp { get; set; } = new SubscribeViewModel() 
     {
         Id = "sign-up",
         Title = "Don't Want to Miss Anything?",

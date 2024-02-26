@@ -2,7 +2,7 @@
 
 namespace AspNetCore.Mvc.Models.Sections;
 
-public class SignUpViewModel
+public class SubscribeViewModel
 {
     public string? Id { get; set; }
     public string Title { get; set; } = null!;
