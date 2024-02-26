@@ -488,7 +488,7 @@ footer .container p span {
   }
 }
 .showcase .container img {
-  display: none;
+  /*   display: none;*/
 }
 @media (min-width: 768px) {
   .showcase .container img {
