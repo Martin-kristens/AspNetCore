@@ -1,5 +1,6 @@
 ﻿@model CourseSectionViewModel
 
+
 <section id="@Model.Id" class="course-section">
     <div class="container">
 
@@ -24,193 +25,49 @@
                             <li><a class="dropdown-item" asp-controller="" asp-action="">@item.Text</a></li>
                         }
                     }
-                    
-                   @*  <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li> *@
                 </ul>
                 <div class="input-container">
                     <input type="text" id="courses" name="courses" placeholder="@Model.CourseSearch.Placeholder">
-                    <i id="sven" class="fa-solid fa-search">
+                   @*  <i id="search" class="fa-solid fa-search"> *@
                 </div>
             </div>
         </div>
         <div class="course-card">
-            <div class="card">
+            
                 @if (Model.CourseCard != null)
                 {
                     @foreach (var card in Model.CourseCard)
                     {
-                        <img class="best-seller" src="@card.CardImg.ImageUrl" alt="@card.CardImg.AltText">
-                        <a href="#"><img src="@card.ImageIcon.ImageUrl" alt="@card.ImageIcon.AltText"></a>
-                        <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                        <div class="card-info">
-                            <h4>@card.CardHeader</h4>
-                            <p>@card.Author</p>
-                            <p class="course-price">@card.PriceText</p>
-                            <div class="card-line"></div>
-                            <div class="hours-and-ratings">
-                                <img src="@card.ClockIcon.ImageUrl" alt="@card.ClockIcon.AltText">
-                                <p>@card.HoursText</p>
-                                <img src="@card.ThumbIcon.ImageUrl" alt="@card.ThumbIcon.AltText ">
-                                <p>94 % (4.2k)</p>
+                        <div class="card">
+                            <img class="best-seller" src="@card.CardImg.ImageUrl" alt="@card.CardImg.AltText">
+                            <a asp-controller="" asp-action=""><img src="@card.ImageIcon.ImageUrl" alt="@card.ImageIcon.AltText"></a>
+                            <img class="circle-in-picture" src="@card.CircleIcon.ImageUrl" alt="@card.CircleIcon.AltText">
+                            <div class="card-info">
+                                <h4>@card.CardHeader</h4>
+                                <p>@card.Author</p>
+                            <div class="price-sale">
+                                @if (!string.IsNullOrEmpty(card.PriceSale) && card.PriceSale.Trim() != "")
+                                {
+                                    <p class="course-price-sale">@card.PriceSale</p>
+                                    <p class="course-price strikethrough">@card.PriceText</p>
+                                }
+                                else
+                                {
+                                    <p class="course-price">@card.PriceText</p>
+                                }
+                                
+                            </div>                           
+                                <div class="card-line"></div>
+                                <div class="hours-and-ratings">
+                                    <img src="@card.ClockIcon.ImageUrl" alt="@card.ClockIcon.AltText">
+                                    <p>@card.HoursText</p>
+                                    <img src="@card.ThumbIcon.ImageUrl" alt="@card.ThumbIcon.AltText ">
+                                    <p>94 % (4.2k)</p>
+                                </div>
                             </div>
                         </div>
                     }
                 }
-               @*  <img class="best-seller" src="../icons/best-seller.svg" alt="best seller">
-                <a href="#"><img src="../test/images/course_1.svg" alt="hands on a laptop"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>Fullstack Web Developer Course from Scratch</h4>
-                    <p>By Robert Fox</p>
-                    <p class="course-price">$12.50</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>220 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>94 % (4.2k)</p>
-                    </div>
-                </div> *@
-
-            </div>
-           @*  <div class="card">
-                <a href="#"><img src="../test/images/course_2.svg" alt="man looking at a laptop"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>HTML, CSS, JavaScript Web Developer</h4>
-                    <p>By Jenny Wilson & Marvin McKinney</p>
-                    <p class="course-price">$15.99</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>160 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>92 % (3.1k)</p>
-                    </div>
-                </div>
-
-            </div> *@
-            @* <div class="card">
-                <a href="#"><img src="../test/images/course_3.svg" alt="happy women"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>The Complete Front-End Web Development Course</h4>
-                    <p>By Albert Flores</p>
-                    <div class="price-sale">
-                        <p class="course-price-sale">$9.99</p>
-                        <p class="course-price">$49.99</p>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>100 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>98 % (2.7k)</p>
-                    </div>
-                </div>
-            </div> *@
-         @*    <div class="card">
-                <a href="#"><img src="../test/images/course_4.svg" alt="smiling woman"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>iOS & Swift - The Complete iOS App Development Course</h4>
-                    <p>By Marvin McKinney</p>
-                    <p class="course-price">$15.99</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>160 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>92 % (3.1k)</p>
-                    </div>
-                </div>
-            </div> *@
-         @*    <div class="card">
-                <img class="best-seller" src="../icons/best-seller.svg" alt="best seller">
-                <a href="#"><img src="../test/images/course_5.svg" alt="woman in dark hair waves at a laptop"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>Data Science & Machine Learning with Python</h4>
-                    <p>By Esther Howard</p>
-                    <p class="course-price">$11.20</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>160 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>92 % (3.1k)</p>
-                    </div>
-                </div>
-            </div> *@
-           @*  <div class="card">
-                <a href="#"><img src="../test/images/course_6.svg" alt="woman in dark hair reading from a paper"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>Creative CSS Drawing Course: Make Art With CSS</h4>
-                    <p>By Robert Fox</p>
-                    <p class="course-price">$10.50</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>220 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>94 % (4.2k)</p>
-                    </div>
-                </div>
-            </div> *@
-           @*  <div class="card">
-                <a href="#"><img src="../test/images/course_7.svg" alt="smiling woman with a laptop"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>Blender Character Creator v2.0 for Video Games Design</h4>
-                    <p>By Ralph Edwards</p>
-                    <p class="course-price">$18.99</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>160 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>92 % (3.1k)</p>
-                    </div>
-                </div>
-            </div> *@
-            @* <div class="card">
-                <a href="#"><img src="../test/images/course_8.svg" alt="smiling man showing his hands"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>The Ultimate Guide to 2D Mobile Game Development with Unity</h4>
-                    <p>By Albert Flores</p>
-                    <div class="price-sale">
-                        <p class="course-price-sale">$12.99</p>
-                        <p class="course-price">$49.99</p>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>100 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>98 % (2.7k)</p>
-                    </div>
-                </div>
-            </div> *@
-         @*    <div class="card">
-                <a href="#"><img src="../test/images/course_9.svg" alt="man typing on a laptop"></a>
-                <img class="circle-in-picture" src="../icons/course-picture-icon.svg">
-                <div class="card-info">
-                    <h4>Learn JMETER from Scratch on Live Apps-Performance Testing</h4>
-                    <p>By Jenny Wilson</p>
-                    <p class="course-price">$14.50</p>
-                    <div class="card-line"></div>
-                    <div class="hours-and-ratings">
-                        <img src="../icons/clock.svg" alt="clock">
-                        <p>160 hours</p>
-                        <img src="../icons/thumb-like.svg" alt="thumb ">
-                        <p>92 % (3.1k)</p>
-                    </div>
-                </div>
-            </div> *@
         </div>
 
 
@@ -225,9 +82,6 @@
                 {
                     <li class="page-item"><a class="page-link" asp-controller="" asp-action="">@links.Text</a></li>
                 }
-               @*  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li> *@
 
                 <li class="page-item">
                     <a class="page-link" href="#">

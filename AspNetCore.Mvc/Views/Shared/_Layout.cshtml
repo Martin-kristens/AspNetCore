@@ -13,12 +13,12 @@
     <div class="wrapper">
         <header>
             <div class="container">
-                <a id="logo" asp-controller="Home" asp-action="Index"><img src="~/images/solid.svg" alt=""></a>
+                <a id="logo" asp-controller="Home" asp-action="Index"><img src="~/images/solid.svg" alt="Logo for silicon"></a>
 
                 <div id="menu" class="hide">
                     <nav>
-                        <a class="menu-link" asp-controller="Home" asp-action="Index">Overview</a>
-                        <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
+                        <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
+                        <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="feature">Features</a>
                         <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
                         <a class="menu-link" asp-controller="Course" asp-action="Index">Courses</a>
                     </nav>
@@ -39,11 +39,15 @@
                 </div>
 
                 <!-- Top Navigation Menu -->
-                <div class="btn-mobile" href="javascript:void(0);" onclick="toggleMenu()">
+                <button onclick="toggleMenu()" class="btn-mobile">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+
+              @*   <div class="btn-mobile" href="javascript:void(0);" onclick="toggleMenu()">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </div>
                 <div class="mobile-container">
-                </div>
+                </div> *@
 
             </div>
         </header>
@@ -55,7 +59,7 @@
 
         <footer>
             <div class="container">
-                <div class="social-media">
+                <div class="@((ViewContext.RouteData.Values["Controller"]!.ToString() == "Auth") ? "d-none" : "social-media")">
                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -68,6 +72,6 @@
     </div>
  
 
-    <script src="../javascript/index.js"></script>
+    <script src="~/js/site.js"></script>
 </body>
 </html>

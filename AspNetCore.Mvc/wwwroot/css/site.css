@@ -1393,8 +1393,7 @@ footer .container p span {
   }
 }
 #course-section .container .course-card .card .card-info .price-sale .course-price {
-  color: #9397AD;
-  text-decoration: line-through;
+  color: #6366F1;
 }
 @media (min-width: 768px) {
   #course-section .container .course-card .card .card-info .price-sale .course-price {
@@ -1405,6 +1404,9 @@ footer .container p span {
   #course-section .container .course-card .card .card-info .price-sale .course-price {
     font-size: 18px !important;
   }
+}
+#course-section .container .course-card .card .card-info .price-sale .strikethrough {
+  text-decoration: line-through;
 }
 #course-section .container .course-card .card .card-info .card-line {
   display: flex;

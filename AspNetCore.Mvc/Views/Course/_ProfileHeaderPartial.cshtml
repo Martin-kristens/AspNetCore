@@ -1,0 +1,38 @@
+﻿@using AspNetCore.Mvc.Models.Components
+@model ProfileHeaderViewModel
+
+<header id="@Model.Id class="profile-header">
+    <div class="container">
+        <a id="logo" asp-controller="Home" asp-action="Index"><img src="@Model.Logo.ImageUrl" alt="@Model.Logo.AltText"></a>
+
+        <div id="menu">
+            @if (Model.Links.Count == 1)
+            {
+                @foreach(var links in Model.Links)
+                {
+                    <nav>
+                        <a class="menu-link" asp-controller="" asp-action="">@links.Text</a>
+                    </nav>
+                }
+            } 
+           @*  <nav>
+                <a class="menu-link" href="#showcase">Overview</a>
+                <a class="menu-link" href="#courses">Courses</a>
+                <a class="menu-link" href="contact.html">Contact</a>
+            </nav> *@
+        </div>
+
+        <div class="btn-switch">
+            <label>Light</label>
+            <label class="switch" for="switch-mode">
+                <input type="checkbox" id="switch-mode" />
+                <div class="slider round"></div>
+            </label>
+            <label>Dark</label>
+        </div>
+        <img class="profile-picture" src="../test/images/account-profile.svg" alt="profile picture of a smilling man with glasses">
+        <div class="btn-mobile">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+    </div>
+</header>

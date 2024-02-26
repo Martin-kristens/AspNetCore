@@ -13,7 +13,6 @@
         @include md {
             flex-direction: row;
             text-align: left;
-            
         }
 
         @include lg {
@@ -28,35 +27,35 @@
 
             p {
                 @include lg {
-                    @include standard-text; 
-                    font-size: 18px !important; 
+                    @include standard-text;
+                    font-size: 18px !important;
                 }
-
             }
 
             h2 {
 
-                @include standard-heading; 
+                @include standard-heading;
                 font-size: 28px !important;
                 margin-bottom: 2rem;
+
                 span {
                     color: $theme;
                 }
+
                 @include lg {
-                    @include standard-heading; 
+                    @include standard-heading;
                     font-size: 32px !important;
                 }
-
             }
         }
 
         .work-with-us-right-side {
             padding-top: 2rem;
+
             img {
                 width: 100%;
                 height: 100%;
             }
         }
-
     }
 }

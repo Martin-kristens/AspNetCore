@@ -1,6 +1,6 @@
 ﻿using AspNetCore.Mvc.Models.Components;
 
-namespace AspNetCore.Mvc.Models.Courses;
+namespace AspNetCore.Mvc.Models.Courses.Components;
 
 public class NavMenuViewModel
 {
