@@ -477,23 +477,24 @@ footer .container p span {
     flex-direction: row-reverse;
   }
 }
-.showcase img {
-  display: none;
-}
-@media (min-width: 768px) {
-  .showcase img {
-    display: flex;
-    max-width: 50%;
-    object-fit: scale-down;
-    justify-content: flex-end;
-  }
-}
 .showcase .container {
   padding: 1.1rem 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 @media (min-width: 1200px) {
   .showcase .container {
     width: 50%;
+  }
+}
+.showcase .container img {
+  /*   display: none;*/
+}
+@media (min-width: 768px) {
+  .showcase .container img {
+    /*  max-width: 50%;
+      object-fit: scale-down;
+      justify-content: flex-end;*/
   }
 }
 .showcase .container .content {

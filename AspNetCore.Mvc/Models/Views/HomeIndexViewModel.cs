@@ -214,13 +214,13 @@ public class HomeIndexViewModel
 
     };
 
-    public SignUpViewModel SignUp { get; set; } = new SignUpViewModel() 
+    public SubscribeViewModel SignUp { get; set; } = new SubscribeViewModel() 
     {
         Id = "sign-up",
         Title = "Don't Want to Miss Anything?",
         HeadingImg = new ImageViewModel() { ImageUrl = "../icons/sign-up-line.svg", AltText = "blue winding line" },
         Subheading = "Sign up for Newsletters",
-        SignUpBox = 
+        SignUpBox =
         [
             new SignUpBoxViewModel()
             {

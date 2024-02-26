@@ -1,8 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore.Mvc.Models.Sections;
+using AspNetCore.Mvc.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace AspNetCore.Mvc.Controllers;
 
 public class AuthController : Controller
 {
-   
+    //tar bort auth i sökrutan
+    [Route("/signup")]
+    [HttpGet]
+   public IActionResult SignUp()
+    {
+
+        var viewModel = new SignUpViewModel();
+        ViewData["Title"] = viewModel.Title;
+        return View(viewModel);
+    }
+
+    [Route("/signup")]
+    [HttpPost]
+    public IActionResult SignUp(SignUpViewModel viewModel)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(viewModel);
+        }
+        return RedirectToAction("SignIn", "Auth");
+        
+    }
 }
