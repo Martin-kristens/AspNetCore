@@ -1,6 +1,6 @@
-﻿using AspNetCore.Mvc.Models.Components;
-using AspNetCore.Mvc.Models.Courses;
-using AspNetCore.Mvc.Models.Courses.Components;
+﻿using AspNetCore.Mvc.Models.Courses.Components;
+using AspNetCore.Mvc.ViewModels.Components;
+using AspNetCore.Mvc.ViewModels.Courses;
 
 namespace AspNetCore.Mvc.Models.Views;
 

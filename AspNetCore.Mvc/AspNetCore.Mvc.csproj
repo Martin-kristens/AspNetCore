@@ -14,4 +14,10 @@
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Components\" />
+    <Folder Include="Models\Courses\" />
+    <Folder Include="Models\Sections\" />
+  </ItemGroup>
+
 </Project>

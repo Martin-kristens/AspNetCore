@@ -1,5 +1,6 @@
 ﻿using AspNetCore.Mvc.Models.Components;
-using AspNetCore.Mvc.Models.Sections;
+using AspNetCore.Mvc.ViewModels.Components;
+using AspNetCore.Mvc.ViewModels.Home;
 
 namespace AspNetCore.Mvc.Models.Views;
 

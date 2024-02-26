@@ -1,4 +1,4 @@
-﻿namespace AspNetCore.Mvc.Models.Courses.Components;
+﻿namespace AspNetCore.Mvc.ViewModels.Components;
 
 public class HeadingViewModel
 {
