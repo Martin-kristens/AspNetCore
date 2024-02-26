@@ -220,7 +220,7 @@ public class HomeIndexViewModel
         Title = "Don't Want to Miss Anything?",
         HeadingImg = new ImageViewModel() { ImageUrl = "../icons/sign-up-line.svg", AltText = "blue winding line" },
         Subheading = "Sign up for Newsletters",
-        SignUpBox = 
+        SignUpBox =
         [
             new SignUpBoxViewModel()
             {

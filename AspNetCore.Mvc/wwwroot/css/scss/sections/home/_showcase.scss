@@ -8,25 +8,26 @@
     @include md {
         flex-direction: row-reverse;
     }
-    
-    img {
 
-        display: none;
 
-        @include md {
-            display: flex;
-            max-width: 50%;
-            object-fit: scale-down;
-            justify-content: flex-end;
-        }
-       
-    }
-    
+
     .container {
         padding: 1.1rem 1rem;
-        
+        display: flex;
+        justify-content: space-between;
+
         @include xl {
             width: 50%;
+        }
+
+        img {
+         /*   display: none;*/
+
+            @include md {
+              /*  max-width: 50%;
+                object-fit: scale-down;
+                justify-content: flex-end;*/
+            }
         }
 
         .content {
@@ -42,22 +43,23 @@
                 padding: 0 20px;
                 margin-left: 5rem;
             }
-            
+
             h1 {
                 margin-bottom: 2rem;
-                @include standard-heading; 
+                @include standard-heading;
                 font-size: 40px !important;
 
                 @include md {
-                    @include standard-heading; 
+                    @include standard-heading;
                     font-size: 35px !important;
                 }
 
                 @include xxl {
-                    @include standard-heading; 
+                    @include standard-heading;
                     font-size: 58px !important;
                 }
             }
+
             p {
                 margin-bottom: 2rem;
             }
@@ -75,11 +77,11 @@
             h6 {
                 padding-top: 2rem;
                 margin-bottom: 2.5rem;
-                @include standard-heading; 
+                @include standard-heading;
                 font-size: 20px !important;
 
                 @include md {
-                    @include standard-heading; 
+                    @include standard-heading;
                     font-size: 18px !important;
                 }
             }
@@ -96,14 +98,13 @@
 
                 img {
                     max-width: 20%; /* Säkerställ att bilderna inte överskrider förälderselementets bredd */
-                    height: auto; 
+                    height: auto;
 
                     @include md {
                         // max-width: 25%;
                     }
                 }
             }
-
         }
     }
 }
