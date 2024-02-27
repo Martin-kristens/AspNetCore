@@ -1,8 +1,5 @@
-
-
 using AspNetCore.Mvc.ViewModels.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
 
 namespace AspNetCore.Mvc.Controllers;
 
@@ -31,3 +28,4 @@ public class AuthController : Controller
         
     }
 }
+
