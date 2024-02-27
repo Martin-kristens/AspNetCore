@@ -1,4 +1,4 @@
-.sign-up {
+.subscribe {
     background-color: $gray-100;
     
     .container {
@@ -10,7 +10,7 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
 
-        .sign-up-heading {
+        .subscribe-heading {
 
             @include md {
                 display: flex;
@@ -34,7 +34,7 @@
             }
         }
 
-        .sign-up-newsletters {
+        .subscribe-newsletters {
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -60,7 +60,7 @@
                 }
             }
 
-            .sign-up-options {
+            .subscribe-options {
                 display: flex;
                 flex-wrap: wrap;
                 // justify-content: center;
@@ -88,7 +88,7 @@
             }          
         }
 
-        .sign-up-field {
+        .subscribe-field {
             display: flex;
             gap: 1rem;
             padding-bottom: 1rem;
