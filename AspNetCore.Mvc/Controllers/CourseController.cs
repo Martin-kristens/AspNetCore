@@ -1,4 +1,5 @@
-﻿using AspNetCore.Mvc.Models.Views;
+﻿
+using AspNetCore.Mvc.ViewModels.IndexViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers;

@@ -1,4 +1,4 @@
-﻿using AspNetCore.Mvc.Models.Components;
+﻿
 using AspNetCore.Mvc.ViewModels.Components;
 using AspNetCore.Mvc.ViewModels.Home;
 
@@ -215,7 +215,7 @@ public class HomeIndexViewModel
 
     };
 
-    public SubscribeViewModel SignUp { get; set; } = new SubscribeViewModel()
+    public SubscribeViewModel Subscribe { get; set; } = new SubscribeViewModel()
     {
         Id = "sign-up",
         Title = "Don't Want to Miss Anything?",
