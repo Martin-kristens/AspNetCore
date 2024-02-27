@@ -1,7 +1,8 @@
-﻿using AspNetCore.Mvc.Models.Components;
+﻿
 using AspNetCore.Mvc.Models.Sections;
+using AspNetCore.Mvc.ViewModels.Components;
 
-namespace AspNetCore.Mvc.Models.Views;
+namespace AspNetCore.Mvc.ViewModels.IndexViewModels;
 
 public class HomeIndexViewModel
 {
@@ -166,7 +167,7 @@ public class HomeIndexViewModel
         Id = "integrate-tool",
         Title = "Integrate Top Work Tools",
         Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.",
-        ToolBox = 
+        ToolBox =
         [
             new ToolBoxViewModel()
             {
@@ -209,12 +210,12 @@ public class HomeIndexViewModel
                 BoxText = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu."
             },
         ]
-        
-        
+
+
 
     };
 
-    public SubscribeViewModel SignUp { get; set; } = new SubscribeViewModel() 
+    public SubscribeViewModel Subscribe { get; set; } = new SubscribeViewModel()
     {
         Id = "sign-up",
         Title = "Don't Want to Miss Anything?",

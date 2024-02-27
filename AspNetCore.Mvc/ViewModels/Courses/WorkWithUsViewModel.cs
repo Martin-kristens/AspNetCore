@@ -1,7 +1,7 @@
-﻿using AspNetCore.Mvc.Models.Components;
-using AspNetCore.Mvc.Models.Courses.Components;
+﻿using AspNetCore.Mvc.ViewModels.Components;
+using AspNetCore.Mvc.ViewModels.Courses.Components;
 
-namespace AspNetCore.Mvc.Models.Courses;
+namespace AspNetCore.Mvc.ViewModels.Courses;
 
 public class WorkWithUsViewModel
 {

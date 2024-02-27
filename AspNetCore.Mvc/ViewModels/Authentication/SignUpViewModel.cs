@@ -1,6 +1,6 @@
 ﻿using AspNetCore.Mvc.Models.Auth;
 
-namespace AspNetCore.Mvc.ViewModels;
+namespace AspNetCore.Mvc.ViewModels.Authentication;
 
 public class SignUpViewModel
 {

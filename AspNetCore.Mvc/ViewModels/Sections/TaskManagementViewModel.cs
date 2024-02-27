@@ -1,4 +1,4 @@
-﻿using AspNetCore.Mvc.Models.Components;
+﻿using AspNetCore.Mvc.ViewModels.Components;
 
 namespace AspNetCore.Mvc.Models.Sections;
 
