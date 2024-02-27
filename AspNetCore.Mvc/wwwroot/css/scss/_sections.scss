@@ -1,13 +1,16 @@
 @import './sections/_header.scss';
 @import './sections/_footer.scss';
 
+@import 'components/_forms.scss';
+@import './sections/account/_signup.scss';
+
 @import './sections/home/_showcase.scss';
 @import './sections/home/_features.scss';
 @import './sections/home/_switch-black-white.scss';
 @import './sections/home/_task-management.scss';
 @import './sections/home/_download-app.scss';
 @import './sections/home/_integrate-tool.scss';
-@import './sections/home/_sign-up.scss';
+@import './sections/home/_subscribe.scss';
 
 @import './sections/course/_courses.scss';
 @import './sections/course/_courses-work-with-us.scss';

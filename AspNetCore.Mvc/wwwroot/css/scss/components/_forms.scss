@@ -6,6 +6,20 @@ form {
         display: grid;
     }
 
+    .checkbox {
+        span {
+            display: block;
+
+            &.field-validation-error {
+                position: static;
+                top: 0;
+                right: 0;
+                @include text-s;
+                color: $danger;
+            }
+        }
+    }
+
     .checkbox-group {
         display: flex;
         justify-content: flex-start;
@@ -37,9 +51,9 @@ form {
         &::placeholder {
             opacity: 0.4;
         }
-        
-        &.input-valigation-error {
-            border: 0.63rem $danger !important;
+
+        &.input-validation-error {
+            border: 0.1rem solid $danger !important;
             color: $danger;
         }
     }
