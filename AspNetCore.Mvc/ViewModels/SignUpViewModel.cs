@@ -4,8 +4,8 @@ namespace AspNetCore.Mvc.ViewModels;
 
 public class SignUpViewModel
 {
-    public string Title { get; set; } = "hello";
+    public string Title { get; set; } = "Sign Up";
     public SignUpModel Form { get; set; } = new SignUpModel();
 
-    public bool TermAndConditions { get; set; } = true;
+   
 }
