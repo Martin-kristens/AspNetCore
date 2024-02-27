@@ -1,5 +1,8 @@
 
 
+using AspNetCore.Mvc.ViewModels.Components;
+using AspNetCore.Mvc.ViewModels.Courses;
+
 namespace AspNetCore.Mvc.ViewModels.IndexViewModels;
 
 public class CourseIndexViewModel
