@@ -1,15 +1,16 @@
-﻿@model SubscribeViewModel
+﻿
+@model SubscribeViewModel
 
 
-<section id="@Model.Id" class="sign-up">
+<section id="@Model.Id" class="subscribe">
     <div class="container">
-        <div class="sign-up-heading">
+        <div class="subscribe-heading">
             <h2>@Model.Title</h2>
             <img src="@Model.HeadingImg.ImageUrl" alt="@Model.HeadingImg.AltText">
         </div>
-        <div class="sign-up-newsletters">
+        <div class="subscribe-newsletters">
             <h5>@Model.Subheading</h5>
-            <div class="sign-up-options">
+            <div class="subscribe-options">
                 @foreach (var label in Model.SignUpBox)
                 {
                     <div class="form-check newsletter">
@@ -21,11 +22,11 @@
                 }
             </div>
         </div>
-        <div class="sign-up-field">
+        <div class="subscribe-field">
             <input type="text" placeholder="@Model.PlaceholderText">
             <a class="btn-theme" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">@Model.Link.Text</a>
         </div>
-        <div class="sign-up-terms-and-privacy">
+        <div class="subscribe-terms-and-privacy">
             <p>@Model.TermsAndPrivacy.Text1 
                 <a asp-controller="@Model.TermsAndPrivacy.Link1.ControllerName" asp-action="@Model.TermsAndPrivacy.Link1.ActionName">@Model.TermsAndPrivacy.Link1.Text</a> 
                 @Model.TermsAndPrivacy.Text2 

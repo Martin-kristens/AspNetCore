@@ -1,13 +1,13 @@
-﻿using AspNetCore.Mvc.Models.Components;
-using AspNetCore.Mvc.Models.Courses;
-using AspNetCore.Mvc.Models.Courses.Components;
+﻿using AspNetCore.Mvc.ViewModels.Components;
+using AspNetCore.Mvc.ViewModels.Courses;
+using AspNetCore.Mvc.ViewModels.Courses.Components;
 
-namespace AspNetCore.Mvc.Models.Views;
+namespace AspNetCore.Mvc.ViewModels.IndexViewModels;
 
 public class CourseIndexViewModel
 {
     //om man vill använda denna är den klar
-    public ProfileHeaderViewModel ProfileHeader { get; set; } = new ProfileHeaderViewModel() 
+    public ProfileHeaderViewModel ProfileHeader { get; set; } = new ProfileHeaderViewModel()
     {
         Id = "profile-header",
         LogoLink = new LinkViewModel() { ControllerName = "Home", ActionName = "Index", Text = "" },
@@ -25,8 +25,8 @@ public class CourseIndexViewModel
     public CourseSectionViewModel Courses { get; set; } = new CourseSectionViewModel()
     {
         Id = "course-section",
-     
-        Nav =  new NavMenuViewModel() 
+
+        Nav = new NavMenuViewModel()
         {
             IndexImg = new LinkViewModel() { ControllerName = "Home", ActionName = "Index", Text = "" },
             HouseIcon = new ImageViewModel() { ImageUrl = "../icons/home-icon.svg", AltText = "house icon" },
@@ -47,7 +47,7 @@ public class CourseIndexViewModel
             },
             Placeholder = "Search courses",
         },
-        CourseCard = 
+        CourseCard =
         [
             new CourseCardViewModel
             {
@@ -193,8 +193,8 @@ public class CourseIndexViewModel
                         RatingText = "92 % (3.1k)",
 
                     },
-        ], 
-        PageLinks = 
+        ],
+        PageLinks =
         [
             new LinkViewModel() {ControllerName = "", ActionName = "", Text = "1" },
             new LinkViewModel() {ControllerName = "", ActionName = "", Text = "2" },
@@ -205,22 +205,22 @@ public class CourseIndexViewModel
         LeftArrow = new ImageViewModel() { ImageUrl = "../icons/Property-arrow 1=left.svg", AltText = "left arrow" },
         RightArrow = new ImageViewModel() { ImageUrl = "../icons/Property-arrow 1=right.svg", AltText = "right arrow" }
 
-        
+
     };
 
     public WorkWithUsViewModel WorkWithUsSection { get; set; } = new WorkWithUsViewModel()
     {
         Id = "work-with-us",
         Text = "Ready to get started?",
-        Header = new HeadingViewModel() 
-            {
-                Header1 = "Take Your",
-                SpanText = "Skills",
-                Header2 = "to the Next Level",
-            },
+        Header = new HeadingViewModel()
+        {
+            Header1 = "Take Your",
+            SpanText = "Skills",
+            Header2 = "to the Next Level",
+        },
         Link = new LinkViewModel() { ControllerName = "", ActionName = "", Text = "Work with us" },
-        WorkImg = new ImageViewModel() { ImageUrl = "/images/work-with-us-illustration.svg" , AltText = "cartoon sitting by a desk" },
-        
+        WorkImg = new ImageViewModel() { ImageUrl = "/images/work-with-us-illustration.svg", AltText = "cartoon sitting by a desk" },
+
 
     };
 

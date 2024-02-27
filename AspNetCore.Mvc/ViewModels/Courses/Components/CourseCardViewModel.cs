@@ -1,6 +1,6 @@
-﻿using AspNetCore.Mvc.Models.Components;
+﻿using AspNetCore.Mvc.ViewModels.Components;
 
-namespace AspNetCore.Mvc.Models.Courses.Components;
+namespace AspNetCore.Mvc.ViewModels.Courses.Components;
 
 public class CourseCardViewModel
 {
