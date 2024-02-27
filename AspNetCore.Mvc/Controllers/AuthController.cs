@@ -1,5 +1,4 @@
-﻿
-using AspNetCore.Mvc.ViewModels;
+﻿using AspNetCore.Mvc.ViewModels.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers;
