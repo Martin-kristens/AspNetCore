@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Components\**" />
+    <Compile Remove="Models\Courses\**" />
+    <Compile Remove="Models\Sections\**" />
+    <Compile Remove="Models\Views\**" />
+    <Content Remove="Models\Components\**" />
+    <Content Remove="Models\Courses\**" />
+    <Content Remove="Models\Sections\**" />
+    <Content Remove="Models\Views\**" />
+    <EmbeddedResource Remove="Models\Components\**" />
+    <EmbeddedResource Remove="Models\Courses\**" />
+    <EmbeddedResource Remove="Models\Sections\**" />
+    <EmbeddedResource Remove="Models\Views\**" />
+    <None Remove="Models\Components\**" />
+    <None Remove="Models\Courses\**" />
+    <None Remove="Models\Sections\**" />
+    <None Remove="Models\Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
 

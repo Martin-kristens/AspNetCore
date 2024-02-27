@@ -1,6 +1,4 @@
-﻿
-using AspNetCore.Mvc.Models.Sections;
-using AspNetCore.Mvc.ViewModels.Components;
+
 
 namespace AspNetCore.Mvc.ViewModels.IndexViewModels;
 
