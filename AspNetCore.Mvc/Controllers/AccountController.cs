@@ -1,31 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore.Mvc.ViewModels.Account;
+using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCore.Mvc.Controllers
+namespace AspNetCore.Mvc.Controllers;
+
+public class AccountController : Controller
 {
-    public class AccountController : Controller
+    //private readonly AccountService _accountService;
+
+    //public AccountController(AccountService accountService)
+    //{
+    //    _accountService = accountService;
+    //}
+
+    [Route("/account")]
+    public IActionResult Details()
     {
-        public IActionResult Index()
-        {
-            ViewData["Title"] = "Profile";
-            return View();
-        }
+        var viewModel = new AccountDetailsViewModel();
+        //viewModel.BasicInfo = _accountService.GetBasicInfo();
+        //viewModel.AddressInfo = _accountService.GetAddressInfo();
 
-        //public IActionResult SignIn()
-        //{
-        //    ViewData["Title"] = "Sign Ip";
-        //    return View();
-        //}
+        return View(viewModel);
+    }
 
-        //public IActionResult SignUn()
-        //{
-        //    ViewData["Title"] = "Sign Up";
-        //    return View();
-        //}
+    [HttpPost]
+    public IActionResult BasicInfo(AccountDetailsViewModel viewModel)
+    {
+        //_accountService.SaveBasicInfo(viewModel.BasicInfo);
 
-        //public new IActionResult SignOut()
-        //{
-        //    //när man sign out kommer man automatiskt till HomeControllern 
-        //    return RedirectToAction("Index", "Home");
-        //}
+        return RedirectToAction(nameof(Details));
+    }
+
+    [HttpPost]
+    public IActionResult AddressInfo(AccountDetailsViewModel viewModel)
+    {
+        //_accountService.SaveAddressInfo(viewModel.AddressInfo);
+        return RedirectToAction(nameof(Details));
     }
 }
