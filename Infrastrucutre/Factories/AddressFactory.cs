@@ -1,0 +1,48 @@
+﻿using Infrastrucutre.Entities;
+using Infrastrucutre.Models;
+
+namespace Infrastrucutre.Factories;
+
+public class AddressFactory
+{
+    public static AddressEntity Create()
+    {
+        try
+        {
+            return new AddressEntity();
+        }
+        catch { }
+        return null!;
+    }
+
+    public static AddressEntity Create(string streeetName, string postalCode, string city)
+    {
+		try
+		{
+            return new AddressEntity
+            {
+                StreetName = streeetName,
+                PostalCode = postalCode,
+                City = city
+            };
+		}
+        catch { }
+        return null!;
+    }
+
+    public static AddressModel Create(AddressEntity entity)
+    {
+        try
+        {
+            return new AddressModel
+            {
+                Id = entity.Id,
+                StreetName = entity.StreetName,
+                PostalCode = entity.PostalCode,
+                City = entity.City
+            };
+        }
+        catch { }
+        return null!;
+    }
+}

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore.Mvc.Models.Auth;
+namespace Infrastrucutre.Models;
 
 public class SignInModel
 {
@@ -16,5 +16,5 @@ public class SignInModel
     public string Password { get; set; } = null!;
 
     [Display(Name = "Remeber me", Order = 2)]
-    public bool RememberMe { get; set; } 
+    public bool RememberMe { get; set; }
 }

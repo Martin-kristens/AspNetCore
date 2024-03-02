@@ -1,12 +1,12 @@
-
-
 using AspNetCore.Mvc.Models.Sections;
 using AspNetCore.Mvc.ViewModels.Components;
+using Infrastrucutre.Services;
 
 namespace AspNetCore.Mvc.ViewModels.IndexViewModels;
 
-public class HomeIndexViewModel
+public class HomeIndexViewModel()
 {
+
     public string Title { get; set; } = "Ultimate Task Management Assistant";
     public ShowcaseViewModel Showcase { get; set; } = new ShowcaseViewModel
     {

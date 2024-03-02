@@ -1,4 +1,6 @@
 ﻿using AspNetCore.Mvc.ViewModels.Components;
+using Infrastrucutre.Entities;
+using Infrastrucutre.Services;
 
 namespace AspNetCore.Mvc.ViewModels.Home;
 
