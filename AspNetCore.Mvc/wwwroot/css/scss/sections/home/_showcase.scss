@@ -17,39 +17,37 @@
         /* display: flex;
         justify-content: space-between;*/
 
-        @include xl {
+        @include lg {
             width: 100%;
             display: flex;
             flex-direction: row-reverse;
         }
 
-        img {
-               display: none;
+        .showcase-image {
+            display: none;
 
-            @include md {
-                /*position: absolute;
-                top: 0;
-                right: 0;*/
-                /*max-width: 50%;*/
-                width: 50%;
+            @include lg {
+                margin-right: -300px;
+                display: inline;
+                width: 100%;
+                height: auto;
                 object-fit: scale-down;
-                justify-content: flex-end;
-                margin-left: -300px;
             }
         }
+
 
         .content {
             margin-top: 1rem;
             display: flex;
             flex-direction: column;
             text-align: center;
-            // max-width: 80%;
+            max-width: 80%;
 
             @include md {
                 text-align: left;
                 max-width: 70%;
                 padding: 0 20px;
-                margin-left: 5rem;
+                width: 100%;
             }
 
             h1 {
@@ -96,8 +94,8 @@
 
             .brands {
                 display: flex;
-                flex-wrap: nowrap; /* Förhindra ombrytning av element på flera rader */
-                justify-content: center; /* Centrera elementen horisontellt */
+                flex-wrap: nowrap;
+                justify-content: center;
                 gap: 20px;
 
                 @include xl {
@@ -105,7 +103,7 @@
                 }
 
                 img {
-                    max-width: 20%; /* Säkerställ att bilderna inte överskrider förälderselementets bredd */
+                    max-width: 20%;
                     height: auto;
 
                     @include md {
