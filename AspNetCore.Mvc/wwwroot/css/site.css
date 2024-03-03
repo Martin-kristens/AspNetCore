@@ -487,6 +487,9 @@ footer .container p span {
 #signin .container form {
   padding: 1rem;
 }
+#signin .container form .error-signin {
+  text-align: center;
+}
 #signin .container form .content {
   display: grid;
   gap: 1rem 2rem;
