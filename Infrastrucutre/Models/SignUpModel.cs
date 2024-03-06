@@ -1,7 +1,7 @@
-﻿using AspNetCore.Mvc.Helpers;
+﻿using Infrastrucutre.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore.Mvc.Models.Auth;
+namespace Infrastrucutre.Models;
 
 public class SignUpModel
 {
@@ -43,5 +43,4 @@ public class SignUpModel
     [Display(Name = "I agree to the terms and conditions.", Order = 5)]
     [CheckBoxRequired(ErrorMessage = " You must accept the terms and conditions to proceed.")]
     public bool TermsAndConditions { get; set; } = false!;
-
 }

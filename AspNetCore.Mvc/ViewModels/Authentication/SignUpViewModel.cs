@@ -1,4 +1,4 @@
-﻿using AspNetCore.Mvc.Models.Auth;
+﻿using Infrastrucutre.Models;
 
 namespace AspNetCore.Mvc.ViewModels.Authentication;
 
