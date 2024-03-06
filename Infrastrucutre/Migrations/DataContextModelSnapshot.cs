@@ -44,7 +44,7 @@ namespace Infrastrucutre.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("Infrastrucutre.Entities.UserEntity", b =>
@@ -91,7 +91,7 @@ namespace Infrastrucutre.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Infrastrucutre.Entities.UserEntity", b =>
