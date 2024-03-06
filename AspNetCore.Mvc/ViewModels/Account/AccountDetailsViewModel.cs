@@ -1,4 +1,4 @@
-﻿using AspNetCore.Mvc.Models.Accounts;
+﻿using Infrastrucutre.Models;
 
 namespace AspNetCore.Mvc.ViewModels.Account;
 

@@ -1,6 +1,9 @@
 using AspNetCore.Mvc.ViewModels.Authentication;
+using Infrastrucutre.Entities;
 using Infrastrucutre.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCore.Mvc.Controllers;
 
@@ -54,7 +57,7 @@ public class AuthController(UserSerivce userService) : Controller
             if (result.StatusCode == Infrastrucutre.Models.StatusCode.OK)
             {
                 return RedirectToAction("Details", "Account");
-            }             
+            }
         }
 
         viewModel.ErrorMessage = "Incorrect email or password";

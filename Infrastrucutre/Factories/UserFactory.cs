@@ -28,8 +28,6 @@ public class UserFactory
         try
         {
             var date = DateTime.Now;
-            var (password, securityKey) = PasswordHasher.GenerateSecurePassword(model.Password);
-
 
             return new UserEntity 
             { 
@@ -37,8 +35,6 @@ public class UserFactory
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                Password = password,
-                SecurityKey = securityKey,
                 Created = date,
                 Modified = date
             };
@@ -47,3 +43,6 @@ public class UserFactory
         return null!;
     }
 }
+//var (password, securityKey) = PasswordHasher.GenerateSecurePassword(model.Password);
+//Password = password,
+//SecurityKey = securityKey,
