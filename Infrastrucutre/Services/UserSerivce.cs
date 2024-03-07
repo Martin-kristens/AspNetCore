@@ -21,10 +21,10 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
             var exists = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
             if (exists)
             {
-                return ResponseFactory.Exists();
+                return ResponseFactory.Exists("User with same email already exists");
             }
 
-            var result = await _userManager.CreateAsync(UserFactory.Create(model));
+            var result = await _userManager.CreateAsync(UserFactory.Create(model), model.Password);
             if (result.Succeeded)
             {
                 return ResponseFactory.Ok("User was created successully");
@@ -43,19 +43,16 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
     {
         try
         {
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
 
-            if (user != null)
+            if (user)
             {
-                var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                //var result = await _signInManager.PasswordSignInAsync("martin@mail.se", "Bytmig123!", false, false);
 
                 if (result.Succeeded)
                 {
                     return ResponseFactory.Ok("User logged in successfully");
-                }
-                else if (result.IsLockedOut)
-                {
-                    return ResponseFactory.Error("User account locked out");
                 }
                 else
                 {

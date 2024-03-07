@@ -3,26 +3,30 @@ using Infrastrucutre.Entities;
 using Infrastrucutre.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCore.Mvc.Controllers;
 
-public class AuthController(UserSerivce userService) : Controller
+public class AuthController(UserSerivce userService, SignInManager<UserEntity> signInManager) : Controller
 {
     private readonly UserSerivce _userService = userService;
+    private readonly SignInManager<UserEntity> _signInManager = signInManager;
 
-    [Route("/signup")]
     [HttpGet]
-   public IActionResult SignUp()
+    [Route("/signup")]
+    public IActionResult SignUp()
     {
+        if (_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("Details", "Account");
+        }
 
         var viewModel = new SignUpViewModel();
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
     }
 
-    [Route("/signup")]
     [HttpPost]
+    [Route("/signup")]
     public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
     {
         if (ModelState.IsValid)
@@ -31,26 +35,29 @@ public class AuthController(UserSerivce userService) : Controller
             if (result.StatusCode == Infrastrucutre.Models.StatusCode.OK)
             {
                 return RedirectToAction("SignIn", "Auth");
-            }           
+            }
         }
-        return View(viewModel);       
+        return View(viewModel);
     }
 
-    [Route("/signin")]
     [HttpGet]
+    [Route("/signin")]
     public IActionResult SignIn()
     {
-
+        if (_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("Details", "Account");
+        }
         var viewModel = new SignInViewModel();
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
     }
 
-    [Route("/signin")]
     [HttpPost]
+    [Route("/signin")]
     public async Task<IActionResult> SignIn(SignInViewModel viewModel)
     {
-        
+
         if (ModelState.IsValid)
         {
             var result = await _userService.SignInUserAsync(viewModel.Form);
@@ -60,8 +67,17 @@ public class AuthController(UserSerivce userService) : Controller
             }
         }
 
+        //ModelState.AddModelError("IncorrectValues", "Incorrect email or password");
         viewModel.ErrorMessage = "Incorrect email or password";
         return View(viewModel);
+    }
+
+    [HttpGet]
+    [Route("/signout")]
+    public new async Task<IActionResult> SignOut()
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("SignIn", "Auth");
     }
 }
 

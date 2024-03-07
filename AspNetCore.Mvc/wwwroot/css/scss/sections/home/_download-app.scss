@@ -45,25 +45,21 @@
                 h2 {
 
                     @include md {
-                        @include standard-heading; 
-                        font-size: 24px !important;   
-                    }  
+                        @include standard-heading;
+                        font-size: 24px !important;
+                    }
 
-                    @include lg{
-                        @include standard-heading; 
+                    @include lg {
+                        @include standard-heading;
                         font-size: 28px !important;
                     }
-                    @include xl{
-                        @include standard-heading; 
+
+                    @include xl {
+                        @include standard-heading;
                         font-size: 38px !important;
                         max-width: 60%;
                     }
                 }
-                 
-                
-               
-
-               
             }
 
             .app-download {
@@ -72,13 +68,12 @@
                     display: flex;
                     // flex-direction: column;
                     // gap: 3rem;
+                    column-gap: 2rem;
                 }
 
                 .left-side-download {
-                    
+
                     @include md {
-                        
-                        // column-gap: 0;
                         // width: 60%;
                     }
 
@@ -91,12 +86,11 @@
                     .ratings {
                         padding-bottom: 0.5rem;
                     }
-
                 }
 
-                
+
                 .right-side-download {
-                       
+
                     @include md {
                         display: flex;
                         justify-content: center;
@@ -105,7 +99,7 @@
                     }
 
                     .app-stores {
- 
+
                         @include md {
                             display: flex;
                             justify-content: center;
@@ -114,14 +108,17 @@
                             object-fit: cover;
                         }
 
+                        .download-icon {
+                            max-width: 100%;
+                            width: 100%;
+                        }
+
                         img {
                             width: 30%;
-
                         }
                     }
                 }
             }
         }
-
     }
 }

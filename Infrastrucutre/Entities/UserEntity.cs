@@ -5,15 +5,12 @@ namespace Infrastrucutre.Entities;
 
 public class UserEntity : IdentityUser
 {
-    [Key]
-    public string Id { get; set; } = null!;
     [ProtectedPersonalData]
     public string FirstName { get; set; } = null!;
+
     [ProtectedPersonalData]
     public string LastName { get; set; } = null!;
     public string? Biography { get; set; }
-    public DateTime? Created { get; set; }
-    public DateTime? Modified { get; set; }
 
     public int? AddressId { get; set; }
 

@@ -420,6 +420,17 @@ header .container .btn-mobile i {
     display: none;
   }
 }
+header .container #mobile-menu {
+  height: 100vh;
+  background-color: tomato;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 99;
+  display: none;
+}
 
 footer {
   padding: 50px 0 30px 0;
@@ -671,6 +682,8 @@ form span.field-validation-error {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
+    max-width: unset;
+    column-gap: 5rem;
   }
 }
 .showcase .container .showcase-image {
@@ -678,7 +691,7 @@ form span.field-validation-error {
 }
 @media (min-width: 992px) {
   .showcase .container .showcase-image {
-    margin-right: -300px;
+    /*margin-right: -300px;*/
     display: inline;
     width: 100%;
     height: auto;
@@ -690,7 +703,7 @@ form span.field-validation-error {
   display: flex;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
+  /*  max-width: 80%;*/
 }
 @media (min-width: 768px) {
   .showcase .container .content {
@@ -698,6 +711,7 @@ form span.field-validation-error {
     max-width: 70%;
     padding: 0 20px;
     width: 100%;
+    padding-left: 11rem;
   }
 }
 .showcase .container .content h1 {
@@ -821,7 +835,7 @@ form span.field-validation-error {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    /* gap: 20px; */
   }
 }
 .features .container .tool-features .box {
@@ -829,7 +843,7 @@ form span.field-validation-error {
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  /*margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -850,7 +864,7 @@ form span.field-validation-error {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    /*margin-bottom: 20px; */
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
@@ -1148,6 +1162,7 @@ form span.field-validation-error {
 @media (min-width: 768px) {
   .download-app .container .download-app-content .app-download {
     display: flex;
+    column-gap: 2rem;
   }
 }
 @media (min-width: 768px) {
@@ -1173,6 +1188,10 @@ form span.field-validation-error {
     width: 100%;
     object-fit: cover;
   }
+}
+.download-app .container .download-app-content .app-download .right-side-download .app-stores .download-icon {
+  max-width: 100%;
+  width: 100%;
 }
 .download-app .container .download-app-content .app-download .right-side-download .app-stores img {
   width: 30%;
@@ -1518,7 +1537,7 @@ form span.field-validation-error {
     font-size: 14px !important;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   #course-section .container .course-card .card .card-info h4 {
     line-height: 160%;
     font-weight: 400;
@@ -1527,6 +1546,7 @@ form span.field-validation-error {
     font-weight: 800;
     color: #0B0F19;
     font-size: 16px !important;
+    max-width: 75%;
   }
 }
 @media (min-width: 768px) {

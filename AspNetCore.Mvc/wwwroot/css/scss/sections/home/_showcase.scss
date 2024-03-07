@@ -21,13 +21,15 @@
             width: 100%;
             display: flex;
             flex-direction: row-reverse;
+            max-width: unset;
+            column-gap: 5rem;
         }
 
         .showcase-image {
             display: none;
 
             @include lg {
-                margin-right: -300px;
+                /*margin-right: -300px;*/
                 display: inline;
                 width: 100%;
                 height: auto;
@@ -41,13 +43,15 @@
             display: flex;
             flex-direction: column;
             text-align: center;
-            max-width: 80%;
+          /*  max-width: 80%;*/
 
             @include md {
                 text-align: left;
                 max-width: 70%;
                 padding: 0 20px;
                 width: 100%;
+                padding-left: 11rem;
+                
             }
 
             h1 {

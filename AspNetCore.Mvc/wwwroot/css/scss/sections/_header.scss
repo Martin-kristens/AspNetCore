@@ -5,19 +5,21 @@ header {
         display: grid;
         align-items: center;
         grid-template-columns: 1fr auto;
-        grid-template-areas:  "logo mobile";
+        grid-template-areas: "logo mobile";
         gap: 40px;
-        
+
         @include lg {
             grid-template-columns: auto 1fr auto auto;
-            grid-template-areas:  "logo menu switch buttons";
+            grid-template-areas: "logo menu switch buttons";
         }
 
-        #logo { grid-area: logo; }
+        #logo {
+            grid-area: logo;
+        }
 
-        #menu { 
+        #menu {
             grid-area: menu;
-            // background-color: $danger; 
+            // background-color: $danger;
             justify-content: center;
             align-items: center;
             // padding: 5rem;
@@ -26,15 +28,15 @@ header {
             @include lg {
                 display: block;
             }
-            
+
             nav {
                 display: flex;
                 gap: 15px;
             }
         }
-        
-        .btn-switch { 
-            grid-area: switch; 
+
+        .btn-switch {
+            grid-area: switch;
             display: none;
 
             @include lg {
@@ -42,8 +44,8 @@ header {
             }
         }
 
-        .account-buttons { 
-            grid-area: buttons; 
+        .account-buttons {
+            grid-area: buttons;
             display: none;
             gap: 15px;
 
@@ -53,16 +55,14 @@ header {
         }
 
         .btn-mobile {
-            grid-area: mobile; 
+            grid-area: mobile;
             display: block;
             padding-right: 1rem;
-
             // width: 50px;
             // height: 50px;
             // background-size: cover;
             // background-position: center;
             // position: relative;
-
             // // background-color: $danger;
             // cursor: pointer;
 
@@ -73,14 +73,21 @@ header {
             @include lg {
                 display: none;
             }
-
             // .hide {
             //     display: none;
             // }
-
-            
         }
 
-        
+        #mobile-menu {
+            height: 100vh;
+            background-color: tomato;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            z-index: 99;
+            display: none;
+        }
     }
 }

@@ -43,20 +43,22 @@
                             <a asp-controller="" asp-action=""><img src="@card.ImageIcon.ImageUrl" alt="@card.ImageIcon.AltText"></a>
                             <img class="circle-in-picture" src="@card.CircleIcon.ImageUrl" alt="@card.CircleIcon.AltText">
                             <div class="card-info">
+                             
+
                                 <h4>@card.CardHeader</h4>
                                 <p>@card.Author</p>
-                            <div class="price-sale">
-                                @if (!string.IsNullOrEmpty(card.PriceSale) && card.PriceSale.Trim() != "")
-                                {
-                                    <p class="course-price-sale">@card.PriceSale</p>
-                                    <p class="course-price strikethrough">@card.PriceText</p>
-                                }
-                                else
-                                {
-                                    <p class="course-price">@card.PriceText</p>
-                                }
+                                <div class="price-sale">
+                                    @if (!string.IsNullOrEmpty(card.PriceSale) && card.PriceSale.Trim() != "")
+                                    {
+                                        <p class="course-price-sale">@card.PriceSale</p>
+                                        <p class="course-price strikethrough">@card.PriceText</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="course-price">@card.PriceText</p>
+                                    }
                                 
-                            </div>                           
+                                </div>                           
                                 <div class="card-line"></div>
                                 <div class="hours-and-ratings">
                                     <img src="@card.ClockIcon.ImageUrl" alt="@card.ClockIcon.AltText">
