@@ -1,5 +1,6 @@
 using Infrastrucutre.Contexts;
 using Infrastrucutre.Entities;
+using Infrastrucutre.Helpers.Middlewares;
 using Infrastrucutre.Repositories;
 using Infrastrucutre.Services;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +33,10 @@ builder.Services.AddScoped<UserDetailsService>();
 var app = builder.Build();
 app.UseHsts();
 app.UseHttpsRedirection();
-app.UseRouting();
 app.UseStaticFiles();
+app.UseRouting();
+
+app.UseUserSessionValidation();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,5 +1,6 @@
 using AspNetCore.Mvc.ViewModels.Authentication;
 using Infrastrucutre.Entities;
+using Infrastrucutre.Models;
 using Infrastrucutre.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
 {
     private readonly UserSerivce _userService = userService;
     private readonly SignInManager<UserEntity> _signInManager = signInManager;
+
 
     [HttpGet]
     [Route("/signup")]
@@ -35,6 +37,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
             if (result.StatusCode == Infrastrucutre.Models.StatusCode.OK)
             {
                 return RedirectToAction("SignIn", "Auth");
+            }
+            else
+            {
+                viewModel.ErrorMessage = "User with same email already exists";
             }
         }
         return View(viewModel);

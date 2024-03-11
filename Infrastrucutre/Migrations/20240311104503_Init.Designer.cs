@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastrucutre.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240307103909_Init")]
+    [Migration("20240311104503_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -275,7 +275,8 @@ namespace Infrastrucutre.Migrations
                 {
                     b.HasOne("Infrastrucutre.Entities.AddressEntity", "Address")
                         .WithMany("Users")
-                        .HasForeignKey("AddressId");
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Address");
                 });

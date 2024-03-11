@@ -21,7 +21,7 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
             var exists = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
             if (exists)
             {
-                return ResponseFactory.Exists("User with same email already exists");
+                return ResponseFactory.Exists();
             }
 
             var result = await _userManager.CreateAsync(UserFactory.Create(model), model.Password);

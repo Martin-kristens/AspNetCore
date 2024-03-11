@@ -272,7 +272,8 @@ namespace Infrastrucutre.Migrations
                 {
                     b.HasOne("Infrastrucutre.Entities.AddressEntity", "Address")
                         .WithMany("Users")
-                        .HasForeignKey("AddressId");
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Address");
                 });

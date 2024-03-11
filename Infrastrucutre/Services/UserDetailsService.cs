@@ -9,6 +9,28 @@ public class UserDetailsService(UserManager<UserEntity> userManager)
 {
     private readonly UserManager<UserEntity> _userManager = userManager;
 
+    //public async Task<ResponseResult> GetUserAsync(AccountDetailsBasicInfoModel basicInfoModel)
+    //{
+    //    try
+    //    {
+    //        var user = await _userManager.FindByEmailAsync(basicInfoModel.Email);
+    //        if (user != null)
+    //        {
+    //            user.FirstName = basicInfoModel.FirstName;
+    //            user.LastName = basicInfoModel.LastName;
+    //            user.Email = basicInfoModel.Email;
+    //            user.PhoneNumber = basicInfoModel.Phone;
+    //            user.Biography = basicInfoModel.Biography;           
+    //        }
+    //        else
+    //        {
+    //            return ResponseFactory.NotFound("User not found");
+    //        }
+    //    }
+    //    catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
+    //    return null!;
+    //}
+
     public async Task<ResponseResult> UpdateUserAsync(AccountDetailsBasicInfoModel basicInfoModel)
     {
         try

@@ -1,11 +1,22 @@
 ﻿using AspNetCore.Mvc.ViewModels.Account;
+using Infrastrucutre.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers;
 
 public class AccountController : Controller
 {
+    private readonly UserManager<UserEntity> _userManager;
+    private readonly SignInManager<UserEntity> _signInManager;
+
+    public AccountController(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager)
+    {
+        _userManager = userManager;
+        _signInManager = signInManager;
+    }
+
     //private readonly AccountService _accountService;
 
     //public AccountController(AccountService accountService)
@@ -13,15 +24,28 @@ public class AccountController : Controller
     //    _accountService = accountService;
     //}
 
-    [Route("/account")]
+    [HttpGet]
+    [Route("/account/details")]
     public IActionResult Details()
     {
-        var viewModel = new AccountDetailsViewModel();
-        //viewModel.BasicInfo = _accountService.GetBasicInfo();
-        //viewModel.AddressInfo = _accountService.GetAddressInfo();
+        if (!_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("SignIn", "Auth");
+        }
 
-        return View(viewModel);
+        return View();
     }
+
+    //[HttpGet]
+    //[Route("/account")]
+    //public IActionResult Details()
+    //{
+    //    var viewModel = new AccountDetailsViewModel();
+    //    //viewModel.BasicInfo = _accountService.GetBasicInfo();
+    //    //viewModel.AddressInfo = _accountService.GetAddressInfo();
+
+    //    return View(viewModel);
+    //}
 
     [HttpPost]
     public IActionResult BasicInfo(AccountDetailsViewModel viewModel)
