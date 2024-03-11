@@ -48,13 +48,14 @@ header {
             grid-area: buttons;
             display: none;
             gap: 15px;
+            height: 3rem;
 
             @include lg {
                 display: flex;
             }
 
             .profile-img {
-                height: 4rem;
+                height: 100%;
             }
         }
 

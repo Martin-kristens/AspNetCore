@@ -401,6 +401,7 @@ header .container .account-buttons {
   grid-area: buttons;
   display: none;
   gap: 15px;
+  height: 3rem;
 }
 @media (min-width: 992px) {
   header .container .account-buttons {
@@ -408,7 +409,7 @@ header .container .account-buttons {
   }
 }
 header .container .account-buttons .profile-img {
-  height: 4rem;
+  height: 100%;
 }
 header .container .btn-mobile {
   grid-area: mobile;
