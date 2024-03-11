@@ -22,7 +22,12 @@
                         <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
                         <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="feature">Features</a>
                         <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
-                        <a class="menu-link" asp-controller="Course" asp-action="Index">Courses</a>
+
+                        @if (User.Identity!.IsAuthenticated)
+                        {
+                            <a class="menu-link" asp-controller="Course" asp-action="Index">Courses</a>
+                        }
+                                             
                     </nav>
                 </div>
 
@@ -36,9 +41,18 @@
                 </div>
 
                 <div id="account-buttons" class="account-buttons hide">
-                    <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><img src="../icons/door-arrow-icon.svg">Sign In</a>
-                    <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><img src="../icons/head-body-icon.svg">Sign Up</a>
-                </div> <div id="mobile-menu"></div>
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="Account" asp-action="Details"><img src="~/images/account-profile.svg" /></a>
+                    }
+                    else
+                    {
+                        <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><img src="../icons/door-arrow-icon.svg">Sign In</a>
+                        <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><img src="../icons/head-body-icon.svg">Sign Up</a>
+                    }
+                </div> 
+                
+                <div id="mobile-menu"></div>
 
                 <!-- Top Navigation Menu -->
                 <button onclick="toggleMenu()" class="btn-mobile">

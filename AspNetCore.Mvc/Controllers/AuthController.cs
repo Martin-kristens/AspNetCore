@@ -15,10 +15,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
     [Route("/signup")]
     public IActionResult SignUp()
     {
-        if (_signInManager.IsSignedIn(User))
-        {
-            return RedirectToAction("Details", "Account");
-        }
+        //if (_signInManager.IsSignedIn(User))
+        //{
+        //    return RedirectToAction("Details", "Account");
+        //}
 
         var viewModel = new SignUpViewModel();
         ViewData["Title"] = viewModel.Title;
@@ -44,10 +44,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
     [Route("/signin")]
     public IActionResult SignIn()
     {
-        if (_signInManager.IsSignedIn(User))
-        {
-            return RedirectToAction("Details", "Account");
-        }
+        //if (_signInManager.IsSignedIn(User))
+        //{
+        //    return RedirectToAction("Details", "Account");
+        //}
         var viewModel = new SignInViewModel();
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
