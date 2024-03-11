@@ -1,56 +1,113 @@
 ﻿using Infrastrucutre.Entities;
 using Infrastrucutre.Factories;
-using Infrastrucutre.Helpers;
 using Infrastrucutre.Models;
 using Infrastrucutre.Repositories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Infrastrucutre.Services;
 
-public class UserSerivce(UserRepository userRepository, AddressRepository addresRepository)
+public class UserSerivce(AddressRepository addresRepository,UserManager<UserEntity> userManager,SignInManager<UserEntity> signInManager)
 {
-    private readonly UserRepository _userRepository = userRepository;
+    private readonly UserManager<UserEntity> _userManager = userManager;
+    private readonly SignInManager<UserEntity> _signInManager = signInManager;
     private readonly AddressRepository _addresRepository = addresRepository;
 
     public async Task<ResponseResult> CreateUserAsync(SignUpModel model)
     {
-		try
-		{
-            var exists = await _userRepository.AlreadyExistsAsync(x => x.Email == model.Email);
-            if (exists.StatusCode == StatusCode.EXISTS)
+        try
+        {
+            var exists = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
+            if (exists)
             {
-                return exists;
+                return ResponseFactory.Exists("User with same email already exists");
             }
 
-            var result = await _userRepository.CreateOneAsync(UserFactory.Create(model));
-            if (result.StatusCode != StatusCode.OK)
+            var result = await _userManager.CreateAsync(UserFactory.Create(model), model.Password);
+            if (result.Succeeded)
             {
-                return result;
+                return ResponseFactory.Ok("User was created successully");
             }
-
-            return ResponseFactory.Ok("User was created successfully");
-
+            else
+            {
+                return ResponseFactory.Error("Failed to create user");
+            }
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+
+
 
     public async Task<ResponseResult> SignInUserAsync(SignInModel model)
     {
         try
         {
-            var result = await _userRepository.GetOneAsync(x => x.Email == model.Email);
-            if (result.StatusCode == StatusCode.OK && result.ContentResult != null)
-            {
-                var userEntity = (UserEntity)result.ContentResult;
+            var user = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
 
-                if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
+            if (user)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                //var result = await _signInManager.PasswordSignInAsync("martin@mail.se", "Bytmig123!", false, false);
+
+                if (result.Succeeded)
                 {
-                    return ResponseFactory.Ok();
+                    return ResponseFactory.Ok("User logged in successfully");
+                }
+                else
+                {
+                    return ResponseFactory.Error("Incorrect email or password");
                 }
             }
+            else
+            {
+                return ResponseFactory.NotFound("User not found");
+            }          
+        }
+        catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
+    }
 
-            return ResponseFactory.Error("Incorrect email or password");
+    public async Task<ResponseResult> SignOutUserAsync(ClaimsPrincipal user)
+    {
+        try
+        {
+            
+            if (_signInManager.IsSignedIn(user))
+            {
+                await _signInManager.SignOutAsync();
+                return ResponseFactory.Ok("User signed out successfully");
+            }
+            else
+            {
+                return ResponseFactory.NotFound("No user is signed in right now");
+            }
 
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
 }
+
+//create
+//var exists = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
+//if (exists)
+//{
+//    return ResponseFactory.Exists("User with this email already exists");
+//}
+//else
+//{
+//    return UserFactory.Create();
+//}
+
+//singin
+//var result = await _userRepository.GetOneAsync(x => x.Email == model.Email);
+//if (result.StatusCode == StatusCode.OK && result.ContentResult != null)
+//{
+//    var userEntity = (UserEntity)result.ContentResult;
+
+//    if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
+//    {
+//        return ResponseFactory.Ok();
+//    }
+//}
+
+//return ResponseFactory.Error("Incorrect email or password");

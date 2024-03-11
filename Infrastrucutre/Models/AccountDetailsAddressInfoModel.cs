@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-namespace AspNetCore.Mvc.Models.Accounts;
+namespace Infrastrucutre.Models;
 
 public class AccountDetailsAddressInfoModel
 {

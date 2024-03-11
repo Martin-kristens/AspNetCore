@@ -15,13 +15,14 @@ public class AddressFactory
         return null!;
     }
 
-    public static AddressEntity Create(string streeetName, string postalCode, string city)
+    public static AddressEntity Create(string addressLine_1, string addressLine_2, string postalCode, string city)
     {
 		try
 		{
             return new AddressEntity
             {
-                StreetName = streeetName,
+                StreetName_1 = addressLine_1,
+                StreetName_2 = addressLine_2,
                 PostalCode = postalCode,
                 City = city
             };
@@ -37,7 +38,8 @@ public class AddressFactory
             return new AddressModel
             {
                 Id = entity.Id,
-                StreetName = entity.StreetName,
+                AddressLine_1 = entity.StreetName_1,
+                AddressLine_2 = entity.StreetName_2,
                 PostalCode = entity.PostalCode,
                 City = entity.City
             };

@@ -1,4 +1,5 @@
 ﻿using AspNetCore.Mvc.ViewModels.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers;

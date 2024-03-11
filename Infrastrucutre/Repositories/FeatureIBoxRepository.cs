@@ -1,10 +1,10 @@
-﻿using Infrastrucutre.Contexts;
-using Infrastrucutre.Entities;
+﻿//using Infrastrucutre.Contexts;
+//using Infrastrucutre.Entities;
 
-namespace Infrastrucutre.Repositories;
+//namespace Infrastrucutre.Repositories;
 
-public class FeatureIBoxRepository(DataContext context) : BaseRepository<FeatureBoxEntity>(context)
-{
-    private readonly DataContext _context = context;
+//public class FeatureIBoxRepository(DataContext context) : BaseRepository<FeatureBoxEntity>(context)
+//{
+//    private readonly DataContext _context = context;
 
-}
+//}
