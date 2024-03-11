@@ -18,6 +18,12 @@
         form {
             padding: 1rem;
 
+            .alert {
+                text-align: center;
+                color: $black;
+                font-size: 1.2rem;
+            }
+
             .content {
                 display: grid;
                 gap: 1rem 2rem;

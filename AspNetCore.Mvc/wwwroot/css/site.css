@@ -501,6 +501,11 @@ footer .container p span {
 #signin .container form {
   padding: 1rem;
 }
+#signin .container form .alert {
+  text-align: center;
+  color: #EF4444;
+  font-size: 1.2rem;
+}
 #signin .container form .content {
   display: grid;
   gap: 1rem 2rem;
@@ -547,6 +552,11 @@ footer .container p span {
 }
 #signup .container form {
   padding: 1rem;
+}
+#signup .container form .alert {
+  text-align: center;
+  color: #000000;
+  font-size: 1.2rem;
 }
 #signup .container form .content {
   display: grid;
