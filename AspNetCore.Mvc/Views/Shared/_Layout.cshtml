@@ -43,7 +43,7 @@
                 <div id="account-buttons" class="account-buttons hide">
                     @if(User.Identity.IsAuthenticated)
                     {
-                        <a id="signout" class="btn-gray" asp-controller="Auth" asp-action="SignIn"><img src="../icons/door-arrow-icon.svg">Sign Out</a>
+                        <a id="signout" class="btn-gray" asp-controller="Auth" asp-action="SignOut"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a>
                         <div>
                             <a asp-controller="Account" asp-action="Details"><img class="profile-img" src="~/images/account-profile.svg" /></a>
                         </div>
@@ -51,7 +51,7 @@
                     }
                     else
                     {
-                        <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><img src="../icons/door-arrow-icon.svg">Sign In</a>
+                        <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-solid fa-right-to-bracket"></i>Sign In</a>
                         <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><img src="../icons/head-body-icon.svg">Sign Up</a>
                     }
                 </div> 
