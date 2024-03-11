@@ -48,7 +48,6 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
             if (user)
             {
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-                //var result = await _signInManager.PasswordSignInAsync("martin@mail.se", "Bytmig123!", false, false);
 
                 if (result.Succeeded)
                 {

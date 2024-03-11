@@ -1,5 +1,6 @@
 using Infrastrucutre.Contexts;
 using Infrastrucutre.Entities;
+using Infrastrucutre.Helpers.Middlewares;
 using Infrastrucutre.Repositories;
 using Infrastrucutre.Services;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,17 @@ builder.Services.AddDefaultIdentity<UserEntity>(x =>
     
 }).AddEntityFrameworkStores<DataContext>();
 
+builder.Services.ConfigureApplicationCookie(x =>
+{  
+    x.LoginPath = "/signin";
+    x.LogoutPath = "/signout";
+    x.AccessDeniedPath = "/denied";
 
+    x.Cookie.HttpOnly = true;
+    x.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    x.SlidingExpiration = true;  
+});
 
 
 builder.Services.AddScoped<AddressRepository>();
@@ -32,10 +43,11 @@ builder.Services.AddScoped<UserDetailsService>();
 var app = builder.Build();
 app.UseHsts();
 app.UseHttpsRedirection();
-app.UseRouting();
 app.UseStaticFiles();
+app.UseRouting();
 
 app.UseAuthentication();
+app.UseUserSessionValidation();
 app.UseAuthorization();
 
 app.MapControllerRoute(

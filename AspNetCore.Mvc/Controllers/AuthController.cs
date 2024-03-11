@@ -15,10 +15,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
     [Route("/signup")]
     public IActionResult SignUp()
     {
-        //if (_signInManager.IsSignedIn(User))
-        //{
-        //    return RedirectToAction("Details", "Account");
-        //}
+        if (_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("Details", "Account");
+        }
 
         var viewModel = new SignUpViewModel();
         ViewData["Title"] = viewModel.Title;
@@ -44,12 +44,15 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
 
     [HttpGet]
     [Route("/signin")]
-    public IActionResult SignIn()
+    public IActionResult SignIn(string returnUrl)
     {
-        //if (_signInManager.IsSignedIn(User))
-        //{
-        //    return RedirectToAction("Details", "Account");
-        //}
+        if (_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("Details", "Account");
+        }
+
+        ViewData["ReturnUrl"] = returnUrl ?? Url.Content("~/");
+
         var viewModel = new SignInViewModel();
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
@@ -57,7 +60,7 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
 
     [HttpPost]
     [Route("/signin")]
-    public async Task<IActionResult> SignIn(SignInViewModel viewModel)
+    public async Task<IActionResult> SignIn(SignInViewModel viewModel, string returnUrl)
     {
 
         if (ModelState.IsValid)
@@ -65,7 +68,14 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
             var result = await _userService.SignInUserAsync(viewModel.Form);
             if (result.StatusCode == Infrastrucutre.Models.StatusCode.OK)
             {
-                return RedirectToAction("Details", "Account");
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    return RedirectToAction("Details", "Account");
+                }               
             }
         }
 
