@@ -8,4 +8,5 @@ public class SignUpViewModel
     public SignUpModel Form { get; set; } = new SignUpModel();
 
     public bool TermAndConditions { get; set; } = true;
+    public string? ErrorMessage { get; set; }
 }

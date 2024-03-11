@@ -36,7 +36,9 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
             {
                 return RedirectToAction("SignIn", "Auth");
             }
+            
         }
+        viewModel.ErrorMessage = "User with same email already exists";
         return View(viewModel);
     }
 
@@ -67,7 +69,6 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
             }
         }
 
-        //ModelState.AddModelError("IncorrectValues", "Incorrect email or password");
         viewModel.ErrorMessage = "Incorrect email or password";
         return View(viewModel);
     }

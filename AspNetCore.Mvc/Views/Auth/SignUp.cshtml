@@ -10,6 +10,13 @@
             <h1>Create Account</h1>
             <p>Already have an account? <a asp-controller="Auth" asp-action="SignIn">Sign In here</a>.</p>
 
+            @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @Model.ErrorMessage
+                </div>
+            }
+
             <div class="content">
                 <div id="form-firstname" class="input-group">
                     <label asp-for="Form.FirstName"></label>
