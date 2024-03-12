@@ -1,14 +1,19 @@
-﻿using Infrastrucutre.Entities;
+﻿using Infrastrucutre.Contexts;
+using Infrastrucutre.Entities;
 using Infrastrucutre.Factories;
 using Infrastrucutre.Models;
+using Infrastrucutre.Repositories;
 using Microsoft.AspNetCore.Identity;
 
 namespace Infrastrucutre.Services;
 
-public class UserDetailsService(UserManager<UserEntity> userManager)
+public class UserDetailsService(UserManager<UserEntity> userManager, UserRepository userRespository, DataContext context)
 {
     private readonly UserManager<UserEntity> _userManager = userManager;
+    private readonly UserRepository _userRespository = userRespository;
+    private readonly DataContext _context = context;
 
+    #region UpdateUserAsync
     public async Task<ResponseResult> UpdateUserAsync(AccountDetailsBasicInfoModel basicInfoModel)
     {
         try
@@ -16,7 +21,7 @@ public class UserDetailsService(UserManager<UserEntity> userManager)
             var user = await _userManager.FindByEmailAsync(basicInfoModel.Email);
             if (user != null)
             {
-                
+
                 user.FirstName = basicInfoModel.FirstName;
                 user.LastName = basicInfoModel.LastName;
                 user.Email = basicInfoModel.Email;
@@ -24,7 +29,7 @@ public class UserDetailsService(UserManager<UserEntity> userManager)
                 user.Biography = basicInfoModel.Biography;
 
                 var updateUserResult = await _userManager.UpdateAsync(user);
-                if (updateUserResult.Succeeded) 
+                if (updateUserResult.Succeeded)
                 {
                     return ResponseFactory.Ok(updateUserResult);
                 }
@@ -40,13 +45,16 @@ public class UserDetailsService(UserManager<UserEntity> userManager)
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+    #endregion
 
+
+    #region DeleteUserAsync
     public async Task<ResponseResult> DeleteUserAsync(UserEntity userEntity)
     {
         try
         {
             var user = await _userManager.FindByEmailAsync(userEntity.Email!);
-            if (user != null) 
+            if (user != null)
             {
                 var deletedUserResult = await _userManager.DeleteAsync(user);
                 return ResponseFactory.Ok(deletedUserResult);
@@ -58,6 +66,6 @@ public class UserDetailsService(UserManager<UserEntity> userManager)
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+    #endregion
 
-    
 }

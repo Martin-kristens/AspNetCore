@@ -1,17 +1,14 @@
-﻿using Infrastrucutre.Models;
+﻿using Infrastrucutre.Entities;
+using Infrastrucutre.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCore.Mvc.ViewModels.Account;
 
 public class AccountDetailsViewModel
 {
-    public string Title { get; set; } = "Account Details";
-    public AccountDetailsBasicInfoModel BasicInfo { get; set; } = new AccountDetailsBasicInfoModel()
-    {
-        ProfileImage = "images/account-profile.svg",
-        FirstName = "Martin",
-        LastName = "Kristensen",
-        Email = "nisse@mail.se"
-    };
-    public AccountDetailsAddressInfoModel AddressInfo { get; set; } = new AccountDetailsAddressInfoModel();
+    public ProfileInfoViewModel? ProfileInfo { get; set; }
+    public UserEntity User { get; set; } = null!;
+    public AccountDetailsBasicInfoModel? BasicInfo { get; set; } 
+    public AccountDetailsAddressInfoModel? AddressInfo { get; set; } 
     
 }

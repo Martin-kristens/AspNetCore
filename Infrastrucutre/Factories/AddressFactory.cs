@@ -15,14 +15,13 @@ public class AddressFactory
         return null!;
     }
 
-    public static AddressEntity Create(string addressLine_1, string addressLine_2, string postalCode, string city)
+    public static AddressEntity Create(string addressLine_1, string postalCode, string city)
     {
 		try
 		{
             return new AddressEntity
             {
                 StreetName_1 = addressLine_1,
-                StreetName_2 = addressLine_2,
                 PostalCode = postalCode,
                 City = city
             };
