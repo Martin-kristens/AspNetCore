@@ -14,6 +14,7 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
     private readonly SignInManager<UserEntity> _signInManager = signInManager;
     private readonly AddressRepository _addresRepository = addresRepository;
 
+    #region CreateUserAsync
     public async Task<ResponseResult> CreateUserAsync(SignUpModel model)
     {
         try
@@ -36,9 +37,10 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+    #endregion
 
 
-
+    #region SignInUserAsync
     public async Task<ResponseResult> SignInUserAsync(SignInModel model)
     {
         try
@@ -65,7 +67,10 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+    #endregion
 
+
+    #region SignOutUserAsync
     public async Task<ResponseResult> SignOutUserAsync(ClaimsPrincipal user)
     {
         try
@@ -84,29 +89,5 @@ public class UserSerivce(AddressRepository addresRepository,UserManager<UserEnti
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
+    #endregion
 }
-
-//create
-//var exists = await _userManager.Users.AnyAsync(x => x.Email == model.Email);
-//if (exists)
-//{
-//    return ResponseFactory.Exists("User with this email already exists");
-//}
-//else
-//{
-//    return UserFactory.Create();
-//}
-
-//singin
-//var result = await _userRepository.GetOneAsync(x => x.Email == model.Email);
-//if (result.StatusCode == StatusCode.OK && result.ContentResult != null)
-//{
-//    var userEntity = (UserEntity)result.ContentResult;
-
-//    if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
-//    {
-//        return ResponseFactory.Ok();
-//    }
-//}
-
-//return ResponseFactory.Error("Incorrect email or password");

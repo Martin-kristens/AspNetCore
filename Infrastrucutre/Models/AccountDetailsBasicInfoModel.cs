@@ -6,6 +6,7 @@ public class AccountDetailsBasicInfoModel
     [DataType(DataType.ImageUrl)]
     public string? ProfileImage { get; set; }
 
+    public string UserId { get; set; } = null!;
 
     [Display(Name = "First name", Prompt = "Enter your first name", Order = 0)]
     [Required(ErrorMessage = "First name is required")]

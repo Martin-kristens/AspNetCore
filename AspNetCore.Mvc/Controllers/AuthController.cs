@@ -11,6 +11,7 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
     private readonly UserSerivce _userService = userService;
     private readonly SignInManager<UserEntity> _signInManager = signInManager;
 
+    #region [HttpGet]SignUp
     [HttpGet]
     [Route("/signup")]
     public IActionResult SignUp()
@@ -24,7 +25,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
     }
+    #endregion
 
+
+    #region [HttpPost]SignUp
     [HttpPost]
     [Route("/signup")]
     public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
@@ -41,7 +45,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
         viewModel.ErrorMessage = "User with same email already exists";
         return View(viewModel);
     }
+    #endregion
 
+
+    #region [HttpGet] SignIn
     [HttpGet]
     [Route("/signin")]
     public IActionResult SignIn(string returnUrl)
@@ -57,7 +64,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
         ViewData["Title"] = viewModel.Title;
         return View(viewModel);
     }
+    #endregion
 
+
+    #region [HttpPost] SignIn
     [HttpPost]
     [Route("/signin")]
     public async Task<IActionResult> SignIn(SignInViewModel viewModel, string returnUrl)
@@ -82,6 +92,10 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
         viewModel.ErrorMessage = "Incorrect email or password";
         return View(viewModel);
     }
+    #endregion
+
+
+    #region [HttpGet] SignOut
 
     [HttpGet]
     [Route("/signout")]
@@ -90,5 +104,6 @@ public class AuthController(UserSerivce userService, SignInManager<UserEntity> s
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
+    #endregion
 }
 
