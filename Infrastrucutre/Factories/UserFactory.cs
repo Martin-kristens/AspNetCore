@@ -6,22 +6,6 @@ namespace Infrastrucutre.Factories;
 
 public class UserFactory
 {
-    //public static UserEntity Create()
-    //{
-    //    try
-    //    {
-    //        var date = DateTime.Now;
-
-    //        return new UserEntity() 
-    //        {
-    //            Id = Guid.NewGuid().ToString(),
-    //            Created = date,
-    //            Modified = date
-    //        };
-    //    }
-    //    catch { }
-    //    return null!;
-    //}
 
     public static UserEntity Create(SignUpModel model)
     {
@@ -41,6 +25,3 @@ public class UserFactory
         return null!;
     }
 }
-//var (password, securityKey) = PasswordHasher.GenerateSecurePassword(model.Password);
-//Password = password,
-//SecurityKey = securityKey,

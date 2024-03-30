@@ -66,16 +66,10 @@
 
                 @include md {
                     display: flex;
-                    // flex-direction: column;
-                    // gap: 3rem;
                     column-gap: 2rem;
                 }
 
                 .left-side-download {
-
-                    @include md {
-                        // width: 60%;
-                    }
 
                     .store-heading {
                         @include md {
@@ -95,7 +89,6 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        // width: 40%;
                     }
 
                     .app-stores {

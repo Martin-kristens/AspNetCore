@@ -46,7 +46,6 @@
             }
 
             @include xl {
-                // max-width: 87.4rem
                 max-width: 50rem;
             }
 
@@ -63,8 +62,6 @@
             .subscribe-options {
                 display: flex;
                 flex-wrap: wrap;
-                // justify-content: center;
-                // align-items: center;
                 gap: 1.1rem;
 
                 .newsletter {
