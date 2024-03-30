@@ -32,4 +32,8 @@
     <ProjectReference Include="..\Infrastrucutre\Infrastrucutre.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\scss\sections\Contact\" />
+  </ItemGroup>
+
 </Project>

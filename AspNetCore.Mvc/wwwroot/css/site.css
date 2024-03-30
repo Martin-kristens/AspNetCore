@@ -812,7 +812,7 @@ form span.field-validation-error {
 }
 .features {
   width: 100%;
-  background-color: #D9D9D9;
+  background-color: #F3F6FF;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
@@ -1753,8 +1753,23 @@ form span.field-validation-error {
   height: 100%;
 }
 
-/*@import './sections/account/_account-sign-in-section.scss';
-@import './sections/account/_account-sign-up.scss';*/
+.construction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 8rem;
+  padding-top: 10rem;
+}
+.construction h1 {
+  font-size: 14rem;
+  padding-bottom: 2rem;
+  color: #33354D;
+}
+.construction p {
+  font-size: 2rem;
+  color: #6366F1;
+}
+
 #account-details {
   display: grid;
   grid-template-columns: 2fr 5fr;
