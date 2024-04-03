@@ -1,6 +1,6 @@
 .subscribe {
     background-color: $gray-100;
-    
+
     .container {
         display: flex;
         flex-direction: column;
@@ -16,8 +16,9 @@
                 display: flex;
                 gap: 1rem
             }
+
             h2 {
-                @include standard-heading; 
+                @include standard-heading;
                 font-size: 28px !important;
 
                 @include xl {
@@ -25,6 +26,7 @@
                     text-align: left;
                 }
             }
+
             img {
                 display: none;
 
@@ -49,46 +51,58 @@
                 max-width: 50rem;
             }
 
-            h5 {
-                @include standard-heading; 
-                font-size: 20px !important;
-                padding-bottom: 1rem;
-
-                @include xxl {
-                    max-width: 10rem;
-                }
-            }
-
             .subscribe-options {
                 display: flex;
-                flex-wrap: wrap;
-                gap: 1.1rem;
+                /*flex-wrap: wrap;*/
+                gap: 1.2rem;
+
+                h5 {
+                    @include standard-heading;
+                    font-size: 20px !important;
+                    padding-bottom: 1rem;
+
+                    @include xxl {
+                        max-width: 10rem;
+                    }
+                }
+
+                .boxes {
+                    display: flex;
+                    flex-wrap: wrap;
+
+
+                    .form-check-input {
+                        padding: 0.9rem;
+                    }
+                }
 
                 .newsletter {
                     display: flex;
                     gap: 0.5rem;
+                    align-items: center;
 
                     @include md {
                         flex: 1 0 calc(33.33% - 1rem);
                         gap: 1rem;
                     }
-    
+
                     p {
                         margin: 0;
 
                         @include md {
-                            @include standard-text; 
+                            @include standard-text;
                             font-size: 14px !important;
                         }
                     }
                 }
-            }          
+            }
         }
 
         .subscribe-field {
             display: flex;
             gap: 1rem;
             padding-bottom: 1rem;
+            text-align: left;
 
             input {
                 border-radius: 0.37rem;
@@ -102,6 +116,10 @@
                     width: 39rem;
                 }
             }
+        }
+
+        .subscribe-terms-and-privacy {
+            text-align: left;
         }
     }
 }

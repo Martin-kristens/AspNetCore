@@ -1356,7 +1356,12 @@ form span.field-validation-error {
     max-width: 50rem;
   }
 }
-.subscribe .container .subscribe-newsletters h5 {
+.subscribe .container .subscribe-newsletters .subscribe-options {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  gap: 1.2rem;
+}
+.subscribe .container .subscribe-newsletters .subscribe-options h5 {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -1367,18 +1372,21 @@ form span.field-validation-error {
   padding-bottom: 1rem;
 }
 @media (min-width: 1400px) {
-  .subscribe .container .subscribe-newsletters h5 {
+  .subscribe .container .subscribe-newsletters .subscribe-options h5 {
     max-width: 10rem;
   }
 }
-.subscribe .container .subscribe-newsletters .subscribe-options {
+.subscribe .container .subscribe-newsletters .subscribe-options .boxes {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
+}
+.subscribe .container .subscribe-newsletters .subscribe-options .boxes .form-check-input {
+  padding: 0.9rem;
 }
 .subscribe .container .subscribe-newsletters .subscribe-options .newsletter {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .subscribe .container .subscribe-newsletters .subscribe-options .newsletter {
@@ -1402,6 +1410,7 @@ form span.field-validation-error {
   display: flex;
   gap: 1rem;
   padding-bottom: 1rem;
+  text-align: left;
 }
 .subscribe .container .subscribe-field input {
   border-radius: 0.37rem;
@@ -1416,6 +1425,9 @@ form span.field-validation-error {
   .subscribe .container .subscribe-field input {
     width: 39rem;
   }
+}
+.subscribe .container .subscribe-terms-and-privacy {
+  text-align: left;
 }
 
 #profile-header .profile-picture {
