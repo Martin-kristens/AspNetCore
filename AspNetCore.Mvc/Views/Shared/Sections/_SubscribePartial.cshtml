@@ -1,14 +1,112 @@
-﻿
-@model SubscribeViewModel
+﻿@model SubscriberDto
 
-<section id="@Model.Id" class="subscribe">
+<section id="Subscriber" class="subscribe">
+    <div class="container">
+        <div class="subscribe-heading">
+            <h2>Don't Want to Miss Anything?</h2>
+            <img src="~/icons/sign-up-line.svg" alt="lines">
+        </div>
+        <div class="subscribe-newsletters">
+            <form id="submitForm" asp-controller="Subscribe" asp-action="Index" method="post" asp-fragment="Subscriber" novalidate>
+                <div class="subscribe-options">
+                    <h5>Sign up for Newsletters</h5>
+                    <div class="boxes">
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Daily Newsletter
+                            </label>
+                        </div>
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Advertising Updates
+                            </label>
+                        </div>
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Week in Review
+                            </label>
+                        </div>
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Event Updates
+                            </label>
+                        </div>
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Startups Weekly
+                            </label>
+                        </div>
+                        <div class="form-check newsletter">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Podcasts
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="subscribe-field">
+                    <input asp-for="@Model.Email" placeholder="Your Email" type="email" />
+                    <span asp-validation-for="@Model.Email"></span>
+                    <button type="submit" class="btn-theme">Subscribe *</button>
+                </div>
+
+            </form>
+        </div>
+        <span class="information">
+            @if (TempData["Status"]?.ToString() == "Success")
+            {
+                <span class="alert alert-success">
+                    You have been subscribed
+                </span>
+            }
+            else if (TempData["Status"]?.ToString() == "AlreadyExists")
+            {
+                <span class="alert alert-warning">
+                    You have already been subscribed
+                </span>
+            }
+            else if (TempData["Status"]?.ToString() == "Invalid")
+            {
+                <span class="alert alert-danger">
+                    You must enter a valid email address
+                </span>
+            }
+            else if (TempData["Status"]?.ToString() == "ConnectionFailes")
+            {
+                <span class="alert alert-danger">
+                    Unabled to contact the server. Please try again later
+                </span>
+            }
+            else
+            {
+                <span class="alert">
+                    <div class="subscribe-terms-and-privacy">
+                        <p>
+                            * Yes, I agree to the terms and privacy policy.
+                        </p>
+                    </div>
+                </span>
+            }
+        </span>
+    </div>
+</section>
+
+@await Html.PartialAsync("_ValidationScriptPartial")
+
+@* @model SubscribeViewModel *@
+@* <section id="@Model.Id" class="subscribe">
     <div class="container">
         <div class="subscribe-heading">
             <h2>@Model.Title</h2>
             <img src="@Model.HeadingImg.ImageUrl" alt="@Model.HeadingImg.AltText">
         </div>
         <div class="subscribe-newsletters">
-            <form id="submitForm" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName" method="post" asp-fragment="@Model.Id">
+            <form id="submitForm" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName" method="post" asp-fragment="@Model.Id" novalidate>
                 <div class="subscribe-options">
                     <h5>@Model.Subheading</h5>
                     <div class="boxes">
@@ -23,8 +121,9 @@
                         }
                     </div>
                 </div>               
-                <div class="subscribe-field">
-                    <input id="emailInput" type="text" placeholder="@Model.PlaceholderText" name="Email">
+                <div class="subscribe-field"> 
+                    <input asp-for="@Model.Subscriber.Email"  placeholder="@Model.PlaceholderText" type="email" />
+                    <span asp-validation-for="@Model.Subscriber.Email"></span>
                     <button type="submit" class="btn-theme">@Model.Link.Text</button>
                 </div>
             
@@ -72,3 +171,5 @@
             </span>                                      
     </div>
 </section>
+
+@await Html.PartialAsync("_ValidationScriptPartial") *@

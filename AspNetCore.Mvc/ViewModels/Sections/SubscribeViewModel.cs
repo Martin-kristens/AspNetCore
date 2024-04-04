@@ -1,17 +1,22 @@
-﻿using AspNetCore.Mvc.ViewModels.Authentication;
+﻿using AspNetCore.Mvc.Dtos;
+using AspNetCore.Mvc.ViewModels.Authentication;
 using AspNetCore.Mvc.ViewModels.Components;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCore.Mvc.Models.Sections;
 
 public class SubscribeViewModel
 {
-    public string? Id { get; set; }
-    public string Title { get; set; } = null!;
-    public ImageViewModel HeadingImg { get; set; } = new();
-    public string Subheading { get; set; } = null!;
-    public List<SignUpBoxViewModel> SignUpBox { get; set; } = new();
-    public string PlaceholderText { get; set; } = null!;
-    public LinkViewModel Link { get; set; } = new();
-    public TermsAndPrivacyViewModel TermsAndPrivacy { get; set; } = null!;
-    public SignInViewModel Form { get; set; } = null!;
+    //public string? Id { get; set; }
+    //public string Title { get; set; } = null!;
+    //public ImageViewModel HeadingImg { get; set; } = new();
+    //public string Subheading { get; set; } = null!;
+    //public List<SignUpBoxViewModel>? SignUpBox { get; set; } 
+    //public string PlaceholderText { get; set; } = null!;
+    //public LinkViewModel Link { get; set; } = new();
+    //public TermsAndPrivacyViewModel TermsAndPrivacy { get; set; } = null!;
+    //public SignInViewModel Form { get; set; } = null!;
+    [Required]
+    [Display(Name = "Email", Prompt = "Your Email")]
+    public SubscriberDto Subscriber { get; set; } = new();  
 }
