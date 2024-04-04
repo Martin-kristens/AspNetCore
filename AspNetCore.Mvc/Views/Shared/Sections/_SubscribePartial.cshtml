@@ -8,7 +8,7 @@
             <img src="@Model.HeadingImg.ImageUrl" alt="@Model.HeadingImg.AltText">
         </div>
         <div class="subscribe-newsletters">
-            <form id="submitForm" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName" method="post">
+            <form id="submitForm" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName" method="post" asp-fragment="@Model.Id">
                 <div class="subscribe-options">
                     <h5>@Model.Subheading</h5>
                     <div class="boxes">
@@ -27,16 +27,48 @@
                     <input id="emailInput" type="text" placeholder="@Model.PlaceholderText" name="Email">
                     <button type="submit" class="btn-theme">@Model.Link.Text</button>
                 </div>
-                <div class="subscribe-terms-and-privacy">
-                    <p>
-                        @Model.TermsAndPrivacy.Text1
-                        <a asp-controller="@Model.TermsAndPrivacy.Link1.ControllerName" asp-action="@Model.TermsAndPrivacy.Link1.ActionName">@Model.TermsAndPrivacy.Link1.Text</a>
-                        @Model.TermsAndPrivacy.Text2
-                        <a asp-controller="@Model.TermsAndPrivacy.Link2.ControllerName" asp-action="@Model.TermsAndPrivacy.Link2.ActionName">@Model.TermsAndPrivacy.Link2.Text</a>
-                        @Model.TermsAndPrivacy.Text3
-                    </p>
-                </div>
+            
             </form>
         </div>
+            <span class="information">
+            @if (TempData["Status"]?.ToString() == "Success")
+                {
+                    <span class="alert alert-success">
+                        You have been subscribed
+                    </span>
+                }
+            else if (TempData["Status"]?.ToString() == "AlreadyExists")
+                {
+                    <span class="alert alert-warning">
+                        You have already been subscribed
+                    </span>
+                }
+            else if (TempData["Status"]?.ToString() == "Invalid")
+                {
+                    <span class="alert alert-danger">
+                        You must enter a valid email address
+                    </span>
+                }
+            else if (TempData["Status"]?.ToString() == "ConnectionFailes")
+                {
+                    <span class="alert alert-danger">
+                        Unabled to contact the server. Please try again later
+                    </span>
+                }
+                else
+                {
+                    <span class="alert">
+                        <div class="subscribe-terms-and-privacy">
+                            <p>
+                                @Model.TermsAndPrivacy.Text1
+                                <a asp-controller="@Model.TermsAndPrivacy.Link1.ControllerName" asp-action="@Model.TermsAndPrivacy.Link1.ActionName">@Model.TermsAndPrivacy.Link1.Text</a>
+                                @Model.TermsAndPrivacy.Text2
+                                <a asp-controller="@Model.TermsAndPrivacy.Link2.ControllerName" asp-action="@Model.TermsAndPrivacy.Link2.ActionName">@Model.TermsAndPrivacy.Link2.Text</a>
+                                @Model.TermsAndPrivacy.Text3
+                            </p>
+                        </div>
+                    </span>
+                }
+            </span>                                      
     </div>
 </section>

@@ -118,8 +118,15 @@
             }
         }
 
-        .subscribe-terms-and-privacy {
-            text-align: left;
+        .information {
+            margin-left: 16rem;
+            align-self: start;
+            display: flex;
+           /* text-align: left;*/
+
+            .subscribe-terms-and-privacy {
+                /*text-align: left;*/
+            }
         }
     }
 }

@@ -1426,8 +1426,14 @@ form span.field-validation-error {
     width: 39rem;
   }
 }
-.subscribe .container .subscribe-terms-and-privacy {
-  text-align: left;
+.subscribe .container .information {
+  margin-left: 16rem;
+  align-self: start;
+  display: flex;
+  /* text-align: left;*/
+}
+.subscribe .container .information .subscribe-terms-and-privacy {
+  /*text-align: left;*/
 }
 
 #profile-header .profile-picture {

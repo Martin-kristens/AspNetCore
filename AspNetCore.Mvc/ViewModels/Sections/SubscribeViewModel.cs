@@ -1,4 +1,5 @@
-﻿using AspNetCore.Mvc.ViewModels.Components;
+﻿using AspNetCore.Mvc.ViewModels.Authentication;
+using AspNetCore.Mvc.ViewModels.Components;
 
 namespace AspNetCore.Mvc.Models.Sections;
 
@@ -12,4 +13,5 @@ public class SubscribeViewModel
     public string PlaceholderText { get; set; } = null!;
     public LinkViewModel Link { get; set; } = new();
     public TermsAndPrivacyViewModel TermsAndPrivacy { get; set; } = null!;
+    public SignInViewModel Form { get; set; } = null!;
 }

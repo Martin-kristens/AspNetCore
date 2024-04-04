@@ -1,9 +1,7 @@
 ﻿using AspNetCore.Mvc.Dtos;
-using AspNetCore.Mvc.Models.Sections;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Linq.Expressions;
 using System.Text;
 
 namespace AspNetCore.Mvc.Controllers
@@ -13,9 +11,7 @@ namespace AspNetCore.Mvc.Controllers
         public IActionResult Index()
         {
             ViewData["Title"] = "Subscribe";
-            var subscriberDto = new SubscriberDto();
             return View();
-            //return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -35,22 +31,27 @@ namespace AspNetCore.Mvc.Controllers
 
                     if (response.IsSuccessStatusCode)
                     {
-                        //viewModel.IsSubscribed = true;
-                        ViewData["SuccessMessage"] = "Subscription successful!";
+                        TempData["Status"] = "Success";
                         return RedirectToAction("Index", "Home");
 
                     }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.Conflict) 
+                    {
+                        TempData["Status"] = "AlreadyExists";
+                        return RedirectToAction("Index", "Home");
+                    }
+
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
-                    ModelState.AddModelError(string.Empty, "An error occurred while subscribing. Please try again later.");
+                    //ModelState.AddModelError(string.Empty, "An error occurred while subscribing. Please try again later.");
+                    TempData["Status"] = "ConnectionFailed";
                     return View(dto);
                 }
-                //return RedirectToAction("Index");
             }
 
-            return BadRequest(ModelState);
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Terms()
