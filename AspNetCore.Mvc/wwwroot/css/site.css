@@ -1790,6 +1790,28 @@ form span.field-validation-error {
 #account-details aside .profile-info {
   margin: 20px;
   text-align: center;
+  position: relative;
+}
+#account-details aside .profile-info #profileImage img {
+  width: 80%;
+  border-radius: 50%;
+}
+#account-details aside .profile-info form label img {
+  width: 20%;
+  position: absolute;
+  top: 115px;
+  right: 10px;
+  color: black;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+#account-details aside .profile-info form label img:hover {
+  /*border-radius: 50%;*/
+  text-decoration: none;
+  background: #D4D7E5;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 #account-details aside .profile-info h5 {
   margin-top: 15px;

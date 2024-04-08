@@ -1,7 +1,13 @@
-﻿@model AccountDetailsViewModel
+﻿
+
+@model AccountDetailsViewModel
 
 @{
-    ViewData["Title"] = $"{Model.ProfileInfo.FirstName} {Model.ProfileInfo.FirstName}";
+    ViewData["Title"] = $"{Model.ProfileInfo!.FirstName} {Model.ProfileInfo.FirstName}";
+}
+
+@{
+    var user = await UserManager.GetUserAsync(User);
 }
 
 <div class="container">
@@ -16,14 +22,23 @@
 
         <aside>
             <div class="profile-info">
-                <img src="~/images/@Model.ProfileInfo.ProfileImageUrl" alt="@($"{Model.ProfileInfo.FirstName} {Model.ProfileInfo.LastName}'s profile")" />
-                <h5>@($"{Model.ProfileInfo.FirstName} {Model.ProfileInfo.LastName}'s profile")</h5>
-                <p>@Model.ProfileInfo.Email</p>
+                <div id="profileImage">
+                    <img src="~/uploads/@user.ProfileImage" alt="@($"{Model.ProfileInfo.FirstName} {Model.ProfileInfo.LastName}'s profile")" />
+                </div>
+              
+                
+                <form enctype="multipart/form-data" method="post" asp-action="UploadImage" asp-controller="Account">
+                    <input id="uploadFile" type="file" name="file" hidden />
+                    <label for="uploadFile"><img src="~/icons/bx-refresh.svg" /></label>
+                </form>
+
+                <h5>@($"{user.FirstName} {@user.LastName}'s profile")</h5>
+                <p>@user.Email</p>
             </div>
 
             <nav>
-                <a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
-                <a class="btn-gray btn-transparent" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
+                <a class="btn-theme-s" asp-controller="Account" asp-action="Details"><i class="fa-solid fa-gear"></i> Account Details</a>
+                <a class="btn-gray btn-transparent" asp-controller="Auth" asp-action="SignOut"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
             </nav>
         </aside>
 

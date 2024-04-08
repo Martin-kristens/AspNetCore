@@ -11,6 +11,43 @@
         .profile-info {
             margin: 20px;
             text-align: center;
+            position: relative;
+
+            #profileImage {
+
+
+                img {
+                    width: 80%;
+                    border-radius: 50%;
+                }
+            }
+
+
+
+            form {
+
+                label {
+
+                    img {
+                        width: 20%;
+                        position: absolute;
+                        top: 115px;
+                        right: 10px;
+                        color: black;
+                        background-color: $white;
+                        border-radius: 50%;
+
+                        &:hover {
+                            /*border-radius: 50%;*/
+                            text-decoration: none;
+                            background: $gray-400;
+                            color: $white;
+                            cursor: pointer;
+                            transition: all 0.25s ease-in-out;
+                        }
+                    }
+                }
+            }
 
             h5 {
                 margin-top: 15px;
@@ -43,7 +80,6 @@
                 &:hover {
                     color: $black;
                     background: $gray-200;
-                    
                 }
             }
         }

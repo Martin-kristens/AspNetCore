@@ -9,4 +9,10 @@
 
 @using AspNetCore.Mvc.ViewModels.Authentication
 @using AspNetCore.Mvc.Dtos
+@using Infrastrucutre.Entities
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<UserEntity> SignInManager
+@inject UserManager<UserEntity> UserManager
+
 
