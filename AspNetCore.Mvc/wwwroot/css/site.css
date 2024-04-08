@@ -372,6 +372,7 @@ header .container {
 }
 header .container #logo {
   grid-area: logo;
+  background-color: transparent;
 }
 header .container #menu {
   grid-area: menu;
@@ -410,6 +411,14 @@ header .container .account-buttons {
 }
 header .container .account-buttons .profile-img {
   height: 100%;
+  border-radius: 50%;
+}
+header .container .account-buttons .profile-img:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+  transform: translateY(-4px);
+  color: #FFFFFF;
+  transition: all 0.35s ease-in-out;
 }
 header .container .btn-mobile {
   grid-area: mobile;
@@ -1199,6 +1208,14 @@ form span.field-validation-error {
 .download-app .container .download-app-content .app-download .right-side-download .app-stores img {
   width: 30%;
 }
+.download-app .container .download-app-content .app-download .right-side-download .app-stores img:hover {
+  text-decoration: none;
+  box-shadow: 10px 2px 8px rgba(0, 10, 255, 0.2);
+  transform: translateY(-4px);
+  color: #FFFFFF;
+  transition: all 0.35s ease-in-out;
+  border-radius: 10%;
+}
 
 .integrate-tool {
   padding-top: 3rem;
@@ -1806,7 +1823,6 @@ form span.field-validation-error {
   border-radius: 50%;
 }
 #account-details aside .profile-info form label img:hover {
-  /*border-radius: 50%;*/
   text-decoration: none;
   background: #D4D7E5;
   color: #FFFFFF;

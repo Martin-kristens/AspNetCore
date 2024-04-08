@@ -108,6 +108,15 @@
 
                         img {
                             width: 30%;
+
+                            &:hover {
+                                text-decoration: none;
+                                box-shadow: 10px 2px 8px rgba(0, 10, 255, 0.2);
+                                transform: translateY(-4px);
+                                color: $white;
+                                transition: all 0.35s ease-in-out;
+                                border-radius: 10%;
+                            }
                         }
                     }
                 }
