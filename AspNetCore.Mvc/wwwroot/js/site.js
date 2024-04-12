@@ -48,3 +48,43 @@ function handleProfileImageUpload() {
 
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    select()
+})
+function select() {
+    try {
+        let select = document.querySelector('.select')
+        let selected = select.querySelector('.select-options')
+        let selectOptions = select.querySelector('.user-option')
+
+        selected.addEventListener('click', function () {
+            selectOptions.style.display = (selectOptions.style.display === 'block') ? 'none' : 'block'
+        })
+
+        let options = selectOptions.querySelectorAll('.option')
+        options.forEach(function (option) {
+            option.addEventListener('click', function () {
+                selected.innerHTML = this.textContent
+                selectOptions.style.display = 'none'
+                updateCourseByFilter()
+            })
+        })
+
+    } catch {}
+}
+
+
+function updateCourseByFilter() {
+
+    const category = document.querySelector('.select .select - options').getAttribute('data-value') || 'all'
+    const url = `/courses/index?category=${encodeURIComponent(category)}`
+
+    fetch(url)
+        .then(res => res.text())
+        .then(data => {
+            const parser = new DOMParser()
+            const dom = parser.parseFromString(data, 'text/html')
+            document.querySelector('.items').innerHTML = dom.querySelector('.items').innerHTML
+        })
+}
