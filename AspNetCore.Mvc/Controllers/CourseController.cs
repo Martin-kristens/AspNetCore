@@ -1,14 +1,25 @@
 ﻿
 using AspNetCore.Mvc.ViewModels.IndexViewModels;
+using Infrastrucutre.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore.Mvc.Controllers;
 
-public class CourseController : Controller
+public class CourseController(CategoryService category, CourseService course) : Controller
 {
-    public IActionResult Index()
+    private readonly CategoryService _category = category;
+    private readonly CourseService _course = course;
+
+    public async Task<IActionResult> Index()
     {
-        var viewModel = new CourseIndexViewModel();
+        var viewModel = new CourseIndexViewModel
+        {
+            Categories = await _category.GetCategoriesAsync(),
+            Courses = await _course.GetCoursesAsync()
+        };
+
+
+
         ViewData["Title"] = "Courses";
 
         return View(viewModel);

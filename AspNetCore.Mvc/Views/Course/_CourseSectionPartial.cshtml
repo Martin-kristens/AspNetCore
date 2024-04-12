@@ -1,83 +1,96 @@
-﻿@model CourseSectionViewModel
+﻿
+@model CourseIndexViewModel
 
 
-<section id="@Model.Id" class="course-section">
+<section id="course-section" class="course-section">
     <div class="container">
 
         <div class="main-nav">
-            <a class="menu-link" asp-controller="Home" asp-action="Index"><img src="@Model.Nav.HouseIcon.ImageUrl" alt="@Model.Nav.HouseIcon.AltText"></a>
-            <a class="menu-link" asp-controller="Home", asp-action="Index"><p>@Model.Nav.HomeLink.Text</p></a>
-            <img src="@Model.Nav.Vector.ImageUrl" alt="@Model.Nav.HouseIcon.AltText">
-            <a class="menu-link" asp-controller="Course", asp-action="Index"><p>@Model.Nav.CoursesLink.Text</p></a>
+            <a class="menu-link" asp-controller="Home" asp-action="Index"><img src="~/icons/home-icon.svg" alt="house icon"></a>
+            <a class="menu-link" asp-controller="Home", asp-action="Index"><p> Home</p></a>
+            <img src="~/icons/Vector.svg" alt="vector icon">
+            <a class="menu-link" asp-controller="Course", asp-action="Index"><p> Course</p></a>
         </div>
 
-        <div class="course-search">
-            <h2>@Model.CourseSearch.Title</h2>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle btn-theme" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    @Model.CourseSearch.ButtonText.Text
-                </button>
-                <ul class="dropdown-menu">
-                    @if (Model.CourseSearch != null)
-                    {
-                        @foreach (var item in Model.CourseSearch.Items)
+        <form>
+            <div class="course-search">
+                <h1>Courses</h1>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btn-dropdown" data-value="all" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        All categories
+                    </button>
+                    <ul class="dropdown-menu">
+                        @if (Model.Categories != null)
                         {
-                            <li><a class="dropdown-item" asp-controller="" asp-action="">@item.Text</a></li>
+                            @foreach (var category in Model.Categories)
+                            {
+                                <button class="btn btn-secondary dropdown-toggle btn-dropdown" data-value="@category.CategoryName" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @category.CategoryName
+                                </button>
+                            }
                         }
-                    }
-                </ul>
-                <div class="input-container">
-                    <input type="text" id="courses" name="courses" placeholder="@Model.CourseSearch.Placeholder">
-                    <i id="search" class="fa-solid fa-search"></i>
+                    </ul>
+                    <div class="input-container">
+                        <input type="text" id="searchQuery" name="courses" placeholder="Search courses">
+                        <i id="search" class="fa-solid fa-search"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="course-card">
-            
-                @if (Model.CourseCard != null)
+        </form>
+    
+
+              
+                @if (Model.Courses != null)
                 {
-                    @foreach (var card in Model.CourseCard)
+                    @foreach (var card in Model.Courses)
                     {
-                        <div class="card">
-                            <img class="best-seller" src="@card.CardImg.ImageUrl" alt="@card.CardImg.AltText">
-                            <a asp-controller="" asp-action=""><img src="@card.ImageIcon.ImageUrl" alt="@card.ImageIcon.AltText"></a>
-                            <img class="circle-in-picture" src="@card.CircleIcon.ImageUrl" alt="@card.CircleIcon.AltText">
-                            <div class="card-info">
+                         <div class="course-card" onclick="location.href='@Url.Action("Details", "Course", new { id = card.Id})'">
+                            <div class="card">
+                                @if (card.BestSeller)
+                                {
+                                    <img class="best-seller" src="~/icons/best-seller.svg" alt="course image">
+                                }
+
+                                <a asp-controller="" asp-action="" asp-route-id="@card.Id"><img src="~/images/@card.ImageUrl" alt=""></a>
+                                <button class="btn btn-circle btn-bookmark bookmark" onclick="saveCourse(@card.Id)"><i class="fa-regular fa-bookmark"></i></button>
+                                <div class="card-info">
                              
 
-                                <h4>@card.CardHeader</h4>
-                                <p>@card.Author</p>
-                                <div class="price-sale">
-                                    @if (!string.IsNullOrEmpty(card.PriceSale) && card.PriceSale.Trim() != "")
-                                    {
-                                        <p class="course-price-sale">@card.PriceSale</p>
-                                        <p class="course-price strikethrough">@card.PriceText</p>
-                                    }
-                                    else
-                                    {
-                                        <p class="course-price">@card.PriceText</p>
-                                    }
+                                    <h4>@card.Title</h4>
+                                    <p>@card.Author</p>
+                                    <div class="price-sale">
+                                        @if (!string.IsNullOrEmpty(card.DiscountPrice) && card.DiscountPrice.Trim() != "")
+                                        {
+                                            <p class="course-price-sale">@card.DiscountPrice</p>
+                                            <p class="course-price strikethrough">@card.Price</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="course-price" @(!string.IsNullOrEmpty(card.DiscountPrice) ? "discount-enabled" : "")>@card.Price</p>
+                                        }
                                 
-                                </div>                           
-                                <div class="card-line"></div>
-                                <div class="hours-and-ratings">
-                                    <img src="@card.ClockIcon.ImageUrl" alt="@card.ClockIcon.AltText">
-                                    <p>@card.HoursText</p>
-                                    <img src="@card.ThumbIcon.ImageUrl" alt="@card.ThumbIcon.AltText ">
-                                    <p>@card.RatingText</p>
+                                    </div>                           
+                                    <div class="card-line"></div>
+                                    <div class="hours-and-ratings">
+                                        <img src="~/icons/clock.svg" alt="clock">
+                                        <p>@card.Hours</p>
+                                        <img src="~/icons/thumb-like.svg" alt="thumb up ">
+                                        <p>$"@card.LikesInProcent (@card.LikesInNumbers)"</p>
+                                    </div>
                                 </div>
+                    
                             </div>
-                        </div>
+                         </div>
                     }
                 }
-        </div>
+        
 
 
-        <nav class="card-navigation">
+       @*  <nav class="card-navigation">
             <ul class="navigation">
                 <li class="page-item">
                     <a class="page-link" href="#">
-                        <img src="@Model.LeftArrow.ImageUrl" alt="@Model.LeftArrow.AltText">
+                        <img src="~/icons/bx-arrow-left.svg" alt="left arrow">
                     </a>
                 </li>
                 @foreach (var links in Model.PageLinks)
@@ -91,6 +104,77 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav> *@
     </div>
 </section>
+
+@* @{
+    ViewData["Title"] = "Courses";
+}
+
+
+<section id="course-section">
+    <div class="container">
+
+        <div class="header">
+            <div class="main-nav">
+                <a class="menu-link" asp-controller="Home" asp-action="Index"><img src="@Model.Nav.HouseIcon.ImageUrl" alt="@Model.Nav.HouseIcon.AltText"></a>
+                <a class="menu-link" asp-controller="Home" , asp-action="Index"><p>@Model.Nav.HomeLink.Text</p></a>
+                <img src="@Model.Nav.Vector.ImageUrl" alt="@Model.Nav.HouseIcon.AltText">
+                <a class="menu-link" asp-controller="Course" , asp-action="Index"><p>@Model.Nav.CoursesLink.Text</p></a>
+            </div>
+
+
+            <form>
+                <h1>Courses</h1>
+                <div class="right-section">
+                    <div class="select">
+                        <div class="selected">All categories</div>
+                        <div class="select-options">
+                            <div class="option" data-value="all">All categories</div>
+                        </div>
+                    </div>
+
+                    <div class="input-search-group">
+                        <input id="searchQuery" name="searchQuery" placeholder="Search courses" />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="items">
+
+            <a class="course" asp-action="Details" asp-controller="Course" asp-route-id="">
+                <div class="bestseller">Best Seller</div>
+
+                <button class="btn btn-circle bookmark" asp-action="Join" asp-controller="Course"><img src="~/icons/bookmark.svg"/></button>
+
+                <img class="course-image" src="~/images/course_1.svg" alt=""/>
+
+                <div class="content">
+                    <h5 class="title">Title</h5>
+                    <p class="author">By ...</p>
+                    <div class="pricing">
+                        <div class="discount">$ ...</div>
+
+                        <div class="original">$ ...</div>
+                    </div>
+                    <div class="card-line"></div>
+                    <div class="footer">
+                        <div class="hours">
+                            <i class="fa-regular fa-clock">... hours</i>
+                        </div>
+                        <div class="likes">
+                            <i class="fa-regular fa-thumbs-up">... (...)</i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section> *@
