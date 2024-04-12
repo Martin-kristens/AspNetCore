@@ -37,7 +37,6 @@ function handleProfileImageUpload() {
         let fileUploader = document.getElementById('uploadFile')
         console.log('inside handleProfileImageUpload')
         if (fileUploader != undefined) {
-            console.log('inne 3')
             fileUploader.addEventListener('change', function () {
                 if (this.files.length > 0) 
                     this.form.submit()
@@ -51,40 +50,56 @@ function handleProfileImageUpload() {
 
 document.addEventListener('DOMContentLoaded', function () {
     select()
+    console.log("hej")
 })
 function select() {
+    console.log("select")
     try {
-        let select = document.querySelector('.select')
-        let selected = select.querySelector('.select-options')
-        let selectOptions = select.querySelector('.user-option')
-
-        selected.addEventListener('click', function () {
+        console.log(1)
+        let selected = document.querySelector('.selected')
+        console.log(2)
+        let menu = document.querySelector('.menu')
+        console.log(3)
+        let selectOptions = document.querySelector('.select-options')
+        console.log(4)
+        
+        menu.addEventListener('click', function () {
             selectOptions.style.display = (selectOptions.style.display === 'block') ? 'none' : 'block'
+            console.log(5)
         })
-
+        console.log(6)
         let options = selectOptions.querySelectorAll('.option')
         options.forEach(function (option) {
+            console.log(7)
             option.addEventListener('click', function () {
+                console.log(8)
                 selected.innerHTML = this.textContent
+                console.log(9)
                 selectOptions.style.display = 'none'
+                console.log(10)
                 updateCourseByFilter()
+                console.log(11)
+         
             })
         })
 
-    } catch {}
+    } catch { console.log("catch") }
 }
 
 
 function updateCourseByFilter() {
-
-    const category = document.querySelector('.select .select - options').getAttribute('data-value') || 'all'
-    const url = `/courses/index?category=${encodeURIComponent(category)}`
-
+    console.log(12)
+    const category = document.querySelector('.selected').innerHTML || 'all'
+    console.log(22)
+    
+    const url = `/course/index?category=${encodeURIComponent(category)}`
+    console.log(23)
     fetch(url)
+    console.log(24)
         .then(res => res.text())
         .then(data => {
             const parser = new DOMParser()
             const dom = parser.parseFromString(data, 'text/html')
-            document.querySelector('.items').innerHTML = dom.querySelector('.items').innerHTML
+            document.querySelector('.course-card').innerHTML = dom.querySelector('.course-card').innerHTML
         })
 }

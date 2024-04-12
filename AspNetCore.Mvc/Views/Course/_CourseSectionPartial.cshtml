@@ -11,30 +11,36 @@
             <img src="~/icons/Vector.svg" alt="vector icon">
             <a class="menu-link" asp-controller="Course", asp-action="Index"><p> Course</p></a>
         </div>
-
+        <div class="formDiv">
+        <h1>Courses</h1>
         <form>
             <div class="course-search">
-                <h1>Courses</h1>
-                <div class="select">
-                    <select name="select-options" id="course">
-                        <option class="user-option" value="all" data-value="all" selected>All courses</option>
+                <div class="dropdown">
+                    <div class="menu">
+                        <div class="selected">All categories</div>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                   
+                    <div class="select-options" name="select-options" id="course">       
+                        <div class="option" data-value="all">All categories</div>
                         @if (Model.Categories != null)
                         {
                             @foreach (var category in Model.Categories)
                             {
-                                <option class="user-option" value="volvo">@category.CategoryName</option>
+                                <div class="option" data-value="@category.CategoryName">@category.CategoryName</div>
                             }
                         }                                                 
-                    </select>
+                    </div>
 
+                   
+                </div>
                     <div class="input-container">
                         <input type="text" id="searchQuery" name="courses" placeholder="Search courses">
                         <i id="search" class="fa-solid fa-search"></i>
                     </div>
-                </div>
             </div>
         </form>
-
+        </div>
 
             <div class="course-card" >
                 @if (Model.Courses != null)
