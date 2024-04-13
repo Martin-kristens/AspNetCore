@@ -50,52 +50,52 @@ function handleProfileImageUpload() {
 
 document.addEventListener('DOMContentLoaded', function () {
     select()
-    console.log("hej")
+    searchQuery()
 })
 function select() {
-    console.log("select")
+
     try {
-        console.log(1)
         let selected = document.querySelector('.selected')
-        console.log(2)
         let menu = document.querySelector('.menu')
-        console.log(3)
         let selectOptions = document.querySelector('.select-options')
-        console.log(4)
         
         menu.addEventListener('click', function () {
             selectOptions.style.display = (selectOptions.style.display === 'block') ? 'none' : 'block'
-            console.log(5)
         })
-        console.log(6)
+
         let options = selectOptions.querySelectorAll('.option')
         options.forEach(function (option) {
-            console.log(7)
             option.addEventListener('click', function () {
-                console.log(8)
                 selected.innerHTML = this.textContent
-                console.log(9)
                 selectOptions.style.display = 'none'
-                console.log(10)
-                updateCourseByFilter()
-                console.log(11)
+                let category = this.getAttribute('data-value')
+                selected.setAttribute('data-value', category)
+                updateCoursesByFilters()
          
             })
         })
 
-    } catch { console.log("catch") }
+    } catch { }
 }
 
 
-function updateCourseByFilter() {
-    console.log(12)
-    const category = document.querySelector('.selected').innerHTML || 'all'
-    console.log(22)
-    
-    const url = `/course/index?category=${encodeURIComponent(category)}`
-    console.log(23)
+function searchQuery() {
+    try {
+        document.querySelector('#searchQuery').addEventListener('keyup', function () {
+            const value = this.value
+            updateCoursesByFilters(value)
+        })
+    } catch {
+
+    }
+}
+
+function updateCoursesByFilters() {
+    const category = document.querySelector('.selected').getAttribute('data-value') || 'all'
+    const searchQuery = document.querySelector('#searchQuery').value
+
+    const url = `/course/index?category=${encodeURIComponent(category)}&searchQuery=${encodeURIComponent(searchQuery)}`
     fetch(url)
-    console.log(24)
         .then(res => res.text())
         .then(data => {
             const parser = new DOMParser()

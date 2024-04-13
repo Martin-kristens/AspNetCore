@@ -35,11 +35,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: 1rem;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: end;
         }
 
         form {
             display: flex;
             flex-direction: column;
+            justify-content: end;
             gap: 15px;
 
             @include md {
@@ -49,33 +56,36 @@
             .course-search {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                text-align: center;
+                text-align: left;
                 margin-top: 2rem;
+                gap: 1.2rem;
 
                 @include md {
-                    margin-top: 2rem;
+                    margin-top: auto;
                     flex-direction: row;
+                    align-items: center;
                     justify-content: space-between;
                 }
 
                 .dropdown {
-                    border: 2px solid var(--color-gray-400);
+                    border: 2px solid $gray-400;
                     border-radius: 7px !important;
-                    background-color: var(--color-background);
-                    color: var(--color-gray-900);
+                    background-color: $white;
+                    color: $gray-700;
                     padding: 10px 15px;
                     width: 100%;
-                    min-width: 330px;
+                    min-width: 250px;
                     height: 48px;
                     position: relative;
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
 
                     .menu {
 
                         .selected {
-                            color: var(--color-gray-500);
+                            color: $gray-800;
                         }
 
                         i {
@@ -97,6 +107,7 @@
                         border: 1px solid black;
                         border-radius: 7px !important;
                         z-index: 50;
+                        border: 1px solid $gray-600;
                     }
 
                     .option {
@@ -105,10 +116,9 @@
                         font-weight: 600;
                         font-size: 15px;
                         padding: 5px;
-                        border: 1px solid var(--color-gray-600);
 
                         &:hover {
-                            background-color: var(--color-gray-500);
+                            background-color: $gray-300;
                         }
                     }
                 }
@@ -116,157 +126,130 @@
                 .input-container {
                     position: relative;
 
+
                     input {
                         border-radius: 0.3rem;
-                        padding: 0.3rem;
+                        border: 2px solid $gray-400;
+                        padding: 0.6rem;
+                        width: 19rem;
                     }
 
                     i {
                         position: absolute;
-                        top: 12px;
+                        top: 17px;
                         right: 20px;
                     }
                 }
             }
-            }
-            /*  form {
+        }
 
-            .course-search {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+
+        .course-card {
+            padding-bottom: 1rem;
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            @include lg {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+
+            .card {
                 margin-top: 2rem;
 
-                @include md {
-                    margin-top: 2rem;
-                    flex-direction: row;
-                    justify-content: space-between;
+                &:hover {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+                    transition: all 0.35s ease-in-out;
                 }
 
-                .select {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    column-gap: 1rem;
-
-                    .dropdown {
-
-                        .btn-dropdown {
-                            background-color: white;
-                            color: black;
-                        }
-                    }
-
-                    .input-container {
-                        position: relative;
-
-                        input {
-                            border-radius: 0.3rem;
-                            padding: 0.3rem;
-                        }
-
-                        i {
-                            position: absolute;
-                            top: 12px;
-                            right: 20px;
-                        }
-                    }
-                }
-            }
-        }*/
-
-
-            .course-card {
-                padding-bottom: 1rem;
-
-                @include md {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1rem;
+                .best-seller {
+                    width: 20%;
+                    height: auto;
+                    position: absolute;
+                    top: 25px;
+                    left: 12px;
+                    z-index: 10;
                 }
 
-                @include lg {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 0.2rem;
+                    position: relative;
                 }
 
+                .bookmark {
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 25px;
+                    right: 20px;
+                    background-color: white;
+                }
 
-                .card {
-                    margin-top: 2rem;
+                .card-info {
+                    padding: 1rem;
 
-                    &:hover {
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-                        transition: all 0.35s ease-in-out;
-                    }
+                    h5 {
+                        @include standard-heading;
+                        font-size: 24px !important;
 
-                    .best-seller {
-                        width: 20%;
-                        height: auto;
-                        position: absolute;
-                        top: 25px;
-                        left: 12px;
-                        z-index: 10;
-                    }
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 0.2rem;
-                        position: relative;
-                    }
-
-                    .bookmark {
-                        border-radius: 50%;
-                        position: absolute;
-                        top: 25px;
-                        right: 20px;
-                        background-color: white;
-                    }
-
-                    .card-info {
-                        padding: 1rem;
-
-                        h4 {
+                        @include md {
                             @include standard-heading;
-                            font-size: 24px !important;
-
-                            @include md {
-                                @include standard-heading;
-                                font-size: 14px !important;
-                            }
-
-                            @include xl {
-                                @include standard-heading;
-                                font-size: 16px !important;
-                                max-width: 75%;
-                            }
+                            font-size: 14px !important;
                         }
 
-                        p {
+                        @include xl {
+                            @include standard-heading;
+                            font-size: 16px !important;
+                            max-width: 75%;
+                        }
+                    }
 
-                            @include md {
-                                @include standard-text;
-                                font-size: 12px !important;
-                            }
+                    p {
 
-                            @include md {
-                                @include standard-text;
-                                font-size: 14px !important;
-                            }
+                        @include md {
+                            @include standard-text;
+                            font-size: 12px !important;
                         }
 
-                        .course-price {
+                        @include md {
+                            @include standard-text;
+                            font-size: 14px !important;
+                        }
+                    }
+
+                    .course-price {
+                        color: $theme;
+
+                        @include md {
+                            @include standard-text;
+                            font-size: 16px !important;
                             color: $theme;
+                            padding-bottom: 2rem;
+                        }
+
+                        @include xl {
+                            font-size: 18px !important;
+                        }
+                    }
+
+                    .price-sale {
+                        display: flex;
+                        gap: 0.8rem;
+
+                        .course-price-sale {
+                            color: $danger;
 
                             @include md {
-                                @include standard-text;
                                 font-size: 16px !important;
-                                color: $theme;
-                                padding-bottom: 2rem;
                             }
 
                             @include xl {
@@ -274,93 +257,94 @@
                             }
                         }
 
-                        .price-sale {
-                            display: flex;
-                            gap: 2rem;
+                        .course-price {
+                            color: $theme;
 
-                            .course-price-sale {
-                                color: $danger;
-
-                                @include md {
-                                    font-size: 16px !important;
-                                }
-
-                                @include xl {
-                                    font-size: 18px !important;
-                                }
+                            @include md {
+                                font-size: 16px !important;
                             }
 
-                            .course-price {
-                                color: $theme;
-
-                                @include md {
-                                    font-size: 16px !important;
-                                }
-
-                                @include xl {
-                                    font-size: 18px !important;
-                                }
-                            }
-
-                            .strikethrough {
-                                text-decoration: line-through;
+                            @include xl {
+                                font-size: 18px !important;
                             }
                         }
 
-
-                        .card-line {
-                            display: flex;
-                            justify-content: center;
-                            align-self: center;
-                            width: 90%;
-                            margin-bottom: 1rem;
-                            border-bottom: 1px solid $gray-300;
+                        .strikethrough {
+                            text-decoration: line-through;
+                            color: gray;
                         }
 
-                        .hours-and-ratings {
+                        .regular-price {
+                            color: gray;
+                        }
+                    }
+
+
+                    .card-line {
+                        display: flex;
+                        justify-content: center;
+                        align-self: center;
+                        width: 90%;
+                        margin-bottom: 1rem;
+                        border-bottom: 1px solid $gray-300;
+                    }
+
+                    .hours-and-ratings {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 1.6rem;
+
+                        .hours {
                             display: flex;
                             align-items: center;
-                            justify-content: flex-start;
-                            gap: 1rem;
+                            gap: 0.2rem;
+                        }
 
-                            img {
-                                width: 1rem;
+                        .rating {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.2rem;
+                        }
+
+                        img {
+                            width: 1rem;
+                        }
+
+                        p {
+                            margin: 0;
+                            color: $gray-600;
+
+                            @include md {
+                                @include standard-text;
+                                font-size: 10px !important;
                             }
 
-                            p {
-                                margin: 0;
-                                color: $gray-600;
-
-                                @include md {
-                                    @include standard-text;
-                                    font-size: 10px !important;
-                                }
-
-                                @include lg {
-                                    @include standard-text;
-                                    font-size: 0.9rem !important;
-                                }
+                            @include lg {
+                                @include standard-text;
+                                font-size: 0.9rem !important;
                             }
                         }
                     }
                 }
             }
+        }
 
 
-            .card-navigation {
+        .card-navigation {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+            .navigation {
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-
-
-                .navigation {
-                    display: flex;
-                    column-gap: 2rem;
-                    list-style-type: none;
-                }
+                column-gap: 2rem;
+                list-style-type: none;
             }
         }
     }
+}
 
 
