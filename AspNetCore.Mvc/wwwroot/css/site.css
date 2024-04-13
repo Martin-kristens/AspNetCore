@@ -1906,6 +1906,7 @@ form span.field-validation-error {
   color: black;
   background-color: #FFFFFF;
   border-radius: 50%;
+  border: 1px solid #D4D7E5;
 }
 #account-details aside .profile-info form label img:hover {
   text-decoration: none;
