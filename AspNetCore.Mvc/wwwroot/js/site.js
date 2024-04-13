@@ -37,7 +37,6 @@ function handleProfileImageUpload() {
         let fileUploader = document.getElementById('uploadFile')
         console.log('inside handleProfileImageUpload')
         if (fileUploader != undefined) {
-            console.log('inne 3')
             fileUploader.addEventListener('change', function () {
                 if (this.files.length > 0) 
                     this.form.submit()
@@ -47,4 +46,60 @@ function handleProfileImageUpload() {
     catch {
 
     }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    select()
+    searchQuery()
+})
+function select() {
+
+    try {
+        let selected = document.querySelector('.selected')
+        let menu = document.querySelector('.menu')
+        let selectOptions = document.querySelector('.select-options')
+        
+        menu.addEventListener('click', function () {
+            selectOptions.style.display = (selectOptions.style.display === 'block') ? 'none' : 'block'
+        })
+
+        let options = selectOptions.querySelectorAll('.option')
+        options.forEach(function (option) {
+            option.addEventListener('click', function () {
+                selected.innerHTML = this.textContent
+                selectOptions.style.display = 'none'
+                let category = this.getAttribute('data-value')
+                selected.setAttribute('data-value', category)
+                updateCoursesByFilters()
+         
+            })
+        })
+
+    } catch { }
+}
+
+
+function searchQuery() {
+    try {
+        document.querySelector('#searchQuery').addEventListener('keyup', function () {
+            const value = this.value
+            updateCoursesByFilters(value)
+        })
+    } catch {
+
+    }
+}
+
+function updateCoursesByFilters() {
+    const category = document.querySelector('.selected').getAttribute('data-value') || 'all'
+    const searchQuery = document.querySelector('#searchQuery').value
+
+    const url = `/course/index?category=${encodeURIComponent(category)}&searchQuery=${encodeURIComponent(searchQuery)}`
+    fetch(url)
+        .then(res => res.text())
+        .then(data => {
+            const parser = new DOMParser()
+            const dom = parser.parseFromString(data, 'text/html')
+            document.querySelector('.course-card').innerHTML = dom.querySelector('.course-card').innerHTML
+        })
 }
