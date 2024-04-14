@@ -54,9 +54,9 @@
                     <div class="subscribe-field-input-group">
                         <i class="fa-regular fa-envelope"></i> 
                         <input id="input-field" asp-for="@Model.Email" placeholder="Your Email" type="email" />
-                        <span class="this-important" asp-validation-for="@Model.Email"></span>
+                        
                     </div>
-   
+                    <span class="this-important" asp-validation-for="@Model.Email"></span>
                     <button type="submit" class="btn btn-theme">Subscribe *</button>
                 </div>
 

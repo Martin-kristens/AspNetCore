@@ -216,48 +216,5 @@ public class HomeIndexViewModel()
 
     };
 
-    public SubscriberDto Subscribe { get; set; } = new SubscriberDto()
-    {
-        //Id = "sign-up",
-        //Title = "Don't Want to Miss Anything?",
-        //HeadingImg = new ImageViewModel() { ImageUrl = "../icons/sign-up-line.svg", AltText = "blue winding line" },
-        //Subheading = "Sign up for Newsletters",
-        //SignUpBox =
-        //[
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Daily Newsletter"
-        //    },
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Advertising Updates"
-        //    },
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Week in Review"
-        //    },
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Event Updates"
-        //    },
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Startups Weekly"
-        //    },
-        //    new SignUpBoxViewModel()
-        //    {
-        //        LabelText = "Podcasts"
-        //    },
-        //],
-        //PlaceholderText = "Your Email",
-        //Link = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Index", Text = "Subscribe *" },
-        //TermsAndPrivacy = new TermsAndPrivacyViewModel()
-        //{
-        //    Text1 = "* Yes, I agree to the",
-        //    Link1 = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Terms", Text = "terms" },
-        //    Text2 = "and",
-        //    Link2 = new LinkViewModel() { ControllerName = "Subscribe", ActionName = "Privacy", Text = "privacy" },
-        //    Text3 = "policy."
-        //}
-    };
+    public SubscriberDto Subscribe { get; set; } = new SubscriberDto(){ };
 }

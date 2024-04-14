@@ -97,6 +97,7 @@
         }
 
         .subscribe-field {
+            position: relative;
             display: flex;
             gap: 1rem;
             padding-bottom: 1rem;
@@ -120,6 +121,7 @@
                 #input-field {
                     width: 100%;
                     border: $gray-400;
+                    padding-left: 2.5rem;
 
                     @include md {
                     }
@@ -127,18 +129,19 @@
                     @include lg {
                     }
                 }
+            }
 
-                .this-important {
-                    position: absolute;
-                    top: 18px;
-                    right: 20px;
-                    color: red;
-                    font-size: 14px;
-                }
+            .this-important {
+                position: absolute;
+                top: -25px;
+                left: 0;
+                color: red;
+                font-size: 14px;
+                border: $danger;
             }
 
             ::placeholder {
-                padding-left: 2rem;
+                padding-left: 0.5rem;
             }
         }
 
