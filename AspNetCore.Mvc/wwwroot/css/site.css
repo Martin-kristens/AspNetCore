@@ -464,21 +464,6 @@ footer .container .social-media {
   gap: 20px;
   margin-bottom: 30px;
 }
-footer .container .social-media a {
-  background-color: #E2E5F1;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-}
-footer .container .social-media a i {
-  font-size: 1.4rem;
-  color: #33354D;
-}
-footer .container .social-media a:hover {
-  transform: scale(1.2);
-  transition: all ease-in-out 200ms;
-  text-decoration: none;
-  color: #FFFFFF;
-}
 footer .container p span {
   display: none;
 }
@@ -1375,7 +1360,8 @@ form span.field-validation-error {
 }
 .subscribe .container .subscribe-newsletters .subscribe-options {
   display: flex;
-  /*flex-wrap: wrap;*/
+  align-items: flex-start;
+  justify-content: center;
   gap: 1.2rem;
 }
 .subscribe .container .subscribe-newsletters .subscribe-options h5 {
@@ -1387,11 +1373,7 @@ form span.field-validation-error {
   color: #0B0F19;
   font-size: 20px !important;
   padding-bottom: 1rem;
-}
-@media (min-width: 1400px) {
-  .subscribe .container .subscribe-newsletters .subscribe-options h5 {
-    max-width: 10rem;
-  }
+  text-align: left;
 }
 .subscribe .container .subscribe-newsletters .subscribe-options .boxes {
   display: flex;
@@ -1428,29 +1410,54 @@ form span.field-validation-error {
   gap: 1rem;
   padding-bottom: 1rem;
   text-align: left;
+  margin-top: 2rem;
 }
-.subscribe .container .subscribe-field input {
-  border-radius: 0.37rem;
-  border: none;
+.subscribe .container .subscribe-field .subscribe-field-input-group {
+  width: 75%;
+  position: relative;
 }
-@media (min-width: 768px) {
-  .subscribe .container .subscribe-field input {
-    width: 33rem;
-  }
+.subscribe .container .subscribe-field .subscribe-field-input-group i {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  color: #D4D7E5;
 }
-@media (min-width: 992px) {
-  .subscribe .container .subscribe-field input {
-    width: 39rem;
-  }
+.subscribe .container .subscribe-field .subscribe-field-input-group #input-field {
+  width: 100%;
+  border: #D4D7E5;
+}
+.subscribe .container .subscribe-field .subscribe-field-input-group .this-important {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: red;
+  font-size: 14px;
+}
+.subscribe .container .subscribe-field ::placeholder {
+  padding-left: 2rem;
 }
 .subscribe .container .information {
-  margin-left: 16rem;
+  margin-left: 9rem;
   align-self: start;
   display: flex;
-  /* text-align: left;*/
+  text-align: left;
 }
 .subscribe .container .information .subscribe-terms-and-privacy {
-  /*text-align: left;*/
+  text-align: left;
+  color: #9397AD;
+}
+.subscribe .container .information .subscribe-terms-and-privacy a {
+  text-decoration: none;
+}
+.subscribe .container .information .subscribe-terms-and-privacy a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+.subscribe .container .information .subscribe-terms-and-privacy span {
+  color: #6366F1;
+}
+.subscribe .container .information .subscribe-terms-and-privacy span:hover {
+  color: #000000;
 }
 
 #profile-header .profile-picture {

@@ -53,17 +53,15 @@
 
             .subscribe-options {
                 display: flex;
-                /*flex-wrap: wrap;*/
+                align-items: flex-start;
+                justify-content: center;
                 gap: 1.2rem;
 
                 h5 {
                     @include standard-heading;
                     font-size: 20px !important;
                     padding-bottom: 1rem;
-
-                    @include xxl {
-                        max-width: 10rem;
-                    }
+                    text-align: left;
                 }
 
                 .boxes {
@@ -103,29 +101,73 @@
             gap: 1rem;
             padding-bottom: 1rem;
             text-align: left;
+            margin-top: 2rem;
 
-            input {
-                border-radius: 0.37rem;
-                border: none;
 
-                @include md {
-                    width: 33rem;
+
+
+            .subscribe-field-input-group {
+                width: 75%;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 22px;
+                    left: 20px;
+                    color: $gray-400;
                 }
 
-                @include lg {
-                    width: 39rem;
+                #input-field {
+                    width: 100%;
+                    border: $gray-400;
+
+                    @include md {
+                    }
+
+                    @include lg {
+                    }
                 }
+
+                .this-important {
+                    position: absolute;
+                    top: 18px;
+                    right: 20px;
+                    color: red;
+                    font-size: 14px;
+                }
+            }
+
+            ::placeholder {
+                padding-left: 2rem;
             }
         }
 
         .information {
-            margin-left: 16rem;
+            margin-left: 9rem;
             align-self: start;
             display: flex;
-           /* text-align: left;*/
+            text-align: left;
 
             .subscribe-terms-and-privacy {
-                /*text-align: left;*/
+                text-align: left;
+                color: $gray-600;
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: $black;
+                    }
+                }
+
+                span {
+                    color: $theme;
+
+                    &:hover {
+                        color: $black;
+                    }
+                }
             }
         }
     }
