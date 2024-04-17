@@ -1,122 +1,64 @@
-.download-app {
+
+#download-app {
     background-color: $gray-100;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
 
     .container {
-        display: flex;
-        flex-direction: column-reverse;
-        // justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-top: 1rem;
         background-color: $gray-200;
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 1rem;
 
-        @include md {
-            flex-direction: row;
-            text-align: left;
-            justify-content: space-between;
-        }
+        .download-img {
+            flex: 1;
 
-        img {
-            max-width: 50%;
-            object-fit: scale-down;
-            padding-top: 1.2rem;
-
-            @include md {
-                max-width: 40%;
-            }
-
-            @include lg {
-                max-width: 30%;
+            img {
             }
         }
 
-        .download-app-content {
+        .content {
+            flex: 1;
 
-            @include md {
-                display: flex;
-                flex-direction: column;
-                max-width: 50%;
+            h1 {
+                width: 65%;
             }
 
-            .download-app-heading {
+            .download-app {
+                margin: 2.5rem 0;
 
-                h2 {
+                .app-stores {
+                    color: $gray-600;
+                }
 
-                    @include md {
-                        @include standard-heading;
-                        font-size: 24px !important;
-                    }
+                .rating {
+                    margin-bottom: 0.6rem;
 
-                    @include lg {
-                        @include standard-heading;
-                        font-size: 28px !important;
-                    }
-
-                    @include xl {
-                        @include standard-heading;
-                        font-size: 38px !important;
-                        max-width: 60%;
+                    i {
+                        color: $warning;
                     }
                 }
-            }
 
-            .app-download {
-
-                @include md {
+                .download {
                     display: flex;
-                    column-gap: 2rem;
-                }
+                    gap: 4rem;
 
-                .left-side-download {
-
-                    .store-heading {
-                        @include md {
-                            margin-top: 10px;
-                        }
+                    .download-info {
                     }
 
-                    .ratings {
-                        padding-bottom: 0.5rem;
-                    }
-                }
-
-
-                .right-side-download {
-
-                    @include md {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                    h4 {
                     }
 
-                    .app-stores {
+                    .statisticts {
+                    }
 
-                        @include md {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 100%;
-                            object-fit: cover;
-                        }
+                    img {
 
-                        .download-icon {
-                            max-width: 100%;
-                            width: 100%;
-                        }
-
-                        img {
-                            width: 30%;
-
-                            &:hover {
-                                text-decoration: none;
-                                box-shadow: 10px 2px 8px rgba(0, 10, 255, 0.2);
-                                transform: translateY(-4px);
-                                color: $white;
-                                transition: all 0.35s ease-in-out;
-                                border-radius: 10%;
-                            }
+                        &:hover {
+                            text-decoration: none;
+                            box-shadow: 10px 2px 8px rgba(0, 30, 255, 0.2);
+                            transform: translateY(-4px);
+                            color: $white;
+                            transition: all 0.35s ease-in-out;
+                            border-radius: 10%;
                         }
                     }
                 }

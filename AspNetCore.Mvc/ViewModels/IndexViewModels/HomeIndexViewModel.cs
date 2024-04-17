@@ -61,48 +61,5 @@ public class HomeIndexViewModel()
         ],
         Link = new() { ControllerName = "LearnMore", ActionName = "Index", Text = "Learn more" },
     };
-
-    public DownloadAppViewModel DownloadApp { get; set; } = new DownloadAppViewModel
-    {
-        Id = "download-app",
-        MobileImg = new() { ImageUrl = "images/mobile-img-app.svg", AltText = "mobile phone" },
-        Title = "Download Our App for Any Devices:",
-        AppDownload = new List<DownloadAppBoxViewModel>
-        {
-            new DownloadAppBoxViewModel
-            {
-                AppStore = "App Store",
-                RatingImg =
-                    [
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                    ],
-                Subheading = "Editor's Choice",
-                Ratings = "rating 4.7, 187K+ reviews",
-                Link = new LinkViewModel { ControllerName = "Downloads", ActionName = "AppleStore", Text = ""},
-                LinkImages = new ImageViewModel { ImageUrl = "images/appstore.svg", AltText = "appstore logo"}
-            },
-              new DownloadAppBoxViewModel
-            {
-                AppStore = "Google Store",
-                RatingImg =
-                    [
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                        new() { ImageUrl = "images/rating-star.svg", AltText = "yellow star" },
-                    ],
-                Subheading = "App of the Day",
-                Ratings = "rating 4.8, 30K+ reviews",
-                Link = new LinkViewModel { ControllerName = "Downloads", ActionName = "GooglePlay"},
-                LinkImages = new ImageViewModel { ImageUrl = "images/googleplay.svg", AltText = "google store logo"}
-            },
-        }
-    };
-
     public SubscriberDto Subscribe { get; set; } = new SubscriberDto(){ };
 }

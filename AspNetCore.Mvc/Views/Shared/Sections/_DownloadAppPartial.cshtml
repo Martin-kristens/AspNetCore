@@ -1,37 +1,47 @@
-﻿@model DownloadAppViewModel
-
-<section id="@Model.Id" class="download-app">
+﻿
+<section id="download-app">
     <div class="container">
-        <img src="@Model.MobileImg.ImageUrl" alt="@Model.MobileImg.AltText">
-        <div class="download-app-content">
-            <div class="download-app-heading">
-                <h2>@Model.Title</h2>
-            </div>
-
-            @if (Model.AppDownload.Count >= 1)
-            {
-                @foreach (var box in Model.AppDownload)
-                {
-                    <div class="app-download">
-                        <div class="left-side-download">
-
-                            <p class="store-heading">@box.AppStore</p>
-                            <div class="ratings">
-                                @foreach (var rating in box.RatingImg)
-                                {
-                                    <img src="@rating.ImageUrl" alt="@rating.AltText">
-                                }                            
-                            </div>
-                            <h5>@box.Subheading</h5>
-                            <p>@box.Ratings</p>
-                        </div>
-                        <div class="right-side-download">
-                            <a class="app-stores" asp-controller="@box.Link.ControllerName", asp-action="@box.Link.ActionName"><img class="download-icon" src="@box.LinkImages.ImageUrl" alt="@box.LinkImages.AltText"></a>
-                        </div>
+        <div class="download-img">
+            <img src="~/images/mobile-img-app.svg" alt="mobile phone"/>
+        </div>
+        <div class="content">
+            <h1>Download Our App for Any Devices:</h1>
+            <div class="download-app">
+                <p class="app-stores">App Store</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="download">
+                    <div class="download-info">
+                        <h4>Editor's Choice</h4>
+                        <p class="statistics">rating 4.7, 187K+ reviews</p>
                     </div>
-                }
-            }
+                    <img src="~/images/appstore.svg" alt="appstore logo" />
+                </div>
+            </div>
+            <div class="download-app">
+                <p class="app-stores">Google Play</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="download">
+                    <div class="download-info">
+                        <h4>App of the Day</h4>
+                        <p class="statisticts">rating 4.8, 30K+ reviews</p>
+                    </div>
+                    <img src="~/images/googleplay.svg" alt="appstore logo" />
+                </div>
+               
+                
+            </div>
         </div>
     </div>
 </section>
-
