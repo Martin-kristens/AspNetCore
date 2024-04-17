@@ -873,6 +873,8 @@ form span.field-validation-error {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: -5px;
+  right: 0;
   background-color: #000000;
   width: 50vw;
   z-index: -10;
@@ -881,6 +883,24 @@ form span.field-validation-error {
 #switch-black-white .container {
   text-align: center;
   padding: 3rem 0;
+  position: relative;
+}
+#switch-black-white .container .center-line {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #6366F1;
+  z-index: 10;
+}
+#switch-black-white .container .circle-in-laptop {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
 }
 #switch-black-white .container .title {
   display: flex;
