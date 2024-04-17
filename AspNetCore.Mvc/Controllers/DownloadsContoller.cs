@@ -9,4 +9,10 @@ public class DownloadsContoller : Controller
         ViewData["Title"] = "Downloads";
         return View();
     }
+
+    public IActionResult GooglePlay()
+    {
+        ViewData["Title"] = "Google Play";
+        return View();
+    }
 }
