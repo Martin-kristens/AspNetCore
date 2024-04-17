@@ -415,6 +415,7 @@ header .container .account-buttons .profile-img {
 }
 header .container .account-buttons .profile-img:hover {
   text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
   transform: translateY(-4px);
   color: #FFFFFF;
   transition: all 0.35s ease-in-out;
@@ -1768,4 +1769,16 @@ form span.field-validation-error {
   margin: 20px 0;
   display: flex;
   gap: 20px;
+}
+
+#cookie-consent {
+  position: fixed;
+  right: 0;
+  bottom: -17px;
+  left: 0;
+  z-index: 1030;
+}
+#cookie-consent .container {
+  display: flex;
+  justify-content: space-between;
 }
