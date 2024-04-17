@@ -7,5 +7,5 @@ public class ProfileInfoViewModel
     public string LastName { get; set; } = null!;
    
     public string Email { get; set; } = null!;
-    public string? ProfileImageUrl { get; set; } /*= "account-profile.svg";*/
+    public string? ProfileImageUrl { get; set; }
 }

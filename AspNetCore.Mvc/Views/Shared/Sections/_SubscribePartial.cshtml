@@ -78,7 +78,7 @@
             else if (TempData["Status"]?.ToString() == "Invalid")
             {
                 <span class="alert alert-danger">
-                    You must enter a valid email address
+                    You must enter a valid email address (xx@xx.xx)
                 </span>
             }
             else if (TempData["Status"]?.ToString() == "ConnectionFailes")
@@ -92,7 +92,7 @@
                 <span class="alert">
                     <div class="subscribe-terms-and-privacy">
                         <p>
-                            * Yes, I agree to the <a asp-action="" asp-controller=""><span>terms</span></a> and <a asp-action="" asp-controller=""><span>privacy policy</span></a>
+                            * Yes, I agree to the <a asp-action="Terms" asp-controller="Subscribe"><span>terms</span></a> and <a asp-action="Privacy" asp-controller="Subscribe"><span>privacy policy</span></a>
                         </p>
                     </div>
                 </span>

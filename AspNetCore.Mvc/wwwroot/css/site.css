@@ -920,7 +920,7 @@ form span.field-validation-error {
   .switch-black-white {
     display: flex;
     width: 100%;
-    height: 120vh;
+    height: 80vh;
     position: relative;
   }
 }
@@ -1440,7 +1440,7 @@ form span.field-validation-error {
   padding-left: 0.5rem;
 }
 .subscribe .container .information {
-  margin-left: 9rem;
+  margin-left: 14rem;
   align-self: start;
   display: flex;
   text-align: left;

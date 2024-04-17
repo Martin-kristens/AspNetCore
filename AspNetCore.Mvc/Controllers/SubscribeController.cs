@@ -41,17 +41,22 @@ namespace AspNetCore.Mvc.Controllers
                         TempData["Status"] = "AlreadyExists";
                         return RedirectToAction("Index", "Home");
                     }
+                    else
+                    {
+                        TempData["Status"] = "Invalid";
+                        return RedirectToAction("Index", "Home");
+                    }
 
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
-                    //ModelState.AddModelError(string.Empty, "An error occurred while subscribing. Please try again later.");
+                 
                     TempData["Status"] = "ConnectionFailed";
                     return View(dto);
                 }
             }
-
+            TempData["Status"] = "Invalid";
             return RedirectToAction("Index", "Home");
         }
 
