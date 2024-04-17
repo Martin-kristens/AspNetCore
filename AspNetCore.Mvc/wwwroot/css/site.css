@@ -1025,122 +1025,43 @@ form span.field-validation-error {
   }
 }
 
-.download-app {
+#download-app {
   background-color: #F3F6FF;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
 }
-.download-app .container {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-  padding-top: 1rem;
+#download-app .container {
   background-color: #EFF2FC;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 1rem;
 }
-@media (min-width: 768px) {
-  .download-app .container {
-    flex-direction: row;
-    text-align: left;
-    justify-content: space-between;
-  }
+#download-app .container .download-img {
+  flex: 1;
 }
-.download-app .container img {
-  max-width: 50%;
-  object-fit: scale-down;
-  padding-top: 1.2rem;
+#download-app .container .content {
+  flex: 1;
 }
-@media (min-width: 768px) {
-  .download-app .container img {
-    max-width: 40%;
-  }
+#download-app .container .content h1 {
+  width: 65%;
 }
-@media (min-width: 992px) {
-  .download-app .container img {
-    max-width: 30%;
-  }
+#download-app .container .content .download-app {
+  margin: 2.5rem 0;
 }
-@media (min-width: 768px) {
-  .download-app .container .download-app-content {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-  }
+#download-app .container .content .download-app .app-stores {
+  color: #9397AD;
 }
-@media (min-width: 768px) {
-  .download-app .container .download-app-content .download-app-heading h2 {
-    line-height: 160%;
-    font-weight: 400;
-    color: #565973;
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    color: #0B0F19;
-    font-size: 24px !important;
-  }
+#download-app .container .content .download-app .rating {
+  margin-bottom: 0.6rem;
 }
-@media (min-width: 992px) {
-  .download-app .container .download-app-content .download-app-heading h2 {
-    line-height: 160%;
-    font-weight: 400;
-    color: #565973;
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    color: #0B0F19;
-    font-size: 28px !important;
-  }
+#download-app .container .content .download-app .rating i {
+  color: #FFBA08;
 }
-@media (min-width: 1200px) {
-  .download-app .container .download-app-content .download-app-heading h2 {
-    line-height: 160%;
-    font-weight: 400;
-    color: #565973;
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    color: #0B0F19;
-    font-size: 38px !important;
-    max-width: 60%;
-  }
+#download-app .container .content .download-app .download {
+  display: flex;
+  gap: 4rem;
 }
-@media (min-width: 768px) {
-  .download-app .container .download-app-content .app-download {
-    display: flex;
-    column-gap: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .download-app .container .download-app-content .app-download .left-side-download .store-heading {
-    margin-top: 10px;
-  }
-}
-.download-app .container .download-app-content .app-download .left-side-download .ratings {
-  padding-bottom: 0.5rem;
-}
-@media (min-width: 768px) {
-  .download-app .container .download-app-content .app-download .right-side-download {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media (min-width: 768px) {
-  .download-app .container .download-app-content .app-download .right-side-download .app-stores {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-.download-app .container .download-app-content .app-download .right-side-download .app-stores .download-icon {
-  max-width: 100%;
-  width: 100%;
-}
-.download-app .container .download-app-content .app-download .right-side-download .app-stores img {
-  width: 30%;
-}
-.download-app .container .download-app-content .app-download .right-side-download .app-stores img:hover {
+#download-app .container .content .download-app .download img:hover {
   text-decoration: none;
-  box-shadow: 10px 2px 8px rgba(0, 10, 255, 0.2);
+  box-shadow: 10px 2px 8px rgba(0, 30, 255, 0.2);
   transform: translateY(-4px);
   color: #FFFFFF;
   transition: all 0.35s ease-in-out;
