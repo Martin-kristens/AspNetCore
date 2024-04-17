@@ -1,75 +1,45 @@
-.switch-black-white {
-    display: none;
+#switch-black-white {
+    display: flex;
+    align-content: center;
+    position: relative;
 
-    @include lg {
-        display: flex;
-        width: 100%;
-        height: 80vh;
-        position: relative;
-    }
-
-
-
-    .light-theme {
-        background-color: $white;
-        flex: 1;
-        color: $black;
-        padding: 20px;
-    }
-
-    .dark-theme {
+    .dark-bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
         background-color: $black;
-        flex: 1;
-        color: $white;
-        padding: 20px;
+        width: 50vw;
+        z-index: -10;
+        border-right: 1px solid $theme;
     }
 
     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 3rem 0;
 
-        h2 {
-            text-align: center;
-            margin-left: 1.2rem;
+        .title {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
 
-            .dark {
-                color: $black;
+            h1 {
+                flex: 1;
             }
 
             .light {
+                text-align: right;
                 color: $white;
             }
-        }
 
-        .switch-black-white-laptop {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-
-
-            img {
-                width: 70%;
-                height: 70%;
-                object-fit: cover;
-                z-index: 1;
+            .dark {
+                text-align: left;
+                color: $gray-900;
+                margin-left: 50px;
             }
 
-            .circle-in-laptop {
-                width: 5%;
-                height: 17%;
-                object-fit: cover;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
+            img {
+                margin-left: 10px;
+                position: relative;
             }
         }
     }
