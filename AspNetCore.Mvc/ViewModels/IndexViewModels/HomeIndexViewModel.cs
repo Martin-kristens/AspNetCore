@@ -24,42 +24,5 @@ public class HomeIndexViewModel()
                      new() { ImageUrl = "images/brand_4.svg", AltText = "Brand name 4" },
                  ],
     };
-
-    public TaskManagementViewModel TaskManagement { get; set; } = new TaskManagementViewModel
-    {
-        Id = "task - management",
-        Dashboard = new() { ImageUrl = "images/task-management-img.svg", AltText = "dashboard" },
-        Title = "Manage Your Work",
-        TaskBox =
-        [
-            new TaskManagementBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
-                Text = "Powerful project management"
-            },
-            new TaskManagementBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
-                Text = "Transparent work management"
-            },
-            new TaskManagementBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
-                Text = "Manage work & focus on the most important tasks"
-            },
-            new TaskManagementBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
-                Text = "Track your progress with interactive charts"
-            },
-            new TaskManagementBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "images/bx-check-circle.svg", AltText = "circle with checkmarks" },
-                Text = "Easiest way to track time spent on tasks"
-            },
-
-        ],
-        Link = new() { ControllerName = "LearnMore", ActionName = "Index", Text = "Learn more" },
-    };
     public SubscriberDto Subscribe { get; set; } = new SubscriberDto(){ };
 }

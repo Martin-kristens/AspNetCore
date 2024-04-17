@@ -1,93 +1,44 @@
-.task-management {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
 
+.manage-work {
     .container {
+        display: flex;
+        align-items: center;
 
-        .task-management-content {
-            display: flex;
-            flex-direction: column-reverse;
-            text-align: center;
-            align-items: center;
+        img {
+            flex: 1;
+            width: 50%;
+        }
 
-            @include md {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+        .content {
+            flex: 1;
+            margin-left: 5rem;
+
+            h2 {
+
             }
 
-            img {
-                max-width: 80%;
-                object-fit: scale-down;
+            ul {
 
-                @include md {
-                    max-width: 40%;
+                list-style: none;
+                margin: 2rem 0;
+                padding: 0;
+
+                li {
+                    margin-bottom: 0.8rem;
+                    i {
+                        color: $theme;
+                        margin-right: 0.5rem;
+                        background-color: transparent;
+                    }
                 }
             }
 
-            .task-management-work {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-
-                @include md {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                @include lg {
-                    h3 {
-                        text-align: left;
-                        @include standard-heading;
-                        font-size: 28px !important;
-                    }
-                }
-
-                .task-management-status-badge {
-                    display: grid;
-                    grid-template-rows: 1fr 1fr;
-                    grid-template-areas: "image text";
-                    justify-content: flex-start;
-                    gap: 0.8rem;
-                    padding-bottom: 1.4rem;
-                    text-align: left;
-                    align-items: center;
-
-                    @include md {
-                        margin-left: 2rem;
-                    }
-
-                    @include lg {
-                        margin-left: 0;
-                    }
-
-                    img {
-                        grid-area: "image";
-                        width: 3rem;
-
-                        @include lg {
-                            width: 4rem;
-                        }
-                    }
-
-                    p {
-                        grid-area: "text";
-                        @include standard-text;
-                        font-size: 16px !important;
-                        margin: 0;
-
-                        @include lg {
-                            @include standard-text;
-                            font-size: 20px !important;
-                        }
-                    }
-                }
-
-                a {
-                    @include lg {
-                        max-width: 40%;
-                    }
-                }
+            a {
+                display: inline-block;
             }
         }
     }
 }
+
+
+
