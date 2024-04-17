@@ -1,24 +1,16 @@
-﻿@model TaskManagementViewModel
-
-
-<section id="@Model.Id" class="task-management">
+﻿<section id="manage-work" class="manage-work">
     <div class="container">
-        <div class="task-management-content">
-            <img src="@Model.Dashboard.ImageUrl" alt="@Model.Dashboard.AltText">
-
-            <div class="task-management-work">
-                <h3 class="manage-work-heading">@Model.Title</h3>
-                <div class="task-management-status-badge">
-                    @foreach (var tasks in Model.TaskBox)
-                    {
-                        <img src="@tasks.Image.ImageUrl" alt="@tasks.Image.AltText">
-                        <p>@tasks.Text</p>
-                    }
-                </div>
-                <a class="btn-theme" asp-controller="LearnMoreController" asp-action="Index">Learn more<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-           
+        <img src="~/images/task-management-img.svg" alt="dashboard" />
+        <div class="content">
+            <h2>Manage Your Work</h2>
+            <ul>
+                <li><i class="fa-regular fa-circle-check"></i>Powerful project management</li>
+                <li><i class="fa-regular fa-circle-check"></i>Transparent work management</li>
+                <li><i class="fa-regular fa-circle-check"></i>Manage work & focus on the most important tasks</li>
+                <li><i class="fa-regular fa-circle-check"></i>Track your progress with interactive charts</li>
+                <li><i class="fa-regular fa-circle-check"></i>Easiest way to track time spent on tasks</li>
+            </ul>
+            <a class="btn btn-theme" asp-action="ManageWork" asp-controller="Products">Learn more <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-     </div> 
+    </div>
 </section>
