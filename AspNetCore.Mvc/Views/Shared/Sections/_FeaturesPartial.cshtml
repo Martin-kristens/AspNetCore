@@ -52,35 +52,3 @@
      
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-@* 
-@model FeatureViewModel
-
-
-<section id="@Model.Id" class="features">
-    <div class="container">
-        <h2>@Model.Title</h2>
-        <p>@Model.Text</p>
-        <div class="tool-features">
-            @if (Model.FeatureBox.Count >= 1)
-            {
-                @foreach (var box in Model.FeatureBox)
-                {
-                    <div class="box">
-                        <img src="@box.Image.ImageUrl" alt="@box.Image.AltText">
-                        <h5>@box.Subheading</h5>
-                        <p>@box.BoxText</p>
-                    </div>
-                }
-            }
-        </div>
-    </div>
-</section> *@
