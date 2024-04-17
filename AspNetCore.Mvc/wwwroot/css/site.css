@@ -415,7 +415,6 @@ header .container .account-buttons .profile-img {
 }
 header .container .account-buttons .profile-img:hover {
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
   transform: translateY(-4px);
   color: #FFFFFF;
   transition: all 0.35s ease-in-out;
@@ -953,100 +952,6 @@ form span.field-validation-error {
   display: inline-block;
 }
 
-/*.task-management {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
-    .container {
-
-        .task-management-content {
-            display: flex;
-            flex-direction: column-reverse;
-            text-align: center;
-            align-items: center;
-
-            @include md {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            img {
-                max-width: 80%;
-                object-fit: scale-down;
-
-                @include md {
-                    max-width: 40%;
-                }
-            }
-
-            .task-management-work {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-
-                @include md {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                @include lg {
-                    h3 {
-                        text-align: left;
-                        @include standard-heading;
-                        font-size: 28px !important;
-                    }
-                }
-
-                .task-management-status-badge {
-                    display: grid;
-                    grid-template-rows: 1fr 1fr;
-                    grid-template-areas: "image text";
-                    justify-content: flex-start;
-                    gap: 0.8rem;
-                    padding-bottom: 1.4rem;
-                    text-align: left;
-                    align-items: center;
-
-                    @include md {
-                        margin-left: 2rem;
-                    }
-
-                    @include lg {
-                        margin-left: 0;
-                    }
-
-                    img {
-                        grid-area: "image";
-                        width: 3rem;
-
-                        @include lg {
-                            width: 4rem;
-                        }
-                    }
-
-                    p {
-                        grid-area: "text";
-                        @include standard-text;
-                        font-size: 16px !important;
-                        margin: 0;
-
-                        @include lg {
-                            @include standard-text;
-                            font-size: 20px !important;
-                        }
-                    }
-                }
-
-                a {
-                    @include lg {
-                        max-width: 40%;
-                    }
-                }
-            }
-        }
-    }
-}
-*/
 #download-app {
   background-color: #F3F6FF;
 }
