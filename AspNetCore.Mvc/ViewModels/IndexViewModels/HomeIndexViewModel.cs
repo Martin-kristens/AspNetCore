@@ -104,58 +104,5 @@ public class HomeIndexViewModel()
         }
     };
 
-    public IntegrateToolViewModel IntegrateTool { get; set; } = new IntegrateToolViewModel
-    {
-        Id = "integrate-tool",
-        Title = "Integrate Top Work Tools",
-        Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.",
-        ToolBox =
-        [
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/google-icon.svg", AltText = "google icon" },
-                BoxText = "Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/camera.svg", AltText = "camera icon" },
-                BoxText = "In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/color-circle.svg", AltText = "color-circle icon" },
-                BoxText = "Id mollis consectetur congue egestas egestas suspendisse blandit justo."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/mail-icon.svg", AltText = "mail-box icon" },
-                BoxText = "Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/icon-5.svg", AltText = "blue circle icon" },
-                BoxText = "Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/monkey-head.svg", AltText = "monkey head icon" },
-                BoxText = "A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/drop-box-icon.svg", AltText = "dropbox icon" },
-                BoxText = "Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea."
-            },
-            new ToolBoxViewModel()
-            {
-                Image = new ImageViewModel() { ImageUrl = "../icons/elephant-head.svg", AltText = "green elephant head icon" },
-                BoxText = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu."
-            },
-        ]
-
-
-
-    };
-
     public SubscriberDto Subscribe { get; set; } = new SubscriberDto(){ };
 }

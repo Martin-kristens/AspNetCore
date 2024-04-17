@@ -1,87 +1,42 @@
 .integrate-tool {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
+
     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: grid;
         text-align: center;
-        padding-bottom: 1.2rem;
 
         .integrate-tool-heading {
-            h2 {
-                @include standard-heading; 
-                font-size: 28px !important;
-            }
-
-            p {
-                text-align: center;
-                @include lg {
-                    max-width: 45rem;
-                }
-            }
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
         }
 
-        .integrate-tools {
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
 
-            @include md {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding-top: 1rem;
-            }
-
-            @include lg {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                width: 100%;
-            }
-            
             .tool {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                row-gap: 1.1rem;              
-
-                @include md {
-                    flex-direction: column;
-                    max-width: 10rem;
-                    align-items: center;
-                    column-gap: 1.1rem;
-                }
-
-                @include lg {
-                    max-width: 12rem;
-                }
+                text-align: left;
+                padding: 1.5rem;
+                border-radius: 8px;
+                transition: 0.2s ease-in-out;
+                cursor: pointer;
 
                 img {
-                    width: 6%;
-                    margin-right: 1rem;
-
-                    @include md {
-                        width: 16%;
-                        align-self: flex-start;
-                    }
+                    width: 3rem;
+                    padding-bottom: 0.7rem;
                 }
 
                 p {
-                    text-align: left;
-                    margin-top: 0.6rem;
-                    @include standard-text; 
-                    font-size: 12px !important;
-
-                    @include md {
-                        margin-top: 0rem;
-                    }
-
-                    @include lg {
-                        @include standard-text; 
-                        font-size: 14px !important;
-                    }
                 }
-            }           
+
+                &:hover {
+                    box-shadow: 0 0 18px -8px rgba(0, 0, 0, 0.2);
+                }
+            }
         }
     }
 }
