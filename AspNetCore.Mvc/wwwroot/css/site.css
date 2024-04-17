@@ -1148,101 +1148,37 @@ form span.field-validation-error {
 }
 
 .integrate-tool {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 .integrate-tool .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 1.2rem;
-}
-.integrate-tool .container .integrate-tool-heading h2 {
-  line-height: 160%;
-  font-weight: 400;
-  color: #565973;
-  font-family: "Manrope", sans-serif;
-  font-weight: 800;
-  color: #0B0F19;
-  font-size: 28px !important;
-}
-.integrate-tool .container .integrate-tool-heading p {
+  display: grid;
   text-align: center;
 }
-@media (min-width: 992px) {
-  .integrate-tool .container .integrate-tool-heading p {
-    max-width: 45rem;
-  }
+.integrate-tool .container .integrate-tool-heading {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
-@media (min-width: 768px) {
-  .integrate-tool .container .integrate-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
+.integrate-tool .container .tools {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
 }
-@media (min-width: 992px) {
-  .integrate-tool .container .integrate-tools {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-  }
-}
-.integrate-tool .container .integrate-tools .tool {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  row-gap: 1.1rem;
-}
-@media (min-width: 768px) {
-  .integrate-tool .container .integrate-tools .tool {
-    flex-direction: column;
-    max-width: 10rem;
-    align-items: center;
-    column-gap: 1.1rem;
-  }
-}
-@media (min-width: 992px) {
-  .integrate-tool .container .integrate-tools .tool {
-    max-width: 12rem;
-  }
-}
-.integrate-tool .container .integrate-tools .tool img {
-  width: 6%;
-  margin-right: 1rem;
-}
-@media (min-width: 768px) {
-  .integrate-tool .container .integrate-tools .tool img {
-    width: 16%;
-    align-self: flex-start;
-  }
-}
-.integrate-tool .container .integrate-tools .tool p {
+.integrate-tool .container .tools .tool {
   text-align: left;
-  margin-top: 0.6rem;
-  line-height: 160%;
-  font-weight: 400;
-  color: #565973;
-  font-family: "Manrope", sans-serif;
-  font-size: 12px !important;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
-@media (min-width: 768px) {
-  .integrate-tool .container .integrate-tools .tool p {
-    margin-top: 0rem;
-  }
+.integrate-tool .container .tools .tool img {
+  width: 3rem;
+  padding-bottom: 0.7rem;
 }
-@media (min-width: 992px) {
-  .integrate-tool .container .integrate-tools .tool p {
-    line-height: 160%;
-    font-weight: 400;
-    color: #565973;
-    font-family: "Manrope", sans-serif;
-    font-size: 14px !important;
-  }
+.integrate-tool .container .tools .tool:hover {
+  box-shadow: 0 0 18px -8px rgba(0, 0, 0, 0.2);
 }
 
 .subscribe {
