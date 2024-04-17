@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore.Mvc.Dtos;
+using AspNetCore.Mvc.Models.Sections;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Text;
 
 namespace AspNetCore.Mvc.Controllers
 {
@@ -8,6 +13,51 @@ namespace AspNetCore.Mvc.Controllers
         {
             ViewData["Title"] = "Subscribe";
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(SubscriberDto dto)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    using var http = new HttpClient();
+
+                    var url = "https://localhost:7263/api/subscribers";
+                    var json = JsonConvert.SerializeObject(dto);
+                    var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await http.PostAsync(url, data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        TempData["Status"] = "Success";
+                        return RedirectToAction("Index", "Home");
+
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.Conflict) 
+                    {
+                        TempData["Status"] = "AlreadyExists";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        TempData["Status"] = "Invalid";
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                 
+                    TempData["Status"] = "ConnectionFailed";
+                    return View(dto);
+                }
+            }
+            TempData["Status"] = "Invalid";
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Terms()

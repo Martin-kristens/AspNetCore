@@ -1,14 +1,12 @@
-﻿@model WorkWithUsViewModel 
-
-<section id="@Model.Id" class="work-with-us">
+﻿<section id="work-with-us" class="work-with-us">
     <div class="container">
         <div class="work-with-us-left-side">
-            <p>@Model.Text</p>
-            <h2>@Model.Header.Header1 <span>@Model.Header.SpanText</span> @Model.Header.Header2</h2>
-            <a class="btn-theme" asp-controller="" asp-action="">@Model.Link.Text</a>
+            <p>Ready to get started?</p>
+            <h2>Take Your <span>Skills</span> to the Next Level</h2>
+            <a class="btn-theme" asp-controller="" asp-action="">"Work with us"</a>
         </div>
         <div class="work-with-us-right-side">
-            <img src="@Model.WorkImg.ImageUrl" alt="@Model.WorkImg.AltText">
+            <img src="~/images/work-with-us-illustration.svg" alt="cartoon picture">
         </div>
     </div>
 </section>

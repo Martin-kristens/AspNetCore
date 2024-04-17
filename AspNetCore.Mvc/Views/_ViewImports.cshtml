@@ -3,9 +3,15 @@
 @using AspNetCore.Mvc.Models.Sections
 @using AspNetCore.Mvc.ViewModels.Account
 @using AspNetCore.Mvc.ViewModels
-@using AspNetCore.Mvc.ViewModels.Courses
 @using AspNetCore.Mvc.ViewModels.Components
 @using AspNetCore.Mvc.ViewModels.IndexViewModels
 
 @using AspNetCore.Mvc.ViewModels.Authentication
+@using AspNetCore.Mvc.Dtos
+@using Infrastrucutre.Entities
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<UserEntity> SignInManager
+@inject UserManager<UserEntity> UserManager
+
 

@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCore.Mvc.Controllers
+namespace AspNetCore.Mvc.Controllers;
+
+public class ContactController : Controller
 {
-    public class ContactController : Controller
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            ViewData["Title"] = "Contact Us";
-            return View();
-        }
+        ViewData["Title"] = "Contact Us";
+        return View();
     }
 }

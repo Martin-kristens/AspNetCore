@@ -15,14 +15,13 @@ header {
 
         #logo {
             grid-area: logo;
+            background-color: transparent;
         }
 
         #menu {
             grid-area: menu;
-            // background-color: $danger;
             justify-content: center;
             align-items: center;
-            // padding: 5rem;
             display: none;
 
             @include lg {
@@ -56,6 +55,15 @@ header {
 
             .profile-img {
                 height: 100%;
+                border-radius: 50%;
+
+                &:hover {
+                    text-decoration: none;
+                    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+                    transform: translateY(-4px);
+                    color: $white;
+                    transition: all 0.35s ease-in-out;
+                }
             }
         }
 
@@ -63,13 +71,6 @@ header {
             grid-area: mobile;
             display: block;
             padding-right: 1rem;
-            // width: 50px;
-            // height: 50px;
-            // background-size: cover;
-            // background-position: center;
-            // position: relative;
-            // // background-color: $danger;
-            // cursor: pointer;
 
             i {
                 font-size: 1.6rem;
@@ -78,9 +79,6 @@ header {
             @include lg {
                 display: none;
             }
-            // .hide {
-            //     display: none;
-            // }
         }
 
         #mobile-menu {

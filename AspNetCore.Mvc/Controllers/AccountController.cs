@@ -1,6 +1,5 @@
 ﻿using AspNetCore.Mvc.ViewModels.Account;
 using Infrastrucutre.Entities;
-using Infrastrucutre.Factories;
 using Infrastrucutre.Models;
 using Infrastrucutre.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -115,6 +114,7 @@ public class AccountController(SignInManager<UserEntity> signInManager, UserMana
 
         return new ProfileInfoViewModel
         {
+            ProfileImageUrl = user!.ProfileImage,
             FirstName = user!.FirstName,
             LastName = user.LastName,
             Email = user.Email!           
@@ -168,6 +168,17 @@ public class AccountController(SignInManager<UserEntity> signInManager, UserMana
         
 
         return new AccountDetailsAddressInfoModel();
+    }
+    #endregion
+
+    #region UploadImage
+
+    [HttpPost]
+    public async Task<IActionResult> UploadImage(IFormFile file)
+    {
+        var result = await _userDetailsService.UploadUserProfileImageAsync(User, file);
+
+        return RedirectToAction("Details", "Account");
     }
     #endregion
 }
