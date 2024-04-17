@@ -1,14 +1,12 @@
 ﻿
-@model SwitchBlackAndWhiteViewModel
-
 <section id="switch-black-white" class="switch-black-white">
-    <div class="dark-theme"></div>
-    <div class="light-theme"></div>
+    <div class="dark-bg"></div>
     <div class="container">
-        <h2><span class="light">@Model.TitleLight</span><span class="dark">@Model.TitleDark</span></h2>
-        <div class="switch-black-white-laptop">
-            <img src="@Model.LaptopImg.ImageUrl" alt="@Model.LaptopImg.AltText">
-            <img class="circle-in-laptop" src="@Model.CircleImg.ImageUrl" alt="@Model.CircleImg.AltText" />
+        <div class="title">
+            <h1 class="light">Switch between</h1>
+            <h1 class="dark">Light & Dark Mode</h1>
         </div>
+            <img src="~/images/laptop.svg" alt="laptop">  
+            
     </div>
-</section> 
+</section>

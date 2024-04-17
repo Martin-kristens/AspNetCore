@@ -25,15 +25,6 @@ public class HomeIndexViewModel()
                  ],
     };
 
-    public SwitchBlackAndWhiteViewModel DarkAndLight { get; set; } = new SwitchBlackAndWhiteViewModel
-    {
-        Id = "switch-black-white",
-        TitleLight = "Switch between ",
-        TitleDark = "Light & Dark Mode",
-        LaptopImg = new ImageViewModel() { ImageUrl = "images/laptop.svg", AltText = "laptop" },
-        CircleImg = new ImageViewModel() { ImageUrl = "images/circle-in-laptop.svg", AltText = "circle" }
-    };
-
     public TaskManagementViewModel TaskManagement { get; set; } = new TaskManagementViewModel
     {
         Id = "task - management",
