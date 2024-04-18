@@ -28,14 +28,13 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     handleProfileImageUpload()
-    console.log('inne')
 
 })
 
 function handleProfileImageUpload() {
     try {
         let fileUploader = document.getElementById('uploadFile')
-        console.log('inside handleProfileImageUpload')
+
         if (fileUploader != undefined) {
             fileUploader.addEventListener('change', function () {
                 if (this.files.length > 0) 

@@ -53,7 +53,7 @@ namespace AspNetCore.Mvc.Controllers
                     Debug.WriteLine(ex.Message);
                  
                     TempData["Status"] = "ConnectionFailed";
-                    return View(dto);
+                    return RedirectToAction("Index", "Home");
                 }
             }
             TempData["Status"] = "Invalid";
